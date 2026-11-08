@@ -1,3 +1,15 @@
+commit aafdc33bdc5b7ebff09d281505647faa94b8e7c0
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   Sun Nov 8 16:29:10 2026 +0700
+
+    docs: include all skills in README directory tree and main report
+
+commit 2195808972bb016a4406a3986d1e1a9931812764
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   Sun Nov 8 16:21:42 2026 +0700
+
+    docs: finalize git_commit_log.txt
+
 commit fe2cd6177267dceb3ea560c53a600abc34e3d935
 Author: vhthawng <vohuuthangwork@gmail.com>
 Date:   Sun Nov 8 16:21:25 2026 +0700
