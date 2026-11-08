@@ -1,0 +1,51 @@
+[
+  {
+    "id": "P1",
+    "name": "Nguyen Van A",
+    "contact": "0912****78",
+    "role": "Nhân viên văn phòng",
+    "responses": [4, 2, 4, 2, 4, 2, 4, 2, 4, 2]
+  },
+  {
+    "id": "P2",
+    "name": "Tran Thi B",
+    "contact": "0983****12",
+    "role": "Sinh viên kinh tế",
+    "responses": [3, 3, 4, 2, 3, 3, 4, 3, 3, 2]
+  },
+  {
+    "id": "P3",
+    "name": "Le Hoang C",
+    "contact": "0905****45",
+    "role": "Kinh doanh tự do",
+    "responses": [4, 1, 5, 1, 4, 2, 5, 2, 4, 1]
+  },
+  {
+    "id": "P4",
+    "name": "Pham Minh D",
+    "contact": "0934****89",
+    "role": "Kế toán viên",
+    "responses": [3, 2, 3, 3, 3, 2, 3, 3, 3, 3]
+  },
+  {
+    "id": "P5",
+    "name": "Vu Thu E",
+    "contact": "0971****67",
+    "role": "Giáo viên",
+    "responses": [4, 2, 4, 1, 4, 2, 4, 2, 4, 2]
+  },
+  {
+    "id": "P6",
+    "name": "Dang Quoc F",
+    "contact": "0918****34",
+    "role": "Bán hàng online",
+    "responses": [4, 3, 3, 2, 4, 3, 4, 2, 4, 2]
+  },
+  {
+    "id": "P7",
+    "name": "Bui Mai G",
+    "contact": "0962****90",
+    "role": "Nhân sự (HR)",
+    "responses": [3, 2, 4, 2, 3, 2, 4, 2, 3, 2]
+  }
+]

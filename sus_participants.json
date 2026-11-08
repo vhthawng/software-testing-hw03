@@ -1,0 +1,51 @@
+[
+  {
+    "id": "P1",
+    "name": "Nguyễn Anh Vũ",
+    "contact": "0339****12",
+    "role": "Sinh viên năm 4 Marketing ĐH FPT",
+    "responses": [2, 4, 2, 3, 2, 4, 3, 4, 2, 2]
+  },
+  {
+    "id": "P2",
+    "name": "Đặng Dương Thanh Quang",
+    "contact": "0905****26",
+    "role": "Sinh viên năm 4 IT ĐH KHTN HCMUS",
+    "responses": [1, 4, 2, 4, 2, 5, 2, 5, 1, 3]
+  },
+  {
+    "id": "P3",
+    "name": "Đặng Thị Hiếu",
+    "contact": "0977****68",
+    "role": "Mẹ của sinh viên (Lướt web hàng ngày, ít mua sắm online)",
+    "responses": [2, 4, 2, 4, 2, 4, 2, 4, 2, 4]
+  },
+  {
+    "id": "P4",
+    "name": "Nguyễn Trần Ngọc Thịnh",
+    "contact": "0973****55",
+    "role": "Sinh viên năm 4 Công nghệ sinh học ĐH KHTN",
+    "responses": [2, 3, 3, 2, 2, 4, 3, 4, 2, 2]
+  },
+  {
+    "id": "P5",
+    "name": "Võ Hữu Toàn",
+    "contact": "0393****21",
+    "role": "Digital Marketing (Anh của sinh viên)",
+    "responses": [2, 4, 2, 3, 2, 4, 3, 4, 2, 2]
+  },
+  {
+    "id": "P6",
+    "name": "Nguyễn Thảo Linh",
+    "contact": "0914****05",
+    "role": "Sinh viên năm 4 ngành Luật ĐH Quy Nhơn",
+    "responses": [1, 4, 2, 4, 2, 4, 2, 4, 1, 4]
+  },
+  {
+    "id": "P7",
+    "name": "Phạm Anh Nhật",
+    "contact": "0935****68",
+    "role": "Kỹ sư ô tô (Ít dùng MXH, dùng YouTube giải trí)",
+    "responses": [2, 4, 2, 2, 2, 4, 3, 4, 2, 2]
+  }
+]

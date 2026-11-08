@@ -1,0 +1,638 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="Header">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#1E3A8A" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="CellNormal">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="CellCenter">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="PassStatus">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+   </Borders>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#166534" ss:Bold="1"/>
+   <Interior ss:Color="#DCFCE7" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="FailStatus">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E5E7EB"/>
+   </Borders>
+   <Font ss:FontName="Calibri" ss:Size="11" ss:Color="#991B1B" ss:Bold="1"/>
+   <Interior ss:Color="#FEE2E2" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+
+ <Worksheet ss:Name="GUI Checklist">
+  <Table ss:DefaultRowHeight="20">
+   <Column ss:Width="90"/>
+   <Column ss:Width="120"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="280"/>
+   <Column ss:Width="90"/>
+   <Column ss:Width="80"/>
+   <Column ss:Width="250"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="180"/>
+
+   <!-- Tiêu đề Header -->
+   <Row ss:Height="28">
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Item ID</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Interface Aspect</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Màn hình</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Tiêu chí kiểm tra (Verification Point)</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Nguồn gốc</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Kết quả</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Ghi chú lỗi (Notes)</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Mã Bug</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Lý giải AI Gap (nếu Human thêm)</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-01</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout &amp; Cart</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nhất quán định dạng ký hiệu tiền tệ trên toàn bộ màn hình giỏ hàng và thanh toán (sử dụng đồng nhất &apos;₫&apos; hoặc &apos;VND&apos;).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Trang Giỏ hàng hiển thị &apos;... ₫&apos; (dòng 46, 63 Cart.jsx), nhưng trong trang Checkout nhãn lại ghi &apos;Tổng tiền thanh toán (VND)&apos; và định dạng hiển thị lại là &apos;... ₫&apos; (dòng 92, 138 Checkout.jsx). Vi phạm tính nhất quán giao diện (Nielsen #4).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-01</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-02</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Bảng danh sách quản lý sản phẩm Admin có tiêu đề cột rõ ràng, căn lề nhất quán (chữ căn trái, số tiền căn phải) theo Waghmare Grid Guidelines.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Bảng sản phẩm trong Admin hiển thị các cột: ID, Tên, Giá, Danh mục, Thao tác rõ ràng; text và số tiền được định dạng cân đối.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-03</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile &amp; Orders</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thẻ trạng thái đơn hàng (Order Status Badge) trong lịch sử đơn hàng sử dụng màu sắc phân biệt ngữ nghĩa rõ rệt theo chuẩn WCAG 2.2.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hàm statusStyle() trong Profile.jsx (dòng 82-95) áp dụng màu chuẩn: xanh lá cho &apos;delivered&apos;, xanh dương cho &apos;shipping&apos;, tím cho &apos;confirmed&apos;, đỏ cho &apos;canceled&apos;, vàng cho &apos;pending&apos;.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-04</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool D: Mobile Register</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Giao diện màn hình đăng ký Mobile tương thích kích thước màn hình điện thoại (Safe Area View, không bị tai thỏ che khuất).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Mobile App sử dụng component SafeAreaView và StyleSheet bọc vùng hiển thị, không bị tràn viền hoặc che khuất trên màn hình Samsung Galaxy A52.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-05</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile &amp; Orders</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Phân cấp typography rõ ràng (Heading h2 cho tiêu đề hồ sơ, h3 cho tiêu đề lịch sử đơn hàng).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Cấu trúc font chữ trong Profile.jsx phân cấp mạch lạc từ text-2xl font-bold xuống text-xl và text-sm.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-06</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Trang Admin duy trì khoảng cách lề và padding đồng nhất giữa Sidebar điều hướng và vùng nội dung chính.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Khung layout Admin sử dụng hệ thống Tailwind flex gap-6 p-6 cân đối, phân tách rõ khu vực bảng dữ liệu và form nhập.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-07</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hiển thị placeholder trực quan, mờ nhạt và biến mất khi người dùng bắt đầu gõ văn bản trong ô mã giảm giá.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Ô coupon có placeholder=&apos;Nhập mã giảm giá...&apos; mờ nhạt, gợi ý tốt cho người dùng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-08</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Tên sản phẩm quá dài trong bảng Admin không làm tràn vỡ chiều rộng cột bảng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Bảng dữ liệu có thanh cuộn ngang khi nội dung vượt quá độ rộng màn hình, không làm xô lệch các cột chức năng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-09</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A &amp; Pool B</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Định dạng số tiền hiển thị có dấu chấm phân cách hàng nghìn rõ ràng theo chuẩn Việt Nam.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Cả trang Profile và Checkout đều sử dụng Number().toLocaleString() hiển thị dạng 4.000.000 ₫.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-10</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool D: Mobile Register</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Độ tương phản màu sắc của chữ thông báo lỗi màu đỏ trên nền nhạt (bg-red-100 text-red-700) đạt chuẩn WCAG 2.2 AA.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Độ tương phản đạt 4.8:1, người dùng mắt kém vẫn có thể đọc rõ thông báo lỗi.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-11</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hình ảnh thumbnail sản phẩm trong bảng Admin có kích thước đồng đều và có thuộc tính alt mô tả nội dung.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thẻ img trong bảng Admin thiếu thuộc tính alt (hoặc chỉ để alt=&apos;&apos;), vi phạm tiêu chuẩn tiếp cận WCAG 2.2 cho người khiếm thị.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-02</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI thường xem nhẹ khả năng tiếp cận (Accessibility) trên các trang quản trị nội bộ Admin.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA01-12</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-01: UI Standards</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Không xuất hiện các giá trị lỗi rò rỉ kiểu dữ liệu như &apos;NaN&apos;, &apos;undefined&apos;, &apos;null&apos; trong vùng thanh toán.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hệ thống kiểm tra Number(total) trước khi render, không xuất hiện NaN khi dữ liệu bình thường.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI ít khi chủ động kiểm tra các lỗi rò rỉ kiểu dữ liệu JavaScript (NaN, undefined) nếu không có chỉ dẫn cụ thể.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-01</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Validation ô Số điện thoại trong form Profile phải chấp nhận định dạng số điện thoại Việt Nam hợp lệ bắt đầu bằng số 0 (10–11 chữ số).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Tại dòng 43 Profile.jsx, regex lại kiểm tra: !/^[1-9][0-9]{8,9}$/.test(phone). Regex này BẮT BUỘC số điện thoại BẮT ĐẦU TỪ 1 ĐẾN 9, dẫn đến TỪ CHỐI MỌI SỐ ĐIỆN THOẠI VIỆT NAM HỢP LỆ BẮT ĐẦU BẰNG 0! (Khớp phát hiện BUG-A04-001 ở HW02). Lỗi UI/Form validation cực lớn!</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-03</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI phân tích biểu thức chính quy thường cho rằng regex kiểm tra độ dài 9-10 số là hợp lệ mà không phát hiện tiền tố [1-9] loại trừ số 0 của định dạng điện thoại VN.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-02</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Ô &apos;Tổng tiền thanh toán&apos; phải ở chế độ Chỉ đọc (Read-only), tuyệt đối không cho phép người dùng tự gõ sửa số tiền thanh toán.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Ô &apos;Tổng tiền thanh toán (VND)&apos; là thẻ input type=&apos;number&apos; có onChange cho phép người dùng tự do sửa thành 1000 ₫ hoặc số âm (dòng 93-100 Checkout.jsx). Khớp phát hiện BUG-B08-001 ở HW02!</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-04</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI luôn giả định tổng tiền trong trang Checkout là nhãn hiển thị cố định (Text view), không lường trước được việc lập trình viên để thẻ input cho người dùng sửa tay.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-03</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Form thêm/sửa sản phẩm Admin bắt buộc trường Tên sản phẩm không được để trống và không nhận chuỗi chỉ toàn khoảng trắng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Ô Tên sản phẩm trong modal Admin có thuộc tính required ngăn người dùng submit form rỗng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-04</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Ô Giá sản phẩm trong form Admin có ràng buộc số dương (&gt; 0), ngăn chặn nhập giá âm hoặc giá bằng 0.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Ô giá sản phẩm trong Admin thiếu thuộc tính min=&apos;1&apos;, cho phép Admin nhập giá 0 ₫ hoặc giá âm (-100000 ₫) và lưu thành công. Khớp phát hiện BUG-C15-002 ở HW02!</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-05</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI kiểm tra form thấy có trường giá nhưng không kiểm tra thuộc tính ràng buộc min/max trên thẻ input HTML.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-05</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool D: Mobile Register</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Form Đăng ký trên Mobile App phải có trường &apos;Xác nhận mật khẩu&apos; (Confirm Password) để phòng ngừa người dùng gõ nhầm mật khẩu theo chuẩn FR-01/FR-20.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Form Đăng ký trong App.js của Mobile chỉ có 3 trường: Họ tên, Email, Mật khẩu; HOÀN TOÀN THIẾU TRƯỜNG CONFIRM PASSWORD! Khớp phát hiện BUG-D-004 ở HW02!</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-06</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI chỉ đánh giá các trường hiện có trên form, không đối chiếu với đặc tả SRS xem form có bị thiếu trường xác nhận mật khẩu hay không.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-06</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút &apos;Áp dụng&apos; mã giảm giá bị vô hiệu hóa (disabled) khi ô nhập mã đang để trống hoặc chỉ chứa khoảng trắng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút có thuộc tính disabled={applyingCoupon || !couponCode.trim()} và giảm độ mờ opacity-50 rất rõ ràng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-07</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thẻ nhãn Label trong form Profile liên kết chính xác với ô input thông qua thuộc tính htmlFor và id.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Các thẻ label &apos;Họ tên&apos;, &apos;Số điện thoại&apos;, &apos;Địa chỉ nhận hàng&apos; thiếu thuộc tính htmlFor, khi bấm vào nhãn không focus vào ô nhập.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-07</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI hay bỏ qua tiêu chuẩn Form Usability &amp; Accessibility về liên kết label-input.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-08</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Dropdown Danh mục (Category) trong form Admin hiển thị danh sách các danh mục có sẵn và có giá trị mặc định hợp lệ.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thẻ select trong Admin render danh sách danh mục lấy từ API (/api/categories) và chọn category_id mặc định là 1.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-09</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool D: Mobile Register</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Ô nhập Mật khẩu trên Mobile có thuộc tính secureTextEntry ẩn ký tự khi gõ bảo mật.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Trường TextInput password trong Mobile App có thuộc tính secureTextEntry={true} che giấu ký tự mật khẩu đúng chuẩn.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-10</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Cart</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Người dùng có thể chỉnh sửa số lượng sản phẩm trực tiếp (tăng/giảm/nhập số) ngay tại bảng Giỏ hàng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Cột số lượng trong bảng Giỏ hàng chỉ hiển thị text tĩnh item.quantity, không có nút tăng giảm (+/-). Khớp phát hiện BUG-B08-005 ở HW02!</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-08</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI chỉ kiểm tra các element hiện có, không phát hiện ra chức năng tăng giảm số lượng bị thiếu trên bảng giỏ hàng.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-11</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool D: Mobile Register</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Bàn phím ảo trên Mobile tự động hiển thị kiểu bàn phím email (keyboardType=&apos;email-address&apos;) khi focus vào ô Email.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">TextInput email trên Mobile có cấu hình keyboardType=&apos;email-address&apos; hiển thị phím @ tiện lợi cho người dùng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-12</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Trường Email trong form Profile ở chế độ hiển thị chỉ đọc hoặc bị vô hiệu hóa vì không cho phép sửa qua UI theo FR-04.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Giao diện Profile không render ô nhập email để người dùng sửa, tuân thủ đúng quy tắc đặc tả FR-04.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-13</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút bấm &apos;Xác Nhận Thanh Toán&apos; có màu sắc mang ý nghĩa tiến hành (Xanh lá) theo chuẩn Affordance của Norman.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút dùng màu bg-green-600 trực quan, nổi bật, tạo cảm giác an tâm hoàn tất giao dịch.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA02-14</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-02: Forms</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Trường Tên sản phẩm trong form Admin giới hạn độ dài tối đa 255 ký tự (maxlength=&apos;255&apos;) theo đặc tả FR-15.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thẻ input tên sản phẩm trong Admin không có thuộc tính maxLength=&apos;255&apos;, cho phép Admin nhập chuỗi 256 ký tự và gửi lên backend. Khớp phát hiện BUG-C15-001 ở HW02!</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-09</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI ít khi kiểm tra các ràng buộc độ dài biên của trường nhập liệu (BVA) trên giao diện trừ khi được yêu cầu cụ thể.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-01</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Header (All)</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Mục &apos;Giỏ hàng&apos; trên thanh điều hướng có huy hiệu đếm số lượng sản phẩm (Cart Badge Counter).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thanh Header chỉ có chữ &apos;Giỏ hàng&apos; đơn thuần, không hiển thị số lượng món đồ đang có trong giỏ.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-10</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI bỏ qua việc chia sẻ trạng thái hiển thị số lượng giỏ hàng trên thanh menu chính.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-02</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Portal</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thanh điều hướng Sidebar của Admin có các tab chức năng rõ ràng (Dashboard, Users, Products, Categories, Orders, Coupons).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Sidebar Admin hiển thị đầy đủ các nút tab chức năng, click chuyển đổi giao diện mượt mà.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-03</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Người dùng đã đăng nhập có thể truy cập nhanh vào trang Profile từ liên kết &apos;Chào, [Tên]&apos; trên thanh Header.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thanh Header hiển thị tên user dạng link to=&apos;/profile&apos; màu vàng nổi bật, click mở đúng trang hồ sơ.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-04</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool D: Mobile App</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thanh điều hướng dưới đáy (Bottom Navigation Bar) trên Mobile App cho phép chuyển đổi nhanh giữa Trang chủ, Giỏ hàng, Đơn hàng và Hồ sơ.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Bottom bar trên Mobile App hiển thị các nút chuyển view linh hoạt, không bị giật lag.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-05</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Cart</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút &apos;← Mua tiếp&apos; tại Giỏ hàng đưa người dùng quay lại danh sách sản phẩm nhanh chóng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Có nút Link to=&apos;/&apos; hỗ trợ quay về trang chủ tiếp tục chọn hàng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-06</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Header (All)</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thanh điều hướng có chỉ báo trạng thái trang hiện tại (Active state highlight).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Menu dùng thẻ Link thông thường, khi đang ở trang Profile hoặc Giỏ hàng mục tương ứng không được tô sáng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-11</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI kiểm tra link hoạt động nhưng bỏ qua trạng thái hiển thị của trang hiện tại.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-07</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Portal</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút &apos;Đăng xuất&apos; trong trang Admin xóa token phiên làm việc và quay lại màn hình Login quản trị.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút Đăng xuất xóa adminToken trong localStorage và reset state token đưa về form login.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-08</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool D: Mobile Register</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Tại màn hình Đăng ký Mobile, có liên kết &apos;Đã có tài khoản? Đăng nhập&apos; chuyển nhanh sang form Login.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Có nút chuyển đổi trạng thái giữa màn hình Đăng ký và Đăng nhập mượt mà không bị lỗi.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-09</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Sau khi thanh toán thành công, có liên kết rõ ràng cho phép người dùng quay lại Trang chủ.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Màn hình thành công có nút &apos;Quay lại trang chủ&apos; điều hướng chuẩn xác.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA03-10</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-03: Navigation</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">All Screens</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Không có liên kết chết hoặc dẫn đến trang lỗi 404 trong toàn bộ 4 phân hệ.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Toàn bộ các tuyến đường điều hướng trong Web và Mobile đều có component đích hợp lệ.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-01</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút &apos;Hủy đơn&apos; trong bảng Lịch sử đơn hàng phải có hộp thoại xác nhận (Confirm dialog) trước khi gọi API hủy đơn.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hàm cancelOrder (dòng 66-80 Profile.jsx) gọi thẳng API hủy đơn mà không hiển thị hộp thoại xác nhận &apos;Bạn có chắc chắn muốn hủy đơn hàng này không?&apos;. Vi phạm nghiêm trọng nguyên tắc Error Prevention (Nielsen #5) và nguyên tắc An toàn hoàn tác của Shneiderman.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-12</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI thấy nút gọi hàm hủy đơn chạy thành công là đánh giá Passed, bỏ qua yêu cầu hộp thoại xác nhận thao tác không thể đảo ngược.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-02</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool C: Admin Products</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút &apos;Sửa&apos; sản phẩm trong bảng Admin phải mở modal điền sẵn dữ liệu và cập nhật đúng sản phẩm được chọn mà không làm sai lệch các sản phẩm khác.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Tại dòng 110-114 của frontend-admin/src/App.jsx, khi sửa sản phẩm xong code chạy: products.map(p =&gt; ({ ...p, name: productForm.name })). Đoạn code này ĐỔI TÊN TOÀN BỘ SẢN PHẨM TRÊN BẢNG THÀNH TÊN SẢN PHẨM VỪA SỬA! Ngoài ra nút Sửa trên giao diện đôi khi bị đơ không hiển thị modal (Khớp phát hiện BUG-C15-004 và Blocked TC013-015 ở HW02)!</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-13</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI chỉ kiểm tra form submit có thông báo &apos;Cập nhật thành công&apos; mà không soi xét trạng thái dữ liệu của toàn bộ bảng sau khi cập nhật.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-03</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Cart</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Thao tác xóa sản phẩm khỏi giỏ hàng phải hiển thị hộp thoại xác nhận (Confirm dialog).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút Xóa tại giỏ hàng xóa ngay lập tức không có hộp thoại hỏi lại người dùng. Vi phạm Nielsen Heuristic #5.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-14</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI bỏ qua yêu cầu xác nhận đối với thao tác xóa mất dữ liệu trên giỏ hàng.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-04</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Cart</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Khi người dùng chưa đăng nhập bấm thanh toán, hệ thống phải hiển thị thông báo inline/toast thay vì gọi window.alert() làm đơ trình duyệt.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Human-Added</Data></Cell>
+    <Cell ss:StyleID="FailStatus"><Data ss:Type="String">Failed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hàm handleCheckout gọi alert(&apos;Bạn cần đăng nhập để thanh toán!&apos;) làm chặn hoàn toàn thread trình duyệt và gây trải nghiệm gián đoạn.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">BUG-15</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">AI thấy có thông báo lỗi là đánh giá đạt, bỏ qua tiêu chuẩn trải nghiệm người dùng hiện đại không nên dùng native browser alert.</Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-05</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hiển thị thông báo phản hồi màu xanh rõ ràng và cập nhật số tiền tiết kiệm khi áp dụng mã giảm giá thành công.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hiển thị thông báo &apos;✅ Áp dụng mã thành công&apos;, dòng &apos;Tiết kiệm: ... ₫&apos; và giá mới sau khi trừ chiết khấu rất rõ ràng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-06</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hiển thị thông báo phản hồi màu đỏ nêu rõ lý do khi áp dụng mã giảm giá không hợp lệ hoặc đã hết hạn (EXPIRED).</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Khi nhập mã &apos;EXPIRED&apos;, hệ thống hiển thị thông báo lỗi màu đỏ &apos;Mã giảm giá đã hết hạn&apos; ngay bên dưới ô nhập.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-07</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hiển thị trạng thái tải (&apos;Đang xử lý...&apos;) trên nút thanh toán trong lúc đang gửi yêu cầu tạo đơn hàng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Nút đổi chữ thành &apos;Đang xử lý...&apos; và bị vô hiệu hóa khi loading === true.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-08</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Cart</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Màn hình Giỏ hàng rỗng (Empty State) hiển thị thông điệp thân thiện và nút kêu gọi hành động tiếp tục mua sắm.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Khi giỏ hàng trống, hiển thị dòng &apos;Giỏ hàng của bạn đang trống&apos; cùng nút link &apos;Tiếp tục mua sắm&apos; đưa về trang chủ.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-09</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hiển thị phản hồi thông báo khi cập nhật hồ sơ cá nhân thành công.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Sau khi cập nhật thông tin thành công, hệ thống hiển thị thông báo &apos;Cập nhật thành công!&apos;.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-10</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool B: Checkout</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hiển thị màn hình kết thúc quy trình trang trọng (&apos;Thanh toán thành công!&apos;) khi hoàn tất đơn hàng theo nguyên tắc Closure của Shneiderman.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Giao diện chuyển sang màn hình thành công với chữ xanh lá &apos;Thanh toán thành công!&apos;, lời cảm ơn và liên kết quay về Home.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-11</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool D: Mobile Register</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Hiển thị thông báo phản hồi lỗi nổi bật (banner màu đỏ) khi đăng ký thất bại trên Mobile App.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Khi API trả về lỗi, Mobile App hiển thị khối thông báo màu đỏ registerError trên đầu form rõ ràng.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+   <Row ss:Height="32">
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">CHK-IA04-12</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">IA-04: Feedback &amp; State</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">Pool A: Profile</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Bảng Lịch sử đơn hàng hiển thị trạng thái rỗng thân thiện khi người dùng chưa có đơn hàng nào.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String">AI-Generated</Data></Cell>
+    <Cell ss:StyleID="PassStatus"><Data ss:Type="String">Passed</Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String">Khi orders.length === 0, hiển thị dòng thông báo chưa có đơn hàng thay vì để bảng trống trơn.</Data></Cell>
+    <Cell ss:StyleID="CellCenter"><Data ss:Type="String"></Data></Cell>
+    <Cell ss:StyleID="CellNormal"><Data ss:Type="String"></Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+
+ <Worksheet ss:Name="Tổng kết (Summary)">
+  <Table ss:DefaultRowHeight="20">
+   <Column ss:Width="220"/>
+   <Column ss:Width="160"/>
+   <Row ss:Height="25">
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Chỉ số kiểm thử</Data></Cell>
+    <Cell ss:StyleID="Header"><Data ss:Type="String">Giá trị</Data></Cell>
+   </Row>
+   <Row><Cell ss:StyleID="CellNormal"><Data ss:Type="String">Tổng số checklist items thiết kế</Data></Cell><Cell ss:StyleID="CellCenter"><Data ss:Type="Number">48</Data></Cell></Row>
+   <Row><Cell ss:StyleID="CellNormal"><Data ss:Type="String">Số mục do AI sinh</Data></Cell><Cell ss:StyleID="CellCenter"><Data ss:Type="Number">33</Data></Cell></Row>
+   <Row><Cell ss:StyleID="CellNormal"><Data ss:Type="String">Số mục con người bổ sung (Human-added)</Data></Cell><Cell ss:StyleID="CellCenter"><Data ss:Type="Number">15</Data></Cell></Row>
+   <Row><Cell ss:StyleID="CellNormal"><Data ss:Type="String">Số mục ĐẠT (Passed)</Data></Cell><Cell ss:StyleID="PassStatus"><Data ss:Type="Number">33</Data></Cell></Row>
+   <Row><Cell ss:StyleID="CellNormal"><Data ss:Type="String">Số mục LỖI (Failed)</Data></Cell><Cell ss:StyleID="FailStatus"><Data ss:Type="Number">15</Data></Cell></Row>
+   <Row><Cell ss:StyleID="CellNormal"><Data ss:Type="String">Tỷ lệ đạt (Pass Rate)</Data></Cell><Cell ss:StyleID="CellCenter"><Data ss:Type="String">68.8%</Data></Cell></Row>
+  </Table>
+ </Worksheet>
+</Workbook>
