@@ -9,7 +9,7 @@
 
 ## 1. TỔNG QUAN PHẠM VI KIỂM THỬ ĐA NỀN TẢNG
 
-Tuân thủ nghiêm ngặt yêu cầu tại **Mục §6 (Task 3)** của [2026.HW03.md](file:///d:/university/software-testing/HW03/2026.HW03.md):
+Tuân thủ nghiêm ngặt yêu cầu tại **Mục §6 (Task 3)** của [Đặc tả Đề bài HW03](2026.HW03.md):
 > *"Cover the web frontend on Chrome, Firefox, and Safari (or Android Chrome). You may also test the SUT's mobile app via Expo Go on a real phone. Expo Go counts as a valid platform and may replace one of the three required browser platforms... Each screenshot must overlay your username in the form your student email."*
 
 Kịch bản kiểm thử tự động hóa được xây dựng bằng Playwright (`scripts/automated_cross_platform.js`), thực thi đồng thời trên **3 nền tảng độc lập** đại diện cho 2 rendering engine chủ đạo trên máy tính để bàn và 1 môi trường di động thực tế:
@@ -62,9 +62,9 @@ Dưới đây là bảng đối chiếu kết quả kiểm thử trên 3 nền t
 
 ## 4. DANH MỤC MINH CHỨNG ẢNH CHỤP ĐÃ ĐÓNG DẤU WATERMARK BẢN QUYỀN
 
-Toàn bộ ảnh chụp màn hình minh chứng lỗi đã được script [watermark_screenshot.ps1](file:///d:/university/software-testing/HW03/skills/gui-usability-testing/scripts/watermark_screenshot.ps1) tự động đóng dấu dải banner mờ bản quyền sinh viên:  
+Toàn bộ ảnh chụp màn hình minh chứng lỗi đã được script [watermark_screenshot.ps1](skills/gui-usability-testing/scripts/watermark_screenshot.ps1) tự động đóng dấu dải banner mờ bản quyền sinh viên:  
 `23120355 - Vo Huu Thang | 23120355@student.hcmus.edu.vn | HW03 Testing Evidence | 2026-11-08`  
-Các file được lưu trữ đầy đủ tại thư mục [screenshots/watermarked/](file:///d:/university/software-testing/HW03/screenshots/watermarked/):
+Các file được lưu trữ đầy đủ tại thư mục [Thư mục ảnh Watermark](screenshots/watermarked/):
 
 ### 4.1. Minh chứng trên Google Chrome (Desktop):
 1. **`chrome_BUG03_Profile_PhoneRegex.png`**: Giao diện cập nhật Hồ sơ cá nhân trên Chrome. Form hiển thị đầy đủ Họ tên và MSSV `Võ Hữu Thắng - 23120355`, số điện thoại `0912345678` bị chặn bởi popup alert.
