@@ -5,3 +5,4 @@ node_modules/
 test_browser.js
 .DS_Store
 Thumbs.db
+*.zip
