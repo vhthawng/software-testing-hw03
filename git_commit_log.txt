@@ -1,3 +1,15 @@
+commit 37f5a2ae34b6b5a86301c9641aa89668a10f500b
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   Sun Nov 8 16:41:58 2026 +0700
+
+    feat(scripts): add attach_issue_screenshots.js for automating GitHub issue evidence comments
+
+commit 20f4530ec1ffef6bf04b9c7f334fe26bc2046e6c
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   Sun Nov 8 16:40:44 2026 +0700
+
+    docs: sync git_commit_log.txt with screenshot evidence updates
+
 commit ea47fc42e5f1dd93212ee28d0fbd4795cdf7c7df
 Author: vhthawng <vohuuthangwork@gmail.com>
 Date:   Sun Nov 8 16:40:22 2026 +0700
