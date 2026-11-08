@@ -1,0 +1,38 @@
+================================================================================
+NHẬT KÝ GIT COMMIT LOG — BÀI TẬP HW03: GUI & USABILITY TESTING
+Sinh viên: VÕ HỮU THẮNG (MSSV: 23120355) — Lớp: CQ2023/3 — Nhóm: Group 4
+Môn học: CS423 / CSC13003 – Kiểm chứng Phần mềm (FIT@HCMUS)
+Repository: https://github.com/vhthawng/software-testing-hw03
+================================================================================
+
+QUY TRÌNH KIỂM THỬ TỪNG BƯỚC ĐƯỢC GHI NHẬN (THEO MỤC §12 ĐỀ BÀI):
+  [Phase 1] Khởi tạo Agent Skill gui-usability-testing, tài liệu tham chiếu Heuristics (Nielsen, Norman, Shneiderman, Waghmare, WCAG 2.2).
+  [Phase 2] Thiết kế bộ GUI Checklist 48 tiêu chí phủ đủ 4 Interface Aspects (IA-01 -> IA-04) và phân tích khoảng trống AI (AI Gap Analysis - 10 Human-Added).
+  [Phase 3] Thực thi kiểm thử GUI trên SUT EShop, xuất file Excel (.xls styled) / CSV / Markdown, lập báo cáo 16 lỗi.
+  [Phase 4] Thiết kế Kế hoạch kiểm thử Usability 9 phần Rubin & Chisnell, bộ công cụ khảo sát SUS và 4 câu hỏi phỏng vấn đào sâu (Probe questions).
+  [Phase 5] Thực hiện 7 phiên phỏng vấn người tham gia thực tế (P1 - P7), chạy script calculate_sus.js tính điểm SUS (Mean 30.36, Grade F) và lập ma trận mức độ nghiêm trọng.
+  [Phase 6] Xây dựng kịch bản Playwright tự động hóa kiểm thử đa nền tảng (Chrome, Firefox, Mobile Galaxy A52) và đóng dấu watermark sinh viên.
+  [Phase 7] Tự động hóa đăng tải 8 lỗi nghiêm trọng lên GitHub Issues kèm hình ảnh minh chứng có watermark.
+  [Phase 8] Hoàn thiện Báo cáo tổng hợp Main Report, AI Audit Report với AI Critique (285 từ), README.md và đóng gói submission.
+
+--------------------------------------------------------------------------------
+LỊCH SỬ GIT COMMITS CHI TIẾT TỪ REPOSITORY:
+--------------------------------------------------------------------------------
+
+commit 4de1f6c8d76378e906414995a56d9539fbeaa714
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   2026-11-08 16:04:30
+
+    docs: complete HW03 main report, AI audit report with critique, and README summary
+
+commit 00c81ba86ff4b0c6dfec80e7c5b61fa2566ecb8b
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   2026-11-08 15:59:26
+
+    feat(github): add automated GitHub issue creation script and gitignore
+
+commit ae1d880820415036fadd62aea9df283f543f539a
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   2026-11-08 14:30:15
+
+    feat: initialize HW03 deliverables (gui checklist, usability test, cross-platform screenshots, and agent skills)
