@@ -207,7 +207,7 @@ Hệ thống đã tự động kết nối và đăng tải các lỗi trọng y
 
 * 📖 **Tài liệu tổng hợp:** [README.md](README.md) \| [Báo cáo chính Main Report](HW03_Main_Report.md) \| [Phụ lục AI Audit Report](HW03_AI_Audit_Report.md) \| [Nhật ký Git Commit Log](git_commit_log.txt)
 * 📊 **Dữ liệu kiểm thử:** [Checklist Excel](HW03_GUI_Checklist.xls) \| [Checklist CSV](HW03_GUI_Checklist.csv) \| [Checklist JSON](checklist_data.json) \| [SUS Survey JSON](sus_participants.json) \| [Biên bản Phỏng vấn](interview.md)
-* 💻 **Kịch bản tự động hóa:** [Playwright Test](scripts/automated_cross_platform.js) \| [Tạo GitHub Issues](scripts/create_github_issues.js) \| [Agent Skill](skills/gui-usability-testing/)
+* 💻 **Kịch bản tự động hóa & Skills:** [Playwright Test](scripts/automated_cross_platform.js) \| [Tạo GitHub Issues](scripts/create_github_issues.js) \| [GUI Usability Skill](skills/gui-usability-testing/) \| [Playwright Skill](skills/playwright-skill/) \| [Skill Creator](skills/skill-creator/) \| [Test Case Writing](skills/test-case-writing/)
 
 ---
 

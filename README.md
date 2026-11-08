@@ -66,10 +66,24 @@
 │
 └── skills/
     ├── gui-usability-testing/                # Agent Skill do sinh viên thiết kế (Đạt 9.85/10 từ subagent)
-    │   ├── SKILL.md
-    │   ├── references/                       # Heuristics, Rubin & Chisnell guide, Cross-platform matrix
-    │   └── scripts/                          # calculate_sus.js, build_gui_checklist.js, watermark_screenshot.ps1
-    └── playwright-skill/                     # Skill tự động hóa trình duyệt
+    │   ├── SKILL.md                          # Đặc tả skill & quy trình kiểm thử 6 bước
+    │   ├── references/                       # Tài liệu Nielsen Heuristics, Rubin Plan, Cross-platform
+    │   ├── scripts/                          # calculate_sus.js, build_gui_checklist.js, watermark_screenshot.ps1
+    │   └── assets/                           # sample_sus_survey.json
+    ├── playwright-skill/                     # Skill tự động hóa trình duyệt đa nền tảng
+    │   ├── SKILL.md                          # Hướng dẫn Playwright API & helpers
+    │   ├── run.js                            # Trình thực thi Playwright script
+    │   ├── lib/helpers.js                    # Bộ công cụ phát hiện dev servers & automation
+    │   └── API_REFERENCE.md                  # Tài liệu tra cứu API Playwright
+    ├── skill-creator/                        # Bộ công cụ tạo và tối ưu hóa Agent Skills
+    │   ├── SKILL.md                          # Quy trình thiết kế & chuẩn hóa skill
+    │   ├── agents/                           # Các agent thẩm định (analyzer, judge, grader)
+    │   ├── references/                       # Schemas và tài nguyên mẫu
+    │   └── scripts/                          # Các script kiểm tra & đánh giá benchmark skill
+    └── test-case-writing/                    # Skill viết ca kiểm thử chuẩn mực từ HW02
+        ├── SKILL.md                          # Tiêu chuẩn viết test case ISTQB
+        ├── references/                       # Bảng rubric đánh giá & schema JSON
+        └── scripts/                          # Script linting & xuất tài liệu test case
 ```
 
 ---
