@@ -1,3 +1,15 @@
+commit f0a6f4d1a4c1162ca862c1f21cf6cd8866c6ac52
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   Sun Nov 8 16:31:42 2026 +0700
+
+    feat(scripts): add package_submission.ps1 for building clean submission zip
+
+commit c1057c742bea6abaf05d1a9c85a3efc71991b593
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   Sun Nov 8 16:29:39 2026 +0700
+
+    docs: sync git_commit_log.txt
+
 commit aafdc33bdc5b7ebff09d281505647faa94b8e7c0
 Author: vhthawng <vohuuthangwork@gmail.com>
 Date:   Sun Nov 8 16:29:10 2026 +0700
