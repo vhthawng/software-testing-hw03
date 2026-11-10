@@ -4,11 +4,12 @@ const root = path.resolve(__dirname, '..');
 const files = new Set();
 const missing = new Set();
 const blocked = /(^|\/)(node_modules|\.git|\.review_submission|local-runtime)(\/|$)|screenshots\/manual\/01\.|\.(sqlite|db|zip|log)$/i;
+const internalOnly = /^(?:scripts\/|skills\/playwright-skill(?:\/|$)|submission\.config\.json$)/;
 const full = p => path.resolve(root, p);
 function add(p) {
   p = p.replaceAll('\\', '/').replace(/^\.\//, '');
   const abs = full(p);
-  if (!abs.startsWith(root + path.sep) || blocked.test(p)) throw Error('Excluded submission path: ' + p);
+  if (!abs.startsWith(root + path.sep) || blocked.test(p) || internalOnly.test(p)) throw Error('Excluded submission path: ' + p);
   if (!fs.existsSync(abs)) { missing.add(p); return; }
   if (fs.lstatSync(abs).isSymbolicLink()) throw Error('Symlink not allowed: ' + p);
   if (fs.statSync(abs).isDirectory()) {
@@ -26,13 +27,8 @@ const required = [
   'HW03_Usability_Evaluation_Report.md', 'HW03_Usability_Plan_and_Instruments.md',
   'HW03_GUI_Checklist.xlsx', 'HW03_GUI_Checklist.csv', 'HW03_GUI_Checklist_Summary.md',
   'HW03_SUS_Report.md', 'git_commit_log.txt', 'checklist_data.json', 'sus_participants.json',
-  'interview.md', 'submission.config.json', 'audit/chat-history.md', 'audit/chat-history.json',
-  'skills/gui-usability-testing', 'skills/playwright-skill',
-  'scripts/package_submission.ps1', 'scripts/package_submission.sh', 'scripts/submission_manifest.cjs',
-  'scripts/check_relative_paths.cjs',
-  'scripts/run_task1_local.cjs', 'scripts/run_task3_browser.cjs', 'scripts/retest_task1_admin.cjs',
-  'scripts/start_task1_local.ps1', 'scripts/start_mobile_local.ps1', 'scripts/watermark_task3_manual.py',
-  'scripts/update_submission_docs.cjs', 'scripts/clean_submission_reports.cjs',
+  'interview.md', 'audit/chat-history.md', 'audit/chat-history.json',
+  'skills/gui-usability-testing',
   'task3-runs/2026-11-11-local/matrix.json',
   'task3-runs/2026-11-11-local/android/watermark-manifest.json',
   'task1-runs/mobile-manual/student-confirmations.json'

@@ -41,21 +41,3 @@ Task 1 tổng hợp kết quả tự động và kiểm tra thủ công. Ma tr�
 | **Tổng** | **100** | **100** |
 
 Điểm tự đánh giá do sinh viên lựa chọn.
-
-## Đóng gói bài nộp
-
-Xuất lại **HW03_Main_Report.pdf** và **HW03_AI_Audit_Report.pdf** từ Markdown hiện hành trước khi đóng gói. Hai file PDF phải mới hơn các tài liệu Markdown/phụ lục tương ứng.
-
-Kiểm tra thành phần bài nộp:
-
-~~~powershell
-powershell -ExecutionPolicy Bypass -File scripts/package_submission.ps1 -ValidateOnly
-~~~
-
-Tạo ZIP:
-
-~~~powershell
-powershell -ExecutionPolicy Bypass -File scripts/package_submission.ps1
-~~~
-
-Git Bash/WSL: **bash scripts/package_submission.sh --validate-only** để kiểm tra, hoặc **bash scripts/package_submission.sh** để đóng gói. Script đọc điểm từ [cấu hình nộp bài](submission.config.json), lấy Excel và bằng chứng hiện hành, kiểm tra liên kết và không ghi đè ZIP đã có. Dùng tên đầu ra khác hoặc tùy chọn **-Force** / **--force** khi muốn thay thế bản cũ.
