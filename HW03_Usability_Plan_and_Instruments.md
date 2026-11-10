@@ -115,9 +115,9 @@ Người điều phối sử dụng bảng sau để ghi chép lại hành vi c�
 
 ---
 
-## PHẦN IV: DANH SÁCH 7 NGƯỜI THAM GIA THỰC TẾ (PARTICIPANT ROSTER)
+## PHẦN IV: BIỂU MẪU ROSTER MINH HỌA (KHÔNG PHẢI DANH SÁCH THỰC TẾ)
 
-*Theo quy định §11, thông tin người tham gia phải có thật và được che 4 số giữa:*
+Bảng dưới là mẫu chuẩn bị ban đầu, không phải dữ liệu người tham gia. Roster thực tế xem [Usability Report](HW03_Usability_Evaluation_Report.md) và [interview.md](interview.md). Không dùng các số minh họa để xác minh người tham gia.
 
 | ID | Họ và tên | Số điện thoại / Zalo (Masked) | Nghề nghiệp / Đối tượng | Trình độ công nghệ / Thói quen online |
 | :---: | :--- | :---: | :--- | :--- |

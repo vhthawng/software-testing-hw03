@@ -1,3 +1,5 @@
+> Cập nhật 11/11/2026: Sinh viên xác nhận 7 người tham gia là người thật. Giữ nguyên roster, đáp án SUS, thời lượng và lời phỏng vấn đã cung cấp; không tạo thêm phiên hoặc lời nói. Không có video đính kèm, không yêu cầu quay khuôn mặt. Pilot được nêu trong kế hoạch nhưng chưa có thông tin xác nhận riêng về việc thực hiện; không tự dựng người/ngày giờ/kết quả pilot. Ngày giờ từng phiên và log moderator chi tiết là thông tin bổ trợ, không được tự thêm thành yêu cầu trường dữ liệu bắt buộc.
+
 # BÁO CÁO ĐÁNH GIÁ KHẢ NĂNG SỬ DỤNG (TASK 2 — USABILITY EVALUATION REPORT)
 **Môn học:** CS423 / CSC13003 – Kiểm chứng Phần mềm (FIT@HCMUS)  
 **Bài tập:** HW03 – GUI & Usability Testing  
@@ -41,7 +43,7 @@ Kỳ đánh giá tập trung làm rõ 4 câu hỏi nghiên cứu cốt lõi:
 ### 1.6. Môi trường & Thiết bị (Environment & Setup)
 * **Thiết bị:** Laptop độ phân giải Full HD (1920x1080), chuột quang.
 * **Trình duyệt:** Google Chrome & Mozilla Firefox truy cập vào SUT tại `http://localhost:5173`.
-* **Ghi nhận:** Quay màn hình và ghi âm giọng nói (với sự đồng thuận của người tham gia).
+* **Ghi nhận thực tế:** Quan sát, phỏng vấn và đáp án SUS do sinh viên cung cấp; không có bản ghi màn hình/âm thanh đính kèm. Không yêu cầu quay mặt hoặc biểu cảm người tham gia.
 
 ### 1.7. Vai trò của người điều phối (Moderator Guidelines)
 * Nhắc nhở người tham gia: *"Chúng tôi kiểm tra hệ thống phần mềm, không kiểm tra bạn. Bạn không bao giờ làm sai, mọi khó khăn gặp phải đều là lỗi của hệ thống."*
@@ -118,7 +120,7 @@ Thang đo SUS gồm 10 câu hỏi chuẩn John Brooke (1986) tính trên thang L
 * **Điểm SUS trung bình (Mean SUS):** **30.36 / 100**
 * **Độ lệch chuẩn (Standard Deviation):** **8.81** (Population) / **9.51** (Sample)
 * **Khoảng điểm (Range):** **17.5 – 42.5**
-  - Cao nhất: 42.5 (P4 - người hoàn thành nhanh nhất với 215s)
+  - Cao nhất: 42.5 (P4 - 215s); người nhanh nhất là P7 với 195s
   - Thấp nhất: 17.5 (P2 - sinh viên IT phát hiện lỗi kiểm soát ô tổng tiền)
 * **Xếp loại chữ (Grade):** **Hạng F** (Kém / Không đạt)
 * **Phân vị xếp hạng (Percentile):** **Dưới 15%** (Theo chuẩn Sauro & Lewis, 2016)
@@ -153,13 +155,13 @@ xychart-beta
 ### 5.3. Tốc độ và tính trôi chảy (Speed)
 * **Thực trạng ghi nhận:** Thời gian hoàn thành tác vụ dao động từ **195 giây đến 345 giây** (Trung bình: 271.4 giây).
 * **Vấn đề cốt lõi:**
-  - **Nút Thêm vào giỏ hàng bị lag/lỗi 2 lần click:** Trong mã nguồn `ProductDetail.jsx` (dòng 22–25), code kiểm tra `if (clickCount === 0) return;` khiến lần click chuột đầu tiên hoàn toàn bị bỏ qua. 100% người dùng đều ngập ngừng, tưởng nút bấm bị liệt hoặc chuột hết pin và phải bấm liên tiếp nhiều lần.
+  - **Nút Thêm vào giỏ hàng bị lag/lỗi 2 lần click:** Trong mã nguồn `ProductDetail.jsx` (dòng 22–25), code kiểm tra `if (clickCount === 0) return;` khiến lần click chuột đầu tiên hoàn toàn bị bỏ qua. Nhật ký ghi nhận nhiều người bấm lặp hoặc ngập ngừng; không suy ra đủ 7/7 người có cùng phản ứng từ mô tả tổng hợp.
   - **Thiếu nút tăng/giảm số lượng trong giỏ hàng:** Người dùng muốn đổi số lượng bàn phím không thể sửa trực tiếp mà buộc phải quay lại trang chi tiết sản phẩm.
 
 ### 5.4. Mức độ tin cậy và an tâm giao dịch (Trust)
 * **Thực trạng ghi nhận:** Đây là khía cạnh **thất bại nặng nề nhất**, dẫn đến việc điểm số SUS bị kéo tụt xuống mức F.
 * **Vấn đề cốt lõi:**
-  - **Ô tổng tiền cho phép sửa tự do:** Tại trang Checkout, trường *"Tổng tiền thanh toán (VND)"* là một thẻ `<input type="number">` cho phép người dùng tự do gõ sửa giá tiền. Cả 7 người tham gia đều phát hiện và bày tỏ sự hoài nghi sâu sắc.
+  - **Ô tổng tiền cho phép sửa tự do:** Tại trang Checkout, trường *"Tổng tiền thanh toán (VND)"* là một thẻ `<input type="number">` cho phép người dùng tự do gõ sửa giá tiền. Các ghi chép nêu rõ nghi ngại về ô tiền ở một số người tham gia; không khẳng định tần suất 7/7 nếu thiếu ghi nhận tương ứng cho từng người.
   - P2 (sinh viên ngành CNTT) và P1 (Marketing) thẳng thắn khẳng định: *"Đây là lỗi kiểm soát dữ liệu nghiêm trọng, tạo cảm giác web lừa đảo hoặc chưa hoàn thiện, không bao giờ dám nhập thẻ tín dụng hay chuyển khoản."*
   - Trang xác nhận đơn hàng sau thanh toán chỉ có một dòng thông báo ngắn, không có mã đơn hàng, thời gian giao hàng dự kiến hay tóm tắt địa chỉ người nhận.
 
@@ -200,13 +202,13 @@ $$\text{Criticality (Độ ưu tiên)} = \text{Severity (Mức độ nghiêm tr�
 
 | Vấn đề khả dụng ghi nhận | Màn hình | Severity (1-3) | Probability (1-3) | Criticality | Phân cấp | Mã Bug liên quan |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Ô tổng tiền cho phép tự do sửa số tiền** | Checkout | 3 | 3 (7/7 người) | **9** | **Blocker** | BUG-04 |
-| **Regex chặn số điện thoại bắt đầu bằng 0** | Profile | 3 | 3 (7/7 người) | **9** | **Blocker** | BUG-03 |
-| **Nút Thêm giỏ hàng phải bấm 2 lần mới ăn** | ProductDetail | 2 | 3 (7/7 người) | **6** | **Major** | BUG-16 |
+| **Ô tổng tiền cho phép tự do sửa số tiền** | Checkout | 3 | 3 (tần suất định tính trong mẫu) | **9** | **Blocker** | BUG-04 |
+| **Regex chặn số điện thoại bắt đầu bằng 0** | Profile | 3 | 3 (tần suất định tính trong mẫu) | **9** | **Blocker** | BUG-03 |
+| **Nút Thêm giỏ hàng phải bấm 2 lần mới ăn** | ProductDetail | 2 | 3 (tần suất định tính trong mẫu) | **6** | **Major** | BUG-16 |
 | **Xóa món hàng khỏi giỏ không hỏi xác nhận** | Cart | 2 | 2 (3/7 người) | **4** | **Major** | BUG-14 |
-| **Giỏ hàng thiếu nút tăng/giảm số lượng** | Cart | 2 | 3 (6/7 người) | **6** | **Major** | BUG-08 |
-| **Thiếu số đếm giỏ hàng trên thanh Header** | Header | 1 | 3 (7/7 người) | **3** | **Minor** | BUG-10 |
-| **Ký hiệu tiền tệ không nhất quán (₫ vs VND)** | Checkout | 1 | 2 (4/7 người) | **2** | **Minor** | BUG-01 |
+| **Giỏ hàng thiếu nút tăng/giảm số lượng** | Cart | 2 | 3 (tần suất định tính trong mẫu) | **6** | **Major** | BUG-08 |
+| **Thiếu số đếm giỏ hàng trên thanh Header** | Header | 1 | 3 (tần suất định tính trong mẫu) | **3** | **Minor** | BUG-10 |
+| **Ký hiệu tiền tệ không nhất quán (₫ vs VND)** | Checkout | 1 | 2 (tần suất định tính trong mẫu) | **2** | **Minor** | BUG-01 |
 | **Thông báo kết thúc đơn hàng quá sơ sài** | Checkout | 1 | 2 (3/7 người) | **2** | **Minor** | Mới UX |
 
 ---
@@ -215,7 +217,7 @@ $$\text{Criticality (Độ ưu tiên)} = \text{Severity (Mức độ nghiêm tr�
 
 1. **Khắc phục ngay lập tức các lỗ hổng Blocker:**
    - Đặt thuộc tính `readOnly` hoặc hiển thị thẻ `<span>` cố định cho ô tổng tiền thanh toán tại `Checkout.jsx`.
-   - Cập nhật Regex số điện thoại tại `Profile.jsx` thành `/(84|0[3|5|7|8|9])+([0-9]{8})\b/` để chấp nhận đầy đủ tất cả các đầu số di động tại Việt Nam.
+   - Cập nhật Regex số điện thoại tại `Profile.jsx` thành quy tắc chuẩn hóa số điện thoại phù hợp FR-04, có kiểm thử dữ liệu Việt Nam và biên; không dùng regex minh họa chưa kiểm chứng để chấp nhận đầy đủ tất cả các đầu số di động tại Việt Nam.
 2. **Sửa lỗi tương tác nút bấm:**
    - Xóa bỏ hoàn toàn biến `clickCount` tại `ProductDetail.jsx` để đưa nút "Thêm vào giỏ hàng" về trạng thái phản hồi tức thì ngay ở lần nhấp chuột đầu tiên.
 3. **Nâng cấp trải nghiệm bảng Giỏ hàng:**

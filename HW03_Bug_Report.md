@@ -1,113 +1,253 @@
-# BÁO CÁO LỖI GIAO DIỆN & TRẢI NGHIỆM (GUI & UX BUG REPORT)
-**Môn học:** CS423 / CSC13003 – Kiểm chứng Phần mềm (FIT@HCMUS)  
-**Bài tập:** HW03 – GUI & Usability Testing  
-**Sinh viên thực hiện:** Võ Hữu Thắng — **MSSV:** 23120355 — **Lớp:** CQ2023/3 — **Nhóm:** Group 4 – Performance Testing  
-**Hệ thống kiểm thử (SUT):** EShop (https://github.com/ttbhanh/eshop-sut)  
-**Phạm vi lựa chọn (Kế thừa từ 4 Pool HW02):**
-- **Pool A:** FR-04 Profile Management (`Profile.jsx`)
-- **Pool B:** FR-08 Checkout (`Checkout.jsx` & `Cart.jsx`)
-- **Pool C:** FR-15 Admin Product Management (`frontend-admin/src/App.jsx`)
-- **Pool D:** Mobile Register (`frontend-mobile/App.js` trên Samsung Galaxy A52)
+# Bug report EShop – kết quả đã đối soát
 
----
+Sinh viên: Võ Hữu Thắng — 23120355. Cập nhật 11/11/2026.
 
-## 1. Bảng Tổng Hợp Danh Sách Lỗi Phát Hiện (16 Bugs)
+**18 bug xác nhận**, gồm 17 mục checklist Failed và BUG-16 bổ sung từ luồng ProductDetail. **5 nhận xét UX** được ghi riêng. 22 mục Failed không đồng nghĩa 22 bug duy nhất.
 
-| Mã Bug | Tên lỗi | Pool & Màn hình | Khía cạnh | Mức độ | Liên hệ HW02 | Nguyên lý vi phạm |
-| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
-| **BUG-01** | Ký hiệu tiền tệ không đồng nhất (`VND` vs `₫`) | Pool B: Checkout | `IA-01` | Minor | Mới HW03 | Nielsen #4 (Consistency) |
-| **BUG-02** | Ảnh sản phẩm Admin thiếu thuộc tính `alt` | Pool C: Admin | `IA-01` | Major | Mới HW03 | W3C WCAG 2.2 (Accessibility) |
-| **BUG-03** | Regex Phone từ chối mọi SĐT Việt Nam bắt đầu bằng 0 | Pool A: Profile | `IA-02` | **Critical** | BUG-A04-001 | Norman Constraints, Nielsen #5 |
-| **BUG-04** | Ô tổng tiền thanh toán cho phép người dùng tự sửa giá | Pool B: Checkout | `IA-02` | **Critical** | BUG-B08-001 | Norman Constraints & Integrity |
-| **BUG-05** | Ô giá sản phẩm Admin nhận giá âm và số 0 | Pool C: Admin | `IA-02` | Major | BUG-C15-002 | Norman Constraints, BVA |
-| **BUG-06** | Form Đăng ký Mobile thiếu trường Confirm Password | Pool D: Mobile | `IA-02` | Major | BUG-D-004 | Nielsen #5 (Error Prevention) |
-| **BUG-07** | Nhãn Label form Profile thiếu thuộc tính `htmlFor` | Pool A: Profile | `IA-02` | Minor | Mới HW03 | W3C Form Usability |
-| **BUG-08** | Không thể chỉnh sửa số lượng trong bảng Giỏ hàng | Pool B: Cart | `IA-02` | Major | BUG-B08-005 | Nielsen #7, Shneiderman Shortcuts |
-| **BUG-09** | Tên sản phẩm Admin không giới hạn 255 ký tự trên UI | Pool C: Admin | `IA-02` | Minor | BUG-C15-001 | FR-15 BVA Constraint |
-| **BUG-10** | Mục Giỏ hàng trên thanh Header thiếu Cart Badge | Pool B: Header | `IA-03` | Minor | Mới HW03 | Norman Visibility, Nielsen #1 |
-| **BUG-11** | Thanh Header thiếu chỉ báo trang hiện tại (Active State) | Header (All) | `IA-03` | Minor | Mới HW03 | Nielsen #1 (Visibility of Status) |
-| **BUG-12** | Nút Hủy đơn trong Lịch sử đơn hàng thiếu hộp thoại confirm | Pool A: Profile | `IA-04` | Major | Mới HW03 | Nielsen #5 (Error Prevention) |
-| **BUG-13** | Nút Sửa Admin bị đơ và đổi tên toàn bộ bảng sản phẩm | Pool C: Admin | `IA-04` | **Critical** | BUG-C15-004 | Norman Feedback & System State |
-| **BUG-14** | Xóa sản phẩm khỏi giỏ hàng không có hộp thoại confirm | Pool B: Cart | `IA-04` | Major | Mới HW03 | Shneiderman Easy Reversal |
-| **BUG-15** | Bấm thanh toán khi chưa đăng nhập bị chặn bởi `window.alert()` | Pool B: Cart | `IA-04` | Minor | Mới HW03 | Shneiderman Dialogue Closure |
-| **BUG-16** | Nút 'Thêm vào giỏ hàng' bắt buộc bấm 2 lần mới nhận lệnh | Pool B: ProductDetail | `IA-04` | Major | Mới Usability | Nielsen #1 (Visibility), Norman Feedback |
+Nguồn kỳ vọng: [đặc tả SUT](eshop-sut/README.md), không chỉ mã implementation. Chrome 157.0.8103.39 / Windows 10.0.26200; Playwright gọi backend thật, fixture tổng hợp riêng. Mobile: Galaxy A52 SM-A525F/DS, ảnh người dùng cung cấp; phiên bản Android/Expo Go chưa cung cấp.
 
----
+| Mã | Lỗi | Mức độ | Checklist | GitHub |
+| --- | --- | --- | --- | --- |
+| BUG-01 | Checkout dùng VND trong nhãn thay vì thống nhất ₫ | Minor | CHK-IA01-01 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/8) |
+| BUG-03 | Profile từ chối số điện thoại hợp lệ bắt đầu bằng 0 | Major | CHK-IA02-01 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/1) |
+| BUG-04 | Checkout cho sửa trực tiếp tổng tiền thanh toán | Major | CHK-IA02-02 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/2) |
+| BUG-05 | Admin lưu sản phẩm có giá 0 hoặc âm | Major | CHK-IA02-04 | Chờ đồng bộ |
+| BUG-06 | Đăng ký native mobile thiếu Xác nhận mật khẩu | Major | CHK-IA02-05 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/7) |
+| BUG-07 | Click label Số điện thoại không focus input Profile | Minor | CHK-IA02-07 | Chờ đồng bộ |
+| BUG-08 | Cart không có điều khiển chỉnh số lượng | Major | CHK-IA02-10 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/5) |
+| BUG-09 | Admin nhận và lưu tên sản phẩm dài 256 ký tự | Minor | CHK-IA02-14 | Chờ đồng bộ |
+| BUG-10 | Header web không có badge số lượng giỏ hàng | Minor | CHK-IA03-01 | Chờ đồng bộ |
+| BUG-11 | Header web không đánh dấu trang đang chọn | Minor | CHK-IA03-06 | Chờ đồng bộ |
+| BUG-13 | Sửa một sản phẩm làm đổi tên toàn bộ bảng Admin trên UI | Major | CHK-IA04-02 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/3) |
+| BUG-14 | Xóa sản phẩm Cart thực hiện ngay, thiếu dialog xác nhận | Major | CHK-IA04-03 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/6) |
+| BUG-16 | ProductDetail bỏ qua lần bấm Thêm vào giỏ đầu tiên | Major | Ngoài checklist ban đầu | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/4) |
+| BUG-17 | Admin chấp nhận tên sản phẩm toàn khoảng trắng | Major | CHK-IA02-03 | Chờ đồng bộ |
+| BUG-18 | Native Android bị status/navigation bar chồng nội dung | Major | CHK-IA01-04 | Chờ đồng bộ |
+| BUG-19 | Profile không có h1 mô tả trang | Minor | CHK-IA01-05 | Chờ đồng bộ |
+| BUG-22 | SAVE10 trên đơn 4 triệu làm tổng thành 40 triệu | Major | CHK-IA04-05 | Chờ đồng bộ |
+| BUG-23 | Nút xác nhận Checkout màu xanh lá trái quy định xanh dương | Minor | CHK-IA02-13 | Chờ đồng bộ |
 
-## 2. Chi Tiết Các Lỗi Phát Hiện & Đối Chiếu Với HW02
+## BUG-01 – Checkout dùng VND trong nhãn thay vì thống nhất ₫
 
-### BUG-03: Regex Số điện thoại tại Profile từ chối mọi SĐT Việt Nam hợp lệ (Kế thừa BUG-A04-001)
-* **Mức độ:** **CRITICAL** (Lỗi Form Validation nghiêm trọng).
-* **Màn hình:** Profile (`frontend-web/src/pages/Profile.jsx`, dòng 43).
-* **Mô tả:** Code kiểm tra validation số điện thoại:
-  ```javascript
-  if (!/^[1-9][0-9]{8,9}$/.test(phone)) {
-    alert("Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.");
-    return;
-  }
-  ```
-* **Phân tích:** Biểu thức `^[1-9]` bắt buộc ký tự đầu tiên phải từ 1 đến 9. Trong khi đó, 100% số điện thoại di động tại Việt Nam đều bắt đầu bằng số `0` (ví dụ: `0987654321`, `0912345678`). Do đó, người dùng nhập số điện thoại Việt Nam hợp lệ đều bị hệ thống chặn lại và báo lỗi!
-* **Liên hệ HW02:** Trùng khớp với phát hiện tại HW02: *"UI từ chối phone hợp lệ dài 10/11 bắt đầu bằng 0, nhưng nhận phone 10 chữ số không bắt đầu 0"*.
+- Cơ sở: eshop-sut/README.md — FR-21
+- Severity: Minor
+- Thực hiện: Checkout có sản phẩm; đọc nhãn tổng tiền và đơn vị hiển thị.
+- Expected: Dùng ký hiệu ₫ nhất quán.
+- Actual: Nhãn ghi Tổng tiền thanh toán (VND), các dòng khác dùng ₫.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
 
----
+![BUG-01](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-01.png)
 
-### BUG-04: Ô "Tổng tiền thanh toán" cho phép người dùng tự gõ sửa số tiền (Kế thừa BUG-B08-001)
-* **Mức độ:** **CRITICAL** (Gian lận thương mại & Lỗi giao diện).
-* **Màn hình:** Checkout (`frontend-web/src/pages/Checkout.jsx`, dòng 93–102).
-* **Mô tả:** Trường "Tổng tiền thanh toán (VND)" được render bằng thẻ `<input type="number">` có kèm `onChange={(e) => setEditableTotal(Number(e.target.value))}`. Người dùng có thể xóa số tiền thật và nhập `1000 ₫` hoặc số âm rồi bấm "Xác Nhận Thanh Toán" thành công!
-* **Liên hệ HW02:** Trùng khớp với phát hiện tại HW02: *"UI cho sửa tổng; API lưu 199999 hoặc 200001 theo total bị sửa"*.
+## BUG-03 – Profile từ chối số điện thoại hợp lệ bắt đầu bằng 0
 
----
+- Cơ sở: eshop-sut/README.md — FR-04
+- Severity: Major
+- Thực hiện: Đăng nhập; mở Profile; nhập 0912345678; bấm Cập nhật.
+- Expected: Số điện thoại hợp lệ được chấp nhận.
+- Actual: Hiện alert Số điện thoại không hợp lệ.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
 
-### BUG-05: Ô Giá sản phẩm trong Admin nhận giá âm và số 0 (Kế thừa BUG-C15-002)
-* **Mức độ:** Major (Ràng buộc BVA giao diện).
-* **Màn hình:** Quản trị Sản phẩm (`frontend-admin/src/App.jsx`).
-* **Mô tả:** Ô Giá sản phẩm trong modal thêm/sửa sản phẩm không có thuộc tính `min="1"`, cho phép Admin nhập giá 0 ₫ hoặc số âm (-100.000 ₫) và lưu thành công vào cơ sở dữ liệu.
-* **Liên hệ HW02:** Trùng khớp với phát hiện tại HW02: *"Web tạo được tên 256, giá trống/0/âm"*.
+![BUG-03](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-01.png)
 
----
+## BUG-04 – Checkout cho sửa trực tiếp tổng tiền thanh toán
 
-### BUG-06: Form Đăng ký trên Mobile App thiếu trường Xác nhận mật khẩu (Kế thừa BUG-D-004)
-* **Mức độ:** Major (Phòng ngừa lỗi đăng ký).
-* **Màn hình:** Mobile Register (`frontend-mobile/App.js` trên Samsung Galaxy A52).
-* **Mô tả:** Form Đăng ký trên Mobile App chỉ có 3 ô nhập (Họ tên, Email, Mật khẩu), hoàn toàn thiếu trường "Xác nhận mật khẩu" (Confirm Password) theo quy định của đặc tả FR-01/FR-20.
-* **Liên hệ HW02:** Trùng khớp với phát hiện tại HW02: *"Thực tế form thiếu Confirm: TC016/017 Blocked và TC024 Fail do thiếu Confirm"*.
+- Cơ sở: eshop-sut/README.md — FR-08
+- Severity: Major
+- Thực hiện: Thêm bàn phím 4.000.000 ₫; đi qua Cart đến Checkout; gõ 1000 vào tổng tiền.
+- Expected: Tổng tiền hiển thị theo giỏ, người dùng không tùy ý sửa.
+- Actual: Input nhận 1000, coupon hiện hành bị xóa. Lượt này không gửi thanh toán với giá đã sửa; không khẳng định persistence gian lận đã retest.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
 
----
+![BUG-04](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-02.png)
 
-### BUG-13: Nút Sửa Admin bị đơ và đổi tên toàn bộ sản phẩm trên bảng (Kế thừa BUG-C15-004)
-* **Mức độ:** **CRITICAL** (Lỗi phản hồi và toàn vẹn dữ liệu).
-* **Màn hình:** Quản trị Sản phẩm (`frontend-admin/src/App.jsx`, dòng 110–114).
-* **Mô tả:** 
-  1. Nút Sửa trên giao diện đôi khi bị đơ không mở modal cập nhật (khiến các TC013–015 bị Blocked ở HW02).
-  2. Khi cập nhật thành công, code chạy:
-     ```javascript
-     const fakeMassUpdatedProducts = products.map((p) => ({
-       ...p,
-       name: productForm.name,
-     }));
-     setProducts(fakeMassUpdatedProducts);
-     ```
-     Đoạn code này làm toàn bộ sản phẩm trong bảng Admin bị đổi tên thành tên sản phẩm vừa sửa!
+## BUG-05 – Admin lưu sản phẩm có giá 0 hoặc âm
 
----
+- Cơ sở: eshop-sut/README.md — FR-15
+- Severity: Major
+- Thực hiện: Đăng nhập Admin; tạo sản phẩm tổng hợp với giá 0, rồi -1000; lưu; đọc lại API products.
+- Expected: Giá phải > 0; dữ liệu không hợp lệ bị chặn.
+- Actual: Cả 0 và -1000 được lưu thật; fixture được xóa sau test.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
 
-### BUG-16: Nút 'Thêm vào giỏ hàng' bắt buộc bấm 2 lần mới nhận lệnh (Phát hiện từ Usability Testing)
-* **Mức độ:** Major (Lỗi phản hồi tương tác & Trễ nhịp người dùng).
-* **Màn hình:** Chi tiết sản phẩm (`frontend-web/src/pages/ProductDetail.jsx`, dòng 21–31).
-* **Mô tả:** Code cài đặt hàm xử lý thêm vào giỏ hàng:
-  ```javascript
-  const handleAddToCart = () => {
-    if (clickCount === 0) {
-      setClickCount(1);
-      return; // Không làm gì cả ở lần đầu tiên
-    }
+![BUG-05](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-04.png)
 
-    addToCart(product, parseInt(quantity));
-    setAdded(true);
-    setClickCount(0); // Reset lại
-    setTimeout(() => setAdded(false), 2000);
-  };
-  ```
-* **Phân tích:** Lần click đầu tiên người dùng bấm vào nút hoàn toàn bị triệt tiêu (`return;`), không có bất kỳ phản hồi trực quan nào. 100% người dùng trong đợt thử nghiệm Usability (P1–P7) đều tưởng nút bấm bị hỏng, chuột hết pin hoặc hệ thống bị đơ nên phải bấm liên tiếp nhiều lần. Vi phạm nguyên tắc phản hồi tức thời của Nielsen (#1) và Norman.
+## BUG-06 – Đăng ký native mobile thiếu Xác nhận mật khẩu
 
+- Cơ sở: eshop-sut/README.md — FR-01, FR-20
+- Severity: Major
+- Thực hiện: Mở đăng ký trên app Android; xem toàn bộ form.
+- Expected: Có trường Xác nhận mật khẩu.
+- Actual: Chỉ có Họ Tên, Email, Mật khẩu rồi nút Đăng Ký.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-06](screenshots/manual/03.jpg)
+
+![BUG-06](screenshots/manual/04.jpg)
+
+![BUG-06](screenshots/manual/06.jpg)
+
+## BUG-07 – Click label Số điện thoại không focus input Profile
+
+- Cơ sở: Checklist IA-02 / liên kết label-control và thao tác form
+- Severity: Minor
+- Thực hiện: Mở Profile; click nhãn Số điện thoại; kiểm tra activeElement.
+- Expected: Label liên kết với ô nhập tương ứng.
+- Actual: Input phone không được focus; thiếu liên kết label-control. Chưa kiểm định đầy đủ bằng screen reader.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-07](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-07.png)
+
+## BUG-08 – Cart không có điều khiển chỉnh số lượng
+
+- Cơ sở: eshop-sut/README.md — FR-07
+- Severity: Major
+- Thực hiện: Thêm sản phẩm qua UI; mở Cart bằng link trong SPA; xem dòng hàng.
+- Expected: Cột số lượng có nút +/- để chỉnh.
+- Actual: Số lượng chỉ là text; dòng hàng chỉ có nút Xóa.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-08](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-10.png)
+
+## BUG-09 – Admin nhận và lưu tên sản phẩm dài 256 ký tự
+
+- Cơ sở: eshop-sut/README.md — FR-15
+- Severity: Minor
+- Thực hiện: Nhập tên H lặp 256 lần và giá 1000; lưu.
+- Expected: Tên tối đa 255 ký tự.
+- Actual: Input nhận đủ 256 ký tự, POST products HTTP 200.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-09](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-14.png)
+
+## BUG-10 – Header web không có badge số lượng giỏ hàng
+
+- Cơ sở: eshop-sut/README.md — FR-23
+- Severity: Minor
+- Thực hiện: Thêm hàng; mở Cart, quan sát header.
+- Expected: Link Giỏ hàng có badge đếm.
+- Actual: Header chỉ hiển thị chữ Giỏ hàng.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-10](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA03-01.png)
+
+## BUG-11 – Header web không đánh dấu trang đang chọn
+
+- Cơ sở: eshop-sut/README.md — FR-23
+- Severity: Minor
+- Thực hiện: Mở Profile; kiểm tra link hiện tại và ảnh render.
+- Expected: Navbar highlight trang đang chọn.
+- Actual: Không có aria-current hoặc kiểu active theo route; ảnh Profile không đánh dấu mục hiện tại.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-11](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA03-06.png)
+
+## BUG-13 – Sửa một sản phẩm làm đổi tên toàn bộ bảng Admin trên UI
+
+- Cơ sở: eshop-sut/README.md — FR-15
+- Severity: Major
+- Thực hiện: Tạo fixture riêng; ở Admin bấm Sửa dòng fixture; đổi tên; bấm Lưu sản phẩm; đối chiếu UI và API.
+- Expected: Chỉ sản phẩm được chọn thay đổi.
+- Actual: 6/6 dòng UI đổi cùng tên; API chỉ có 1 sản phẩm đổi tên. Không tái hiện lỗi nút Sửa bị đơ; đó từng là lỗi locator harness đã sửa.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-13](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-02-retest.png)
+
+## BUG-14 – Xóa sản phẩm Cart thực hiện ngay, thiếu dialog xác nhận
+
+- Cơ sở: eshop-sut/README.md — FR-07, FR-24
+- Severity: Major
+- Thực hiện: Cart có một dòng hàng; bấm Xóa; ghi dialog và trạng thái sau.
+- Expected: Hỏi xác nhận trước khi xóa.
+- Actual: Dòng hàng biến mất và chuyển empty state, không có confirm.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-14](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-03.png)
+
+## BUG-16 – ProductDetail bỏ qua lần bấm Thêm vào giỏ đầu tiên
+
+- Cơ sở: eshop-sut/README.md — FR-24
+- Severity: Major
+- Thực hiện: Mở chi tiết bàn phím; bấm Thêm vào giỏ hàng một lần, quan sát; bấm lần hai.
+- Expected: Lần bấm đầu có phản hồi và thêm hàng.
+- Actual: Lần đầu chưa có Đã thêm; lần hai có Đã thêm và giỏ nhận sản phẩm.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-16](task1-runs/2026-11-10T17-50-54-314Z/BUG16-after-first-click.png)
+
+![BUG-16](task1-runs/2026-11-10T17-50-54-314Z/BUG16-after-second-click.png)
+
+## BUG-17 – Admin chấp nhận tên sản phẩm toàn khoảng trắng
+
+- Cơ sở: eshop-sut/README.md — FR-15
+- Severity: Major
+- Thực hiện: Thử tên rỗng; sau đó nhập ba dấu cách và giá 1000; lưu, đọc lại API.
+- Expected: Tên bắt buộc có nội dung.
+- Actual: Tên rỗng bị chặn, nhưng ba dấu cách được POST HTTP 200 và lưu thật.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-17](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-03.png)
+
+## BUG-18 – Native Android bị status/navigation bar chồng nội dung
+
+- Cơ sở: Checklist IA-01: safe area / nội dung đọc được trên thiết bị thật
+- Severity: Major
+- Thực hiện: Mở Home và Đăng ký trên Galaxy A52, quan sát header/footer.
+- Expected: Nội dung app nằm ngoài vùng hệ thống che phủ.
+- Actual: Status bar chồng chữ EShop Mobile/Đăng nhập; navigation bar chồng footer ở đáy.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-18](screenshots/manual/02.jpg)
+
+![BUG-18](screenshots/manual/03.jpg)
+
+![BUG-18](screenshots/manual/06.jpg)
+
+## BUG-19 – Profile không có h1 mô tả trang
+
+- Cơ sở: eshop-sut/README.md — FR-21
+- Severity: Minor
+- Thực hiện: Mở Profile; đọc headings trong main.
+- Expected: Mỗi trang có đúng một h1.
+- Actual: Main có hai h2, không có h1. Không còn dùng yêu cầu tự đặt bắt buộc Lịch sử phải là h3.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-19](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-05.png)
+
+## BUG-22 – SAVE10 trên đơn 4 triệu làm tổng thành 40 triệu
+
+- Cơ sở: eshop-sut/README.md — FR-09
+- Severity: Major
+- Thực hiện: Tài khoản test mới; thêm bàn phím 4.000.000 ₫; Checkout; nhập SAVE10; bấm Áp dụng.
+- Expected: Giảm 400.000 ₫, còn 3.600.000 ₫.
+- Actual: UI thông báo giảm 10% nhưng Tiết kiệm -36.000.000 ₫ và tổng 40.000.000 ₫. Chưa gửi đơn với coupon sai này.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-22](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-05.png)
+
+## BUG-23 – Nút xác nhận Checkout màu xanh lá trái quy định xanh dương
+
+- Cơ sở: eshop-sut/README.md — FR-21
+- Severity: Minor
+- Thực hiện: Checkout có hàng; quan sát nút Xác Nhận Thanh Toán và computed background.
+- Expected: Hành động tích cực dùng xanh dương.
+- Actual: Computed rgb(22,163,74), ảnh hiển thị xanh lá.
+- Trạng thái: Reproduced/observed; chưa sửa source SUT.
+
+![BUG-23](task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-05.png)
+
+## Nhận xét usability / thiết kế
+
+| Mã | Checklist | Nhận xét |
+| --- | --- | --- |
+| UX-01 | CHK-IA01-02 | Giá căn trái thay vì căn phải theo checklist grid; chưa có ràng buộc căn phải trong SRS. |
+| UX-02 | CHK-IA01-08 | Tên 256 ký tự làm bảng rộng hơn vùng chứa; đây là probe ngoài giới hạn tên hợp lệ 255 ký tự, không tách thành bug nghiệp vụ mới. |
+| UX-03 | CHK-IA03-04 | Home mobile chưa login không có bottom navigation theo checklist; SRS yêu cầu chức năng nhưng không bắt buộc đặt thanh ở đáy. |
+| UX-04 | CHK-IA04-01 | Hủy đơn không có confirm; đây là đề xuất phòng ngừa sai thao tác. FR-24 yêu cầu confirm khi xóa giỏ, không quy định tương tự cho hủy đơn. |
+| UX-05 | CHK-IA04-04 | Chưa login được alert rồi chuyển Login đúng. Inline/toast là đề xuất UX, không kết luận lỗi access control. |
+
+## Đính chính lịch sử
+
+- BUG-02 (thiếu alt Admin) bị bác bỏ: lần chạy thật có alt tên sản phẩm và kích thước thumbnail đồng đều. Không sửa số liệu bằng cách tiếp tục giữ bug sai.
+- BUG-12 và BUG-15 chuyển thành UX-04 và UX-05; BUG-14 vẫn là bug vì SRS có yêu cầu confirm xóa giỏ.
+- Bằng chứng BUG-13 cũ là Login Admin, BUG-08 cũ là giỏ trống: không dùng làm chứng cứ cho kết luận mới.
+- Chưa sửa lỗi sản phẩm. Không ghi trạng thái Fixed chỉ vì đã sửa báo cáo.

@@ -5,7 +5,35 @@
     "student_id": "23120355",
     "class": "CQ2023/3",
     "group": "Group 4 - Performance Testing",
-    "scope": "Kế thừa 4 Pool HW02: Pool A (A04 Profile), Pool B (B08 Checkout), Pool C (C15 Admin Product Management), Pool D (Mobile Register)"
+    "scope": "Kế thừa 4 Pool HW02: Pool A (A04 Profile), Pool B (B08 Checkout), Pool C (C15 Admin Product Management), Pool D (Mobile Register)",
+    "execution_counts": {
+      "Passed": 26,
+      "Failed": 22
+    },
+    "mobile_environment": {
+      "device": "Samsung Galaxy A52",
+      "model": "SM-A525F/DS",
+      "androidVersion": "Chưa có ảnh Software information",
+      "expoGoVersion": "Chưa cung cấp",
+      "projectSDK": "54 (cấu hình/manifest local, không phải phiên bản Expo Go)",
+      "screenshotPixels": [
+        1080,
+        2400
+      ],
+      "captureTime": "Ảnh app hiển thị 01:08–01:10; ngày chụp chưa được xác nhận; không dùng mtime làm giờ test",
+      "method": "Người dùng thao tác trên điện thoại; assistant rà soát ảnh do người dùng cung cấp",
+      "sourceFiles": {
+        "01.jpg": "ddcf44bfdd1f76e1bdb6f46d3ed4e5b968ae8ef4f840a52ffa0e4132ef7a2c5c",
+        "02.jpg": "8ddba72a8a0e0e31159f57e62e674f4d69b8c4cef815266907d48483226ab07e",
+        "03.jpg": "a8d8adc5911cf09446331e3171578c0fd476230f462db446d5b61821bb54dbd3",
+        "04.jpg": "a5549ea9172203792ebc3f3de053777b12fdc0b8fc4234737074662c8628d01e",
+        "05.jpg": "f3d5c21a0dbafe8b8591bc01f4ace60cc60088202ea47c65a5c2add38d799391",
+        "06.jpg": "bf12d2229a82162c1f3f5e8df8d48697f4464e9afb07519c53a75da4ba4e89c8",
+        "07.jpg": "f618d177170bc01ce8edee3ab6bdaf918b97d2fd2d6a5c44a116a5428cbeb90d"
+      }
+    },
+    "review_date": "2026-11-11",
+    "oracle": "eshop-sut/README.md (SUT SRS), HW03 IA mapping; corrected FR-21 positive-action color and h1 requirement"
   },
   "items": [
     {
@@ -15,9 +43,16 @@
       "description": "Nhất quán định dạng ký hiệu tiền tệ trên toàn bộ màn hình giỏ hàng và thanh toán (sử dụng đồng nhất '₫' hoặc 'VND').",
       "source": "AI-Generated",
       "status": "Failed",
-      "notes": "Trang Giỏ hàng hiển thị '... ₫' (dòng 46, 63 Cart.jsx), nhưng trong trang Checkout nhãn lại ghi 'Tổng tiền thanh toán (VND)' và định dạng hiển thị lại là '... ₫' (dòng 92, 138 Checkout.jsx). Vi phạm tính nhất quán giao diện (Nielsen #4).",
+      "notes": "Checkout hiển thị cả nhãn (VND) và ký hiệu ₫ trên cùng màn hình.",
       "bug_id": "BUG-01",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-01.png"
+      ],
+      "historical_bug_id": "BUG-01",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA01-02",
@@ -25,10 +60,17 @@
       "screen": "Pool C: Admin Products",
       "description": "Bảng danh sách quản lý sản phẩm Admin có tiêu đề cột rõ ràng, căn lề nhất quán (chữ căn trái, số tiền căn phải) theo Waghmare Grid Guidelines.",
       "source": "AI-Generated",
-      "status": "Passed",
-      "notes": "Bảng sản phẩm trong Admin hiển thị các cột: ID, Tên, Giá, Danh mục, Thao tác rõ ràng; text và số tiền được định dạng cân đối.",
-      "bug_id": "",
-      "ai_gap_reason": ""
+      "status": "Failed",
+      "notes": "Headers=Ảnh, Tên SP, Giá, Hành động; alignment=left, left, left, left. Giá phải căn phải theo tiêu chí gốc.",
+      "bug_id": "UX-01",
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-02.png"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "Usability observation",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA01-03",
@@ -37,9 +79,14 @@
       "description": "Thẻ trạng thái đơn hàng (Order Status Badge) trong lịch sử đơn hàng sử dụng màu sắc phân biệt ngữ nghĩa rõ rệt theo chuẩn WCAG 2.2.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Hàm statusStyle() trong Profile.jsx (dòng 82-95) áp dụng màu chuẩn: xanh lá cho 'delivered', xanh dương cho 'shipping', tím cho 'confirmed', đỏ cho 'canceled', vàng cho 'pending'.",
+      "notes": "Sinh viên đã kiểm thử thủ công và xác nhận Passed trực tiếp trong chat. Không có ảnh/video bổ sung để assistant đối chiếu; không ghi nhận là Playwright đã xác minh.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "student-attested manual execution"
     },
     {
       "id": "CHK-IA01-04",
@@ -47,21 +94,37 @@
       "screen": "Pool D: Mobile Register",
       "description": "Giao diện màn hình đăng ký Mobile tương thích kích thước màn hình điện thoại (Safe Area View, không bị tai thỏ che khuất).",
       "source": "AI-Generated",
-      "status": "Passed",
-      "notes": "Mobile App sử dụng component SafeAreaView và StyleSheet bọc vùng hiển thị, không bị tràn viền hoặc che khuất trên màn hình Samsung Galaxy A52.",
-      "bug_id": "",
-      "ai_gap_reason": ""
+      "status": "Failed",
+      "notes": "Header EShop Mobile bị status bar chồng chữ; footer bị navigation bar Android chồng ở đáy. Đây là lỗi safe area nhìn thấy trực tiếp trên ảnh, không suy ra từ component SafeAreaView.",
+      "bug_id": "BUG-18",
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "screenshots/manual/02.jpg",
+        "screenshots/manual/03.jpg",
+        "screenshots/manual/06.jpg"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "Confirmed bug",
+      "execution_method": "human-provided screenshots reviewed by assistant"
     },
     {
       "id": "CHK-IA01-05",
       "aspect": "IA-01: UI Standards",
       "screen": "Pool A: Profile & Orders",
-      "description": "Phân cấp typography rõ ràng (Heading h2 cho tiêu đề hồ sơ, h3 cho tiêu đề lịch sử đơn hàng).",
+      "description": "Mỗi trang Profile có đúng một h1 mô tả trang theo FR-21; các tiêu đề phần có phân cấp phù hợp.",
       "source": "AI-Generated",
-      "status": "Passed",
-      "notes": "Cấu trúc font chữ trong Profile.jsx phân cấp mạch lạc từ text-2xl font-bold xuống text-xl và text-sm.",
-      "bug_id": "",
-      "ai_gap_reason": ""
+      "status": "Failed",
+      "notes": "Quan sát DOM có hai h2 (Hồ sơ của bạn, Lịch sử đơn hàng), không có h1 trong main. Sửa cơ sở đánh giá từ yêu cầu h2/h3 tự đặt sang FR-21 của SUT; trạng thái vẫn Failed.",
+      "bug_id": "BUG-19",
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-05.png"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA01-06",
@@ -70,9 +133,14 @@
       "description": "Trang Admin duy trì khoảng cách lề và padding đồng nhất giữa Sidebar điều hướng và vùng nội dung chính.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Khung layout Admin sử dụng hệ thống Tailwind flex gap-6 p-6 cân đối, phân tách rõ khu vực bảng dữ liệu và form nhập.",
+      "notes": "Sinh viên đã kiểm thử thủ công và xác nhận Passed trực tiếp trong chat. Không có ảnh/video bổ sung để assistant đối chiếu; không ghi nhận là Playwright đã xác minh.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "student-attested manual execution"
     },
     {
       "id": "CHK-IA01-07",
@@ -81,9 +149,14 @@
       "description": "Hiển thị placeholder trực quan, mờ nhạt và biến mất khi người dùng bắt đầu gõ văn bản trong ô mã giảm giá.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Ô coupon có placeholder='Nhập mã giảm giá...' mờ nhạt, gợi ý tốt cho người dùng.",
+      "notes": "Placeholder tồn tại và không còn hiển thị khi có giá trị.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA01-08",
@@ -91,10 +164,17 @@
       "screen": "Pool C: Admin Products",
       "description": "Tên sản phẩm quá dài trong bảng Admin không làm tràn vỡ chiều rộng cột bảng.",
       "source": "AI-Generated",
-      "status": "Passed",
-      "notes": "Bảng dữ liệu có thanh cuộn ngang khi nội dung vượt quá độ rộng màn hình, không làm xô lệch các cột chức năng.",
-      "bug_id": "",
-      "ai_gap_reason": ""
+      "status": "Failed",
+      "notes": "{\"width\":3207.387451171875,\"body\":1440,\"scroll\":1440,\"parent\":1104.800048828125}",
+      "bug_id": "UX-02",
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-08.png"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "Usability observation",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA01-09",
@@ -103,9 +183,14 @@
       "description": "Định dạng số tiền hiển thị có dấu chấm phân cách hàng nghìn rõ ràng theo chuẩn Việt Nam.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Cả trang Profile và Checkout đều sử dụng Number().toLocaleString() hiển thị dạng 4.000.000 ₫.",
+      "notes": "locale vi-VN; kỳ vọng 4.000.000; kiểm tra Checkout (Profile kiểm tra cùng item sau tạo đơn). Profile có đơn 4.000.000 ₫.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA01-10",
@@ -114,9 +199,16 @@
       "description": "Độ tương phản màu sắc của chữ thông báo lỗi màu đỏ trên nền nhạt (bg-red-100 text-red-700) đạt chuẩn WCAG 2.2 AA.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Độ tương phản đạt 4.8:1, người dùng mắt kém vẫn có thể đọc rõ thông báo lỗi.",
+      "notes": "Thông báo mật khẩu yếu nhìn thấy trên ảnh; màu khai báo hiện tại fg=#991b1b, bg=#fee2e2, tỷ lệ tương phản 6.8027:1 > 4.5:1. Tính từ màu source, ảnh JPEG hỗ trợ đối chiếu trạng thái; chỉ kết luận cho error box này, không chứng nhận toàn app đạt WCAG.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "screenshots/manual/06.jpg"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "human-provided screenshots reviewed by assistant"
     },
     {
       "id": "CHK-IA01-11",
@@ -124,10 +216,15 @@
       "screen": "Pool C: Admin Products",
       "description": "Hình ảnh thumbnail sản phẩm trong bảng Admin có kích thước đồng đều và có thuộc tính alt mô tả nội dung.",
       "source": "Human-Added",
-      "status": "Failed",
-      "notes": "Thẻ img trong bảng Admin thiếu thuộc tính alt (hoặc chỉ để alt=''), vi phạm tiêu chuẩn tiếp cận WCAG 2.2 cho người khiếm thị.",
-      "bug_id": "BUG-02",
-      "ai_gap_reason": "AI thường xem nhẹ khả năng tiếp cận (Accessibility) trên các trang quản trị nội bộ Admin."
+      "status": "Passed",
+      "notes": "Thumbnail thực có alt tên sản phẩm; đo kích thước đồng đều.",
+      "bug_id": "",
+      "ai_gap_reason": "AI thường xem nhẹ khả năng tiếp cận (Accessibility) trên các trang quản trị nội bộ Admin.",
+      "previous_status": "Failed",
+      "evidence": [],
+      "historical_bug_id": "BUG-02",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA01-12",
@@ -136,9 +233,14 @@
       "description": "Không xuất hiện các giá trị lỗi rò rỉ kiểu dữ liệu như 'NaN', 'undefined', 'null' trong vùng thanh toán.",
       "source": "Human-Added",
       "status": "Passed",
-      "notes": "Hệ thống kiểm tra Number(total) trước khi render, không xuất hiện NaN khi dữ liệu bình thường.",
+      "notes": "Không rò rỉ NaN/undefined/null trong dữ liệu bình thường.",
       "bug_id": "",
-      "ai_gap_reason": "AI ít khi chủ động kiểm tra các lỗi rò rỉ kiểu dữ liệu JavaScript (NaN, undefined) nếu không có chỉ dẫn cụ thể."
+      "ai_gap_reason": "AI ít khi chủ động kiểm tra các lỗi rò rỉ kiểu dữ liệu JavaScript (NaN, undefined) nếu không có chỉ dẫn cụ thể.",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-01",
@@ -147,9 +249,16 @@
       "description": "Validation ô Số điện thoại trong form Profile phải chấp nhận định dạng số điện thoại Việt Nam hợp lệ bắt đầu bằng số 0 (10–11 chữ số).",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Tại dòng 43 Profile.jsx, regex lại kiểm tra: !/^[1-9][0-9]{8,9}$/.test(phone). Regex này BẮT BUỘC số điện thoại BẮT ĐẦU TỪ 1 ĐẾN 9, dẫn đến TỪ CHỐI MỌI SỐ ĐIỆN THOẠI VIỆT NAM HỢP LỆ BẮT ĐẦU BẰNG 0! (Khớp phát hiện BUG-A04-001 ở HW02). Lỗi UI/Form validation cực lớn!",
+      "notes": "[{\"type\":\"alert\",\"message\":\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\",\"url\":\"http://127.0.0.1:5173/profile\",\"time\":\"2026-11-10T17:51:24.693Z\"}]",
       "bug_id": "BUG-03",
-      "ai_gap_reason": "AI phân tích biểu thức chính quy thường cho rằng regex kiểm tra độ dài 9-10 số là hợp lệ mà không phát hiện tiền tố [1-9] loại trừ số 0 của định dạng điện thoại VN."
+      "ai_gap_reason": "AI phân tích biểu thức chính quy thường cho rằng regex kiểm tra độ dài 9-10 số là hợp lệ mà không phát hiện tiền tố [1-9] loại trừ số 0 của định dạng điện thoại VN.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-01.png"
+      ],
+      "historical_bug_id": "BUG-03",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-02",
@@ -158,9 +267,16 @@
       "description": "Ô 'Tổng tiền thanh toán' phải ở chế độ Chỉ đọc (Read-only), tuyệt đối không cho phép người dùng tự gõ sửa số tiền thanh toán.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Ô 'Tổng tiền thanh toán (VND)' là thẻ input type='number' có onChange cho phép người dùng tự do sửa thành 1000 ₫ hoặc số âm (dòng 93-100 Checkout.jsx). Khớp phát hiện BUG-B08-001 ở HW02!",
+      "notes": "Ô tổng tiền cho sửa từ 4000000 thành 1000; coupon bị xóa khi onChange.",
       "bug_id": "BUG-04",
-      "ai_gap_reason": "AI luôn giả định tổng tiền trong trang Checkout là nhãn hiển thị cố định (Text view), không lường trước được việc lập trình viên để thẻ input cho người dùng sửa tay."
+      "ai_gap_reason": "AI luôn giả định tổng tiền trong trang Checkout là nhãn hiển thị cố định (Text view), không lường trước được việc lập trình viên để thẻ input cho người dùng sửa tay.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-02.png"
+      ],
+      "historical_bug_id": "BUG-04",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-03",
@@ -168,10 +284,17 @@
       "screen": "Pool C: Admin Products",
       "description": "Form thêm/sửa sản phẩm Admin bắt buộc trường Tên sản phẩm không được để trống và không nhận chuỗi chỉ toàn khoảng trắng.",
       "source": "AI-Generated",
-      "status": "Passed",
-      "notes": "Ô Tên sản phẩm trong modal Admin có thuộc tính required ngăn người dùng submit form rỗng.",
-      "bug_id": "",
-      "ai_gap_reason": ""
+      "status": "Failed",
+      "notes": "Tên rỗng validity=false; submit whitespace HTTP 200; persisted=true",
+      "bug_id": "BUG-17",
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-03.png"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-04",
@@ -180,20 +303,36 @@
       "description": "Ô Giá sản phẩm trong form Admin có ràng buộc số dương (> 0), ngăn chặn nhập giá âm hoặc giá bằng 0.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Ô giá sản phẩm trong Admin thiếu thuộc tính min='1', cho phép Admin nhập giá 0 ₫ hoặc giá âm (-100000 ₫) và lưu thành công. Khớp phát hiện BUG-C15-002 ở HW02!",
+      "notes": "Giá được lưu: [0,-1000]",
       "bug_id": "BUG-05",
-      "ai_gap_reason": "AI kiểm tra form thấy có trường giá nhưng không kiểm tra thuộc tính ràng buộc min/max trên thẻ input HTML."
+      "ai_gap_reason": "AI kiểm tra form thấy có trường giá nhưng không kiểm tra thuộc tính ràng buộc min/max trên thẻ input HTML.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-04.png"
+      ],
+      "historical_bug_id": "BUG-05",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-05",
       "aspect": "IA-02: Forms",
       "screen": "Pool D: Mobile Register",
-      "description": "Form Đăng ký trên Mobile App phải có trường 'Xác nhận mật khẩu' (Confirm Password) để phòng ngừa người dùng gõ nhầm mật khẩu theo chuẩn FR-01/FR-20.",
+      "description": "Form Đăng ký mobile có Xác nhận mật khẩu theo FR-01 và phạm vi mobile FR-20 trong đặc tả SUT.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Form Đăng ký trong App.js của Mobile chỉ có 3 trường: Họ tên, Email, Mật khẩu; HOÀN TOÀN THIẾU TRƯỜNG CONFIRM PASSWORD! Khớp phát hiện BUG-D-004 ở HW02!",
+      "notes": "Ảnh app Android 03/04/06: form chỉ có Họ Tên, Email, Mật khẩu, không có Confirm Password. Đặc tả SUT FR-01 bắt buộc xác nhận mật khẩu, FR-20 mở rộng chức năng đăng ký cho mobile.",
       "bug_id": "BUG-06",
-      "ai_gap_reason": "AI chỉ đánh giá các trường hiện có trên form, không đối chiếu với đặc tả SRS xem form có bị thiếu trường xác nhận mật khẩu hay không."
+      "ai_gap_reason": "AI chỉ đánh giá các trường hiện có trên form, không đối chiếu với đặc tả SRS xem form có bị thiếu trường xác nhận mật khẩu hay không.",
+      "previous_status": "Failed",
+      "evidence": [
+        "screenshots/manual/03.jpg",
+        "screenshots/manual/04.jpg",
+        "screenshots/manual/06.jpg"
+      ],
+      "historical_bug_id": "BUG-06",
+      "finding_type": "Confirmed bug",
+      "execution_method": "human-provided screenshots reviewed by assistant"
     },
     {
       "id": "CHK-IA02-06",
@@ -202,9 +341,14 @@
       "description": "Nút 'Áp dụng' mã giảm giá bị vô hiệu hóa (disabled) khi ô nhập mã đang để trống hoặc chỉ chứa khoảng trắng.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Nút có thuộc tính disabled={applyingCoupon || !couponCode.trim()} và giảm độ mờ opacity-50 rất rõ ràng.",
+      "notes": "disabled empty=true; whitespace=true",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-07",
@@ -213,9 +357,16 @@
       "description": "Thẻ nhãn Label trong form Profile liên kết chính xác với ô input thông qua thuộc tính htmlFor và id.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Các thẻ label 'Họ tên', 'Số điện thoại', 'Địa chỉ nhận hàng' thiếu thuộc tính htmlFor, khi bấm vào nhãn không focus vào ô nhập.",
+      "notes": "Sau click label, phone focus=false",
       "bug_id": "BUG-07",
-      "ai_gap_reason": "AI hay bỏ qua tiêu chuẩn Form Usability & Accessibility về liên kết label-input."
+      "ai_gap_reason": "AI hay bỏ qua tiêu chuẩn Form Usability & Accessibility về liên kết label-input.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-07.png"
+      ],
+      "historical_bug_id": "BUG-07",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-08",
@@ -224,9 +375,14 @@
       "description": "Dropdown Danh mục (Category) trong form Admin hiển thị danh sách các danh mục có sẵn và có giá trị mặc định hợp lệ.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Thẻ select trong Admin render danh sách danh mục lấy từ API (/api/categories) và chọn category_id mặc định là 1.",
+      "notes": "Danh mục Điện thoại, Laptop, Phụ kiện; value=1",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-09",
@@ -235,9 +391,18 @@
       "description": "Ô nhập Mật khẩu trên Mobile có thuộc tính secureTextEntry ẩn ký tự khi gõ bảo mật.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Trường TextInput password trong Mobile App có thuộc tính secureTextEntry={true} che giấu ký tự mật khẩu đúng chuẩn.",
+      "notes": "Các ký tự mật khẩu hiện bằng dấu chấm; không ghi nhận nội dung mật khẩu thật hoặc suy ra độ mạnh mật khẩu từ ảnh.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "screenshots/manual/04.jpg",
+        "screenshots/manual/05.jpg",
+        "screenshots/manual/06.jpg"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "human-provided screenshots reviewed by assistant"
     },
     {
       "id": "CHK-IA02-10",
@@ -246,9 +411,16 @@
       "description": "Người dùng có thể chỉnh sửa số lượng sản phẩm trực tiếp (tăng/giảm/nhập số) ngay tại bảng Giỏ hàng.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Cột số lượng trong bảng Giỏ hàng chỉ hiển thị text tĩnh item.quantity, không có nút tăng giảm (+/-). Khớp phát hiện BUG-B08-005 ở HW02!",
+      "notes": "Dòng hàng có điều khiển: [\"Xóa\"]; số lượng là text.",
       "bug_id": "BUG-08",
-      "ai_gap_reason": "AI chỉ kiểm tra các element hiện có, không phát hiện ra chức năng tăng giảm số lượng bị thiếu trên bảng giỏ hàng."
+      "ai_gap_reason": "AI chỉ kiểm tra các element hiện có, không phát hiện ra chức năng tăng giảm số lượng bị thiếu trên bảng giỏ hàng.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-10.png"
+      ],
+      "historical_bug_id": "BUG-08",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-11",
@@ -257,9 +429,16 @@
       "description": "Bàn phím ảo trên Mobile tự động hiển thị kiểu bàn phím email (keyboardType='email-address') khi focus vào ô Email.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "TextInput email trên Mobile có cấu hình keyboardType='email-address' hiển thị phím @ tiện lợi cho người dùng.",
+      "notes": "Sinh viên đã kiểm thử thủ công và xác nhận Passed trực tiếp trong chat. Không có ảnh/video bổ sung để assistant đối chiếu; không ghi nhận là Playwright đã xác minh.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "screenshots/manual/05.jpg"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "student-attested manual execution"
     },
     {
       "id": "CHK-IA02-12",
@@ -268,20 +447,32 @@
       "description": "Trường Email trong form Profile ở chế độ hiển thị chỉ đọc hoặc bị vô hiệu hóa vì không cho phép sửa qua UI theo FR-04.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Giao diện Profile không render ô nhập email để người dùng sửa, tuân thủ đúng quy tắc đặc tả FR-04.",
+      "notes": "Email hiển thị disabled trên form thật.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-13",
       "aspect": "IA-02: Forms",
       "screen": "Pool B: Checkout",
-      "description": "Nút bấm 'Xác Nhận Thanh Toán' có màu sắc mang ý nghĩa tiến hành (Xanh lá) theo chuẩn Affordance của Norman.",
+      "description": "Nút hành động tích cực Xác Nhận Thanh Toán dùng màu xanh dương theo FR-21 của SUT.",
       "source": "AI-Generated",
-      "status": "Passed",
-      "notes": "Nút dùng màu bg-green-600 trực quan, nổi bật, tạo cảm giác an tâm hoàn tất giao dịch.",
-      "bug_id": "",
-      "ai_gap_reason": ""
+      "status": "Failed",
+      "notes": "Màu computed rgb(22, 163, 74) là xanh lá; ảnh Checkout xác nhận. Đặc tả FR-21 quy định hành động tích cực dùng xanh dương. Sửa kết luận Passed trước đây do oracle màu xanh lá sai.",
+      "bug_id": "BUG-23",
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-05.png"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA02-14",
@@ -290,9 +481,16 @@
       "description": "Trường Tên sản phẩm trong form Admin giới hạn độ dài tối đa 255 ký tự (maxlength='255') theo đặc tả FR-15.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Thẻ input tên sản phẩm trong Admin không có thuộc tính maxLength='255', cho phép Admin nhập chuỗi 256 ký tự và gửi lên backend. Khớp phát hiện BUG-C15-001 ở HW02!",
+      "notes": "Input nhận 256 ký tự; POST HTTP 200",
       "bug_id": "BUG-09",
-      "ai_gap_reason": "AI ít khi kiểm tra các ràng buộc độ dài biên của trường nhập liệu (BVA) trên giao diện trừ khi được yêu cầu cụ thể."
+      "ai_gap_reason": "AI ít khi kiểm tra các ràng buộc độ dài biên của trường nhập liệu (BVA) trên giao diện trừ khi được yêu cầu cụ thể.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-14.png"
+      ],
+      "historical_bug_id": "BUG-09",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA03-01",
@@ -301,9 +499,16 @@
       "description": "Mục 'Giỏ hàng' trên thanh điều hướng có huy hiệu đếm số lượng sản phẩm (Cart Badge Counter).",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Thanh Header chỉ có chữ 'Giỏ hàng' đơn thuần, không hiển thị số lượng món đồ đang có trong giỏ.",
+      "notes": "Header text=Giỏ hàng; không có số đếm.",
       "bug_id": "BUG-10",
-      "ai_gap_reason": "AI bỏ qua việc chia sẻ trạng thái hiển thị số lượng giỏ hàng trên thanh menu chính."
+      "ai_gap_reason": "AI bỏ qua việc chia sẻ trạng thái hiển thị số lượng giỏ hàng trên thanh menu chính.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA03-01.png"
+      ],
+      "historical_bug_id": "BUG-10",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA03-02",
@@ -312,9 +517,14 @@
       "description": "Thanh điều hướng Sidebar của Admin có các tab chức năng rõ ràng (Dashboard, Users, Products, Categories, Orders, Coupons).",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Sidebar Admin hiển thị đầy đủ các nút tab chức năng, click chuyển đổi giao diện mượt mà.",
+      "notes": "Sáu tab đều mở đúng heading, không phải click-only.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA03-03",
@@ -323,9 +533,14 @@
       "description": "Người dùng đã đăng nhập có thể truy cập nhanh vào trang Profile từ liên kết 'Chào, [Tên]' trên thanh Header.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Thanh Header hiển thị tên user dạng link to='/profile' màu vàng nổi bật, click mở đúng trang hồ sơ.",
+      "notes": "Link Chào điều hướng đúng /profile.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA03-04",
@@ -333,10 +548,17 @@
       "screen": "Pool D: Mobile App",
       "description": "Thanh điều hướng dưới đáy (Bottom Navigation Bar) trên Mobile App cho phép chuyển đổi nhanh giữa Trang chủ, Giỏ hàng, Đơn hàng và Hồ sơ.",
       "source": "AI-Generated",
-      "status": "Passed",
-      "notes": "Bottom bar trên Mobile App hiển thị các nút chuyển view linh hoạt, không bị giật lag.",
-      "bug_id": "",
-      "ai_gap_reason": ""
+      "status": "Failed",
+      "notes": "Home ở trạng thái chưa đăng nhập chỉ có header với Đăng nhập/Giỏ (0) và footer; không có bottom navigation Home/Cart/Orders/Profile theo checklist. Chưa kiểm thử khả năng chuyển các mục sau đăng nhập; không kết luận mọi điều hướng bị hỏng.",
+      "bug_id": "UX-03",
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "screenshots/manual/02.jpg"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "Usability observation",
+      "execution_method": "human-provided screenshots reviewed by assistant"
     },
     {
       "id": "CHK-IA03-05",
@@ -345,9 +567,14 @@
       "description": "Nút '← Mua tiếp' tại Giỏ hàng đưa người dùng quay lại danh sách sản phẩm nhanh chóng.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Có nút Link to='/' hỗ trợ quay về trang chủ tiếp tục chọn hàng.",
+      "notes": "Mua tiếp quay về Home có danh sách sản phẩm.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA03-06",
@@ -356,9 +583,16 @@
       "description": "Thanh điều hướng có chỉ báo trạng thái trang hiện tại (Active state highlight).",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Menu dùng thẻ Link thông thường, khi đang ở trang Profile hoặc Giỏ hàng mục tương ứng không được tô sáng.",
+      "notes": "aria-current=null; link header không có chỉ báo active theo route. Phạm vi đo DOM, chưa kiểm định mọi tín hiệu thị giác.",
       "bug_id": "BUG-11",
-      "ai_gap_reason": "AI kiểm tra link hoạt động nhưng bỏ qua trạng thái hiển thị của trang hiện tại."
+      "ai_gap_reason": "AI kiểm tra link hoạt động nhưng bỏ qua trạng thái hiển thị của trang hiện tại.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA03-06.png"
+      ],
+      "historical_bug_id": "BUG-11",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA03-07",
@@ -367,9 +601,14 @@
       "description": "Nút 'Đăng xuất' trong trang Admin xóa token phiên làm việc và quay lại màn hình Login quản trị.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Nút Đăng xuất xóa adminToken trong localStorage và reset state token đưa về form login.",
+      "notes": "Token đã xóa, hiển thị Admin Login.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA03-08",
@@ -378,9 +617,17 @@
       "description": "Tại màn hình Đăng ký Mobile, có liên kết 'Đã có tài khoản? Đăng nhập' chuyển nhanh sang form Login.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Có nút chuyển đổi trạng thái giữa màn hình Đăng ký và Đăng nhập mượt mà không bị lỗi.",
+      "notes": "Sinh viên đã kiểm thử thủ công và xác nhận Passed trực tiếp trong chat. Không có ảnh/video bổ sung để assistant đối chiếu; không ghi nhận là Playwright đã xác minh.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "screenshots/manual/03.jpg",
+        "screenshots/manual/07.jpg"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "student-attested manual execution"
     },
     {
       "id": "CHK-IA03-09",
@@ -389,9 +636,14 @@
       "description": "Sau khi thanh toán thành công, có liên kết rõ ràng cho phép người dùng quay lại Trang chủ.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Màn hình thành công có nút 'Quay lại trang chủ' điều hướng chuẩn xác.",
+      "notes": "Quay lại Home có sản phẩm.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA03-10",
@@ -400,9 +652,14 @@
       "description": "Không có liên kết chết hoặc dẫn đến trang lỗi 404 trong toàn bộ 4 phân hệ.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Toàn bộ các tuyến đường điều hướng trong Web và Mobile đều có component đích hợp lệ.",
+      "notes": "Sinh viên đã kiểm thử thủ công và xác nhận Passed trực tiếp trong chat. Không có ảnh/video bổ sung để assistant đối chiếu; không ghi nhận là Playwright đã xác minh.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "student-attested manual execution"
     },
     {
       "id": "CHK-IA04-01",
@@ -411,9 +668,16 @@
       "description": "Nút 'Hủy đơn' trong bảng Lịch sử đơn hàng phải có hộp thoại xác nhận (Confirm dialog) trước khi gọi API hủy đơn.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Hàm cancelOrder (dòng 66-80 Profile.jsx) gọi thẳng API hủy đơn mà không hiển thị hộp thoại xác nhận 'Bạn có chắc chắn muốn hủy đơn hàng này không?'. Vi phạm nghiêm trọng nguyên tắc Error Prevention (Nielsen #5) và nguyên tắc An toàn hoàn tác của Shneiderman.",
-      "bug_id": "BUG-12",
-      "ai_gap_reason": "AI thấy nút gọi hàm hủy đơn chạy thành công là đánh giá Passed, bỏ qua yêu cầu hộp thoại xác nhận thao tác không thể đảo ngược."
+      "notes": "Đơn chuyển Đã hủy; dialog=[{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\",\"url\":\"http://127.0.0.1:5173/profile\",\"time\":\"2026-11-10T17:52:06.841Z\"}]; không có confirm.",
+      "bug_id": "UX-04",
+      "ai_gap_reason": "AI thấy nút gọi hàm hủy đơn chạy thành công là đánh giá Passed, bỏ qua yêu cầu hộp thoại xác nhận thao tác không thể đảo ngược.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-01.png"
+      ],
+      "historical_bug_id": "BUG-12",
+      "finding_type": "Usability observation",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-02",
@@ -422,9 +686,16 @@
       "description": "Nút 'Sửa' sản phẩm trong bảng Admin phải mở modal điền sẵn dữ liệu và cập nhật đúng sản phẩm được chọn mà không làm sai lệch các sản phẩm khác.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Tại dòng 110-114 của frontend-admin/src/App.jsx, khi sửa sản phẩm xong code chạy: products.map(p => ({ ...p, name: productForm.name })). Đoạn code này ĐỔI TÊN TOÀN BỘ SẢN PHẨM TRÊN BẢNG THÀNH TÊN SẢN PHẨM VỪA SỬA! Ngoài ra nút Sửa trên giao diện đôi khi bị đơ không hiển thị modal (Khớp phát hiện BUG-C15-004 và Blocked TC013-015 ở HW02)!",
+      "notes": "Retest harness: chọn đúng nút Lưu sản phẩm thay vì Hủy sửa. Sau sửa fixture riêng, 6/6 dòng UI đổi cùng tên. API chỉ 1 sản phẩm đổi tên; phân biệt lỗi state UI và persistence.",
       "bug_id": "BUG-13",
-      "ai_gap_reason": "AI chỉ kiểm tra form submit có thông báo 'Cập nhật thành công' mà không soi xét trạng thái dữ liệu của toàn bộ bảng sau khi cập nhật."
+      "ai_gap_reason": "AI chỉ kiểm tra form submit có thông báo 'Cập nhật thành công' mà không soi xét trạng thái dữ liệu của toàn bộ bảng sau khi cập nhật.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-02-retest.png"
+      ],
+      "historical_bug_id": "BUG-13",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-03",
@@ -433,9 +704,16 @@
       "description": "Thao tác xóa sản phẩm khỏi giỏ hàng phải hiển thị hộp thoại xác nhận (Confirm dialog).",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Nút Xóa tại giỏ hàng xóa ngay lập tức không có hộp thoại hỏi lại người dùng. Vi phạm Nielsen Heuristic #5.",
+      "notes": "Dòng hàng biến mất ngay, không có confirm. Đây là đối chiếu tiêu chí cũ về usability. FR-07 và FR-24 của SUT quy định dialog xác nhận khi xóa giỏ: xác nhận là bug, không chỉ đề xuất UX.",
       "bug_id": "BUG-14",
-      "ai_gap_reason": "AI bỏ qua yêu cầu xác nhận đối với thao tác xóa mất dữ liệu trên giỏ hàng."
+      "ai_gap_reason": "AI bỏ qua yêu cầu xác nhận đối với thao tác xóa mất dữ liệu trên giỏ hàng.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-03.png"
+      ],
+      "historical_bug_id": "BUG-14",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-04",
@@ -444,9 +722,16 @@
       "description": "Khi người dùng chưa đăng nhập bấm thanh toán, hệ thống phải hiển thị thông báo inline/toast thay vì gọi window.alert() làm đơ trình duyệt.",
       "source": "Human-Added",
       "status": "Failed",
-      "notes": "Hàm handleCheckout gọi alert('Bạn cần đăng nhập để thanh toán!') làm chặn hoàn toàn thread trình duyệt và gây trải nghiệm gián đoạn.",
-      "bug_id": "BUG-15",
-      "ai_gap_reason": "AI thấy có thông báo lỗi là đánh giá đạt, bỏ qua tiêu chuẩn trải nghiệm người dùng hiện đại không nên dùng native browser alert."
+      "notes": "Modal alert=Bạn cần đăng nhập để thanh toán!; sau đó đến /login. Fail theo tiêu chí cũ yêu cầu inline/toast, không phải lỗi access control.",
+      "bug_id": "UX-05",
+      "ai_gap_reason": "AI thấy có thông báo lỗi là đánh giá đạt, bỏ qua tiêu chuẩn trải nghiệm người dùng hiện đại không nên dùng native browser alert.",
+      "previous_status": "Failed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-04.png"
+      ],
+      "historical_bug_id": "BUG-15",
+      "finding_type": "Usability observation",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-05",
@@ -454,10 +739,17 @@
       "screen": "Pool B: Checkout",
       "description": "Hiển thị thông báo phản hồi màu xanh rõ ràng và cập nhật số tiền tiết kiệm khi áp dụng mã giảm giá thành công.",
       "source": "AI-Generated",
-      "status": "Passed",
-      "notes": "Hiển thị thông báo '✅ Áp dụng mã thành công', dòng 'Tiết kiệm: ... ₫' và giá mới sau khi trừ chiết khấu rất rõ ràng.",
-      "bug_id": "",
-      "ai_gap_reason": ""
+      "status": "Failed",
+      "notes": "Xác Nhận Đơn Hàng\nSản phẩm:\nBàn phím cơ Keychron Q1 x 1 — 4.000.000 ₫\nTổng tiền thanh toán (VND):\nMã Giảm Giá\nÁp dụng\n\n✅ Áp dụng thành công! Giảm 10%\n\nTiết kiệm: -36.000.000 ₫\n\nThành tiền: 40.000.000 ₫\n\nTổng thanh toán: 40.000.000 ₫\nXác Nhận Thanh Toán",
+      "bug_id": "BUG-22",
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-05.png"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "Confirmed bug",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-06",
@@ -466,9 +758,14 @@
       "description": "Hiển thị thông báo phản hồi màu đỏ nêu rõ lý do khi áp dụng mã giảm giá không hợp lệ hoặc đã hết hạn (EXPIRED).",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Khi nhập mã 'EXPIRED', hệ thống hiển thị thông báo lỗi màu đỏ 'Mã giảm giá đã hết hạn' ngay bên dưới ô nhập.",
+      "notes": "API từ chối EXPIRED; hiển thị thông báo hết hạn.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-07",
@@ -477,9 +774,14 @@
       "description": "Hiển thị trạng thái tải ('Đang xử lý...') trên nút thanh toán trong lúc đang gửi yêu cầu tạo đơn hàng.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Nút đổi chữ thành 'Đang xử lý...' và bị vô hiệu hóa khi loading === true.",
+      "notes": "Bắt được trạng thái Đang xử lý trên request thật.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-08",
@@ -488,9 +790,14 @@
       "description": "Màn hình Giỏ hàng rỗng (Empty State) hiển thị thông điệp thân thiện và nút kêu gọi hành động tiếp tục mua sắm.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Khi giỏ hàng trống, hiển thị dòng 'Giỏ hàng của bạn đang trống' cùng nút link 'Tiếp tục mua sắm' đưa về trang chủ.",
+      "notes": "Có empty message và CTA mở Home.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-09",
@@ -499,9 +806,14 @@
       "description": "Hiển thị phản hồi thông báo khi cập nhật hồ sơ cá nhân thành công.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Sau khi cập nhật thông tin thành công, hệ thống hiển thị thông báo 'Cập nhật thành công!'.",
+      "notes": "Dialog=Cập nhật thành công!; persisted phone=912345678. Chỉ kiểm tra phản hồi lưu, không coi workaround là phone VN hợp lệ.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-10",
@@ -510,9 +822,14 @@
       "description": "Hiển thị màn hình kết thúc quy trình trang trọng ('Thanh toán thành công!') khi hoàn tất đơn hàng theo nguyên tắc Closure của Shneiderman.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Giao diện chuyển sang màn hình thành công với chữ xanh lá 'Thanh toán thành công!', lời cảm ơn và liên kết quay về Home.",
+      "notes": "Có heading thành công và lời cảm ơn sau POST checkout thật.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     },
     {
       "id": "CHK-IA04-11",
@@ -521,9 +838,16 @@
       "description": "Hiển thị thông báo phản hồi lỗi nổi bật (banner màu đỏ) khi đăng ký thất bại trên Mobile App.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Khi API trả về lỗi, Mobile App hiển thị khối thông báo màu đỏ registerError trên đầu form rõ ràng.",
+      "notes": "Thông báo validation mật khẩu yếu hiện trong khối nền đỏ nhạt, đủ câu giải thích và không bị cắt. Chỉ xác minh nhánh validation local; chưa có bằng chứng nhánh lỗi từ API/backend.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [
+        "screenshots/manual/06.jpg"
+      ],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "human-provided screenshots reviewed by assistant"
     },
     {
       "id": "CHK-IA04-12",
@@ -532,9 +856,14 @@
       "description": "Bảng Lịch sử đơn hàng hiển thị trạng thái rỗng thân thiện khi người dùng chưa có đơn hàng nào.",
       "source": "AI-Generated",
       "status": "Passed",
-      "notes": "Khi orders.length === 0, hiển thị dòng thông báo chưa có đơn hàng thay vì để bảng trống trơn.",
+      "notes": "Empty state lịch sử hiển thị cho tài khoản test mới.",
       "bug_id": "",
-      "ai_gap_reason": ""
+      "ai_gap_reason": "",
+      "previous_status": "Passed",
+      "evidence": [],
+      "historical_bug_id": "",
+      "finding_type": "",
+      "execution_method": "Playwright local + real API"
     }
   ]
 }

@@ -1,95 +1,102 @@
+commit 0b4f34e95ffab719bf33dac35f733e16c7e10ac1
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date: 2026-11-10T23:05:41+07:00
+
+    docs: sync git_commit_log.txt
+
 commit b111a9654ca2018ecae169e54c54ea34326d8285
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Tue Nov 10 23:05:40 2026 +0700
+Date: 2026-11-10T23:05:40+07:00
 
     docs: add YouTube demo video link to README
 
 commit a60652f208530054fe05ed2dfe33a713bf007937
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:42:12 2026 +0700
+Date: 2026-11-08T16:42:12+07:00
 
     docs: finalize git_commit_log.txt
 
 commit 37f5a2ae34b6b5a86301c9641aa89668a10f500b
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:41:58 2026 +0700
+Date: 2026-11-08T16:41:58+07:00
 
     feat(scripts): add attach_issue_screenshots.js for automating GitHub issue evidence comments
 
 commit 20f4530ec1ffef6bf04b9c7f334fe26bc2046e6c
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:40:44 2026 +0700
+Date: 2026-11-08T16:40:44+07:00
 
     docs: sync git_commit_log.txt with screenshot evidence updates
 
 commit ea47fc42e5f1dd93212ee28d0fbd4795cdf7c7df
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:40:22 2026 +0700
+Date: 2026-11-08T16:40:22+07:00
 
     fix(screenshots): add watermarked evidence screenshots for all 8 GitHub issues
 
 commit 9703ccab1f3dee243cdfbac684c71bdf90732e3a
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:31:52 2026 +0700
+Date: 2026-11-08T16:31:52+07:00
 
     docs: finalize git_commit_log.txt with packaging script commit
 
 commit f0a6f4d1a4c1162ca862c1f21cf6cd8866c6ac52
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:31:42 2026 +0700
+Date: 2026-11-08T16:31:42+07:00
 
     feat(scripts): add package_submission.ps1 for building clean submission zip
 
 commit c1057c742bea6abaf05d1a9c85a3efc71991b593
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:29:39 2026 +0700
+Date: 2026-11-08T16:29:39+07:00
 
     docs: sync git_commit_log.txt
 
 commit aafdc33bdc5b7ebff09d281505647faa94b8e7c0
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:29:10 2026 +0700
+Date: 2026-11-08T16:29:10+07:00
 
     docs: include all skills in README directory tree and main report
 
 commit 2195808972bb016a4406a3986d1e1a9931812764
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:21:42 2026 +0700
+Date: 2026-11-08T16:21:42+07:00
 
     docs: finalize git_commit_log.txt
 
 commit fe2cd6177267dceb3ea560c53a600abc34e3d935
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:21:25 2026 +0700
+Date: 2026-11-08T16:21:25+07:00
 
     refactor: apply relative paths, enrich AI audit report with authentic chat history, format main report, and clean git commit log
 
 commit 692acf855a0066bd69b6ac76bbfa799cc2f76378
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:06:56 2026 +0700
+Date: 2026-11-08T16:06:56+07:00
 
     docs: add PDF exports for main report, AI audit, and bug report
 
 commit 206b0a697fa01a8242874dda7618ea93e23af510
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:05:08 2026 +0700
+Date: 2026-11-08T16:05:08+07:00
 
     docs: add git_commit_log.txt tracing testing workflow phases
 
 commit 4de1f6cb3aab08bc7e8d8f4f76f2604cd893d75d
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 16:04:30 2026 +0700
+Date: 2026-11-08T16:04:30+07:00
 
     docs: complete HW03 main report, AI audit report with critique, and README summary
 
 commit 00c81bad8c1c0063b7d3bcaf616ef25cf5443772
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 15:59:26 2026 +0700
+Date: 2026-11-08T15:59:26+07:00
 
     feat(github): add automated GitHub issue creation script and gitignore
 
 commit ae1d880820415036fadd62aea9df283f543f539a
 Author: vhthawng <vohuuthangwork@gmail.com>
-Date:   Sun Nov 8 15:55:17 2026 +0700
+Date: 2026-11-08T15:55:17+07:00
 
     first commit
+
