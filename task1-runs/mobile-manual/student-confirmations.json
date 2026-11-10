@@ -1,0 +1,8 @@
+{
+  "source": "Sinh viên xác nhận trực tiếp trong chat",
+  "statement": "các phần not run đó là passed hết, tôi đã xác nhận, vì không có cách nào để đưa lên bằng hình ảnh thôi",
+  "reviewDate": "2026-11-11",
+  "items": ["CHK-IA01-03", "CHK-IA01-06", "CHK-IA02-11", "CHK-IA03-08", "CHK-IA03-10"],
+  "status": "Passed",
+  "evidenceLimitation": "Không có ảnh/video bổ sung cho các kiểm tra này; nguồn kết luận là xác nhận kiểm thử thủ công của sinh viên."
+}

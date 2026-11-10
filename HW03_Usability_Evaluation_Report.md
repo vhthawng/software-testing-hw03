@@ -38,7 +38,7 @@ Kỳ đánh giá tập trung làm rõ 4 câu hỏi nghiên cứu cốt lõi:
 ### 1.5. Phương pháp & Thiết kế kiểm thử (Methodology)
 * **Hình thức:** Đánh giá có điều phối viên (Moderated Usability Testing).
 * **Giao thức:** Áp dụng phương pháp suy nghĩ thành tiếng (**Think-Aloud Protocol**). Người tham gia liên tục nói ra những suy nghĩ, thắc mắc, ngập ngừng trong khi thao tác.
-* **Phiên thử nghiệm (Pilot Session):** Tiến hành 01 phiên thử nghiệm trước để kiểm tra tính thông suốt của kịch bản và môi trường kỹ thuật trước khi chạy 7 phiên chính thức.
+* **Pilot trong kế hoạch:** Một phiên thử trước để kiểm tra kịch bản/môi trường; hiện chưa có thông tin xác nhận riêng về kết quả thực hiện, nên không khai bổ sung ngày giờ hoặc người pilot.
 
 ### 1.6. Môi trường & Thiết bị (Environment & Setup)
 * **Thiết bị:** Laptop độ phân giải Full HD (1920x1080), chuột quang.
@@ -194,7 +194,7 @@ Theo công thức chuẩn Rubin & Chisnell:
 $$\text{Criticality (Độ ưu tiên)} = \text{Severity (Mức độ nghiêm trọng)} \times \text{Probability (Tần suất xuất hiện)}$$
 
 * **Thang đo Severity:** 1 (Thấp) $\rightarrow$ 3 (Cao).
-* **Thang đo Probability:** 1 (Hiếm gặp: 1–2 người) $\rightarrow$ 3 (Phổ biến: 5–7 người).
+* **Probability:** điểm ưu tiên ước lượng định tính 1–3 từ notes; không quy đổi thành tỷ lệ người tham gia khi chưa có trace từng phiên.
 * **Phân cấp:**
   - **Blocker (Điểm 8 – 9):** Chặn đứng tác vụ, làm sai lệch dữ liệu tài chính hoặc khiến người dùng bỏ cuộc.
   - **Major (Điểm 4 – 6):** Gây ngập ngừng, khó khăn lớn hoặc suy giảm nghiêm trọng lòng tin.
@@ -205,11 +205,11 @@ $$\text{Criticality (Độ ưu tiên)} = \text{Severity (Mức độ nghiêm tr�
 | **Ô tổng tiền cho phép tự do sửa số tiền** | Checkout | 3 | 3 (tần suất định tính trong mẫu) | **9** | **Blocker** | BUG-04 |
 | **Regex chặn số điện thoại bắt đầu bằng 0** | Profile | 3 | 3 (tần suất định tính trong mẫu) | **9** | **Blocker** | BUG-03 |
 | **Nút Thêm giỏ hàng phải bấm 2 lần mới ăn** | ProductDetail | 2 | 3 (tần suất định tính trong mẫu) | **6** | **Major** | BUG-16 |
-| **Xóa món hàng khỏi giỏ không hỏi xác nhận** | Cart | 2 | 2 (3/7 người) | **4** | **Major** | BUG-14 |
+| **Xóa món hàng khỏi giỏ không hỏi xác nhận** | Cart | 2 | 2 (ước lượng định tính) | **4** | **Major** | BUG-14 |
 | **Giỏ hàng thiếu nút tăng/giảm số lượng** | Cart | 2 | 3 (tần suất định tính trong mẫu) | **6** | **Major** | BUG-08 |
 | **Thiếu số đếm giỏ hàng trên thanh Header** | Header | 1 | 3 (tần suất định tính trong mẫu) | **3** | **Minor** | BUG-10 |
 | **Ký hiệu tiền tệ không nhất quán (₫ vs VND)** | Checkout | 1 | 2 (tần suất định tính trong mẫu) | **2** | **Minor** | BUG-01 |
-| **Thông báo kết thúc đơn hàng quá sơ sài** | Checkout | 1 | 2 (3/7 người) | **2** | **Minor** | Mới UX |
+| **Thông báo kết thúc đơn hàng quá sơ sài** | Checkout | 1 | 2 (ước lượng định tính) | **2** | **Minor** | Mới UX |
 
 ---
 

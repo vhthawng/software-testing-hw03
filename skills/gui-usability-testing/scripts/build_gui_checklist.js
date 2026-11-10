@@ -10,7 +10,32 @@
 const fs = require('fs');
 const path = require('path');
 
+function summarize(data) {
+  if (!Array.isArray(data.items) || !data.items.length) throw new Error('Checklist cần mảng items không rỗng');
+  const statuses = ['Passed', 'Failed', 'Not Run', 'Blocked', 'Not Applicable'];
+  const ids = new Set();
+  const counts = Object.fromEntries(statuses.map(s => [s, 0]));
+  for (const it of data.items) {
+    if (!it.id || ids.has(it.id)) throw new Error(`Item ID thiếu hoặc trùng: ${it.id}`);
+    ids.add(it.id);
+    if (!statuses.includes(it.status)) throw new Error(`${it.id}: cần status rõ ràng, không tự mặc định Passed`);
+    if (!['AI-Generated', 'Human-Added'].includes(it.source)) throw new Error(`${it.id}: cần nguồn rõ ràng`);
+    if (it.status === 'Failed' && !it.notes?.trim()) throw new Error(`${it.id}: Failed cần Notes`);
+    if (it.source === 'Human-Added' && !it.ai_gap_reason?.trim()) throw new Error(`${it.id}: cần lý do AI bỏ sót`);
+    counts[it.status]++;
+  }
+  return { total: data.items.length, counts,
+    ai: data.items.filter(it => it.source === 'AI-Generated').length,
+    human: data.items.filter(it => it.source === 'Human-Added').length,
+    missingEvidence: data.items.filter(it => it.status === 'Failed' && (!Array.isArray(it.evidence) || !it.evidence.length)).map(it => it.id) };
+}
+
+function mdCell(value) {
+  return String(value ?? '').replace(/\|/g, '\\|').replace(/\r?\n/g, '<br>');
+}
+
 function generateExcelXML(data) {
+  summarize(data);
   const items = data.items || [];
   const meta = data.meta || {};
 
@@ -116,7 +141,7 @@ function generateExcelXML(data) {
 
   items.forEach(it => {
     const isPass = it.status === 'Passed';
-    const statusStyle = isPass ? 'PassStatus' : 'FailStatus';
+    const statusStyle = isPass ? 'PassStatus' : it.status === 'Failed' ? 'FailStatus' : 'CellNormal';
 
     xml += `   <Row ss:Height="32">
     <Cell ss:StyleID="CellCenter"><Data ss:Type="String">${escapeXml(it.id)}</Data></Cell>
@@ -169,20 +194,30 @@ function escapeXml(unsafe) {
 }
 
 function generateMarkdownTable(data) {
+  const summary = summarize(data);
   const items = data.items || [];
   let md = `### BẢNG TỔNG HỢP GUI CHECKLIST (${items.length} ITEMS)\n\n`;
+  md += `Số liệu từ dữ liệu gốc: ${summary.counts.Passed} Passed / ${summary.counts.Failed} Failed; ${summary.ai} AI-Generated / ${summary.human} Human-Added.\n\n`;
+  md += `Các trạng thái khác: ${summary.counts['Not Run']} Not Run / ${summary.counts.Blocked} Blocked / ${summary.counts['Not Applicable']} Not Applicable.\n\n`;
+  md += `Các kết quả dưới đây là dữ liệu đã khai báo; xuất báo cáo không xác minh việc chạy SUT. ${summary.missingEvidence.length} mục Failed chưa có tham chiếu ảnh theo item.\n\n`;
   md += `| Item ID | Aspect | Màn hình | Tiêu chí kiểm tra | Nguồn | Kết quả | Ghi chú lỗi (Notes) | Mã Bug |\n`;
   md += `| :--- | :---: | :---: | :--- | :---: | :---: | :--- | :---: |\n`;
 
   items.forEach(it => {
-    const badge = it.status === 'Passed' ? '🟢 Pass' : '🔴 Fail';
-    md += `| \`${it.id}\` | **${it.aspect}** | ${it.screen} | ${it.description} | ${it.source} | ${badge} | ${it.notes || '-'} | ${it.bug_id || '-'} |\n`;
+    const badge = it.status === 'Passed' ? '🟢 Pass' : it.status === 'Failed' ? '🔴 Fail' : it.status;
+    md += '| ' + [it.id, it.aspect, it.screen, it.description, it.source, badge, it.notes || '-', it.bug_id || '-'].map(mdCell).join(' | ') + ' |\n';
   });
+
+  md += '\n### Lý do AI bỏ sót và tham chiếu bằng chứng\n\n| Item ID | Lý do AI bỏ sót | Ảnh / bằng chứng |\n| --- | --- | --- |\n';
+  for (const it of items.filter(it => it.source === 'Human-Added' || it.status === 'Failed')) {
+    md += '| ' + [it.id, it.ai_gap_reason || '-', (it.evidence || []).join('; ') || 'Chưa đối soát bằng chứng'].map(mdCell).join(' | ') + ' |\n';
+  }
 
   return md;
 }
 
 function generateCSV(data) {
+  summarize(data);
   const items = data.items || [];
   let csv = "Item ID,Interface Aspect,Màn hình,Tiêu chí kiểm tra,Nguồn,Kết quả,Ghi chú lỗi (Notes),Mã Bug,Lý giải AI Gap\n";
   items.forEach(it => {
@@ -191,13 +226,14 @@ function generateCSV(data) {
       it.aspect || '',
       it.screen || '',
       `"${(it.description || '').replace(/"/g, '""')}"`,
-      it.source || 'AI-Generated',
-      it.status || 'Passed',
+      it.source,
+      it.status,
       `"${(it.notes || '').replace(/"/g, '""')}"`,
       it.bug_id || '',
       `"${(it.ai_gap_reason || '').replace(/"/g, '""')}"`
     ];
-    csv += row.join(',') + "\n";
+    // Các trường mô tả đã được quote ở trên; quote cả định danh/màn hình có dấu phẩy.
+    csv += row.map((v, i) => [3, 6, 8].includes(i) ? v : `"${String(v).replace(/"/g, '""')}"`).join(',') + "\n";
   });
   return csv;
 }
@@ -249,6 +285,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  summarize,
   generateExcelXML,
   generateMarkdownTable,
   generateCSV

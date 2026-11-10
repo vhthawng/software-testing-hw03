@@ -4,28 +4,28 @@ Sinh viên: Võ Hữu Thắng — 23120355. Cập nhật 11/11/2026.
 
 **18 bug xác nhận**, gồm 17 mục checklist Failed và BUG-16 bổ sung từ luồng ProductDetail. **5 nhận xét UX** được ghi riêng. 22 mục Failed không đồng nghĩa 22 bug duy nhất.
 
-Nguồn kỳ vọng: [đặc tả SUT](eshop-sut/README.md), không chỉ mã implementation. Chrome 157.0.8103.39 / Windows 10.0.26200; Playwright gọi backend thật, fixture tổng hợp riêng. Mobile: Galaxy A52 SM-A525F/DS, ảnh người dùng cung cấp; phiên bản Android/Expo Go chưa cung cấp.
+Nguồn kỳ vọng: [đặc tả SUT](https://github.com/ttbhanh/eshop-sut/blob/85af3ba875c88283615e22cb108f13e2fccaf0e9/README.md), không chỉ mã implementation. Chrome 157.0.8103.39 / Windows 10.0.26200; Playwright gọi backend thật, fixture tổng hợp riêng. Mobile: Galaxy A52 SM-A525F/DS, ảnh người dùng cung cấp; phiên bản Android/Expo Go chưa cung cấp.
 
 | Mã | Lỗi | Mức độ | Checklist | GitHub |
 | --- | --- | --- | --- | --- |
 | BUG-01 | Checkout dùng VND trong nhãn thay vì thống nhất ₫ | Minor | CHK-IA01-01 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/8) |
 | BUG-03 | Profile từ chối số điện thoại hợp lệ bắt đầu bằng 0 | Major | CHK-IA02-01 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/1) |
 | BUG-04 | Checkout cho sửa trực tiếp tổng tiền thanh toán | Major | CHK-IA02-02 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/2) |
-| BUG-05 | Admin lưu sản phẩm có giá 0 hoặc âm | Major | CHK-IA02-04 | Chờ đồng bộ |
+| BUG-05 | Admin lưu sản phẩm có giá 0 hoặc âm | Major | CHK-IA02-04 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/9) |
 | BUG-06 | Đăng ký native mobile thiếu Xác nhận mật khẩu | Major | CHK-IA02-05 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/7) |
-| BUG-07 | Click label Số điện thoại không focus input Profile | Minor | CHK-IA02-07 | Chờ đồng bộ |
+| BUG-07 | Click label Số điện thoại không focus input Profile | Minor | CHK-IA02-07 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/10) |
 | BUG-08 | Cart không có điều khiển chỉnh số lượng | Major | CHK-IA02-10 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/5) |
-| BUG-09 | Admin nhận và lưu tên sản phẩm dài 256 ký tự | Minor | CHK-IA02-14 | Chờ đồng bộ |
-| BUG-10 | Header web không có badge số lượng giỏ hàng | Minor | CHK-IA03-01 | Chờ đồng bộ |
-| BUG-11 | Header web không đánh dấu trang đang chọn | Minor | CHK-IA03-06 | Chờ đồng bộ |
+| BUG-09 | Admin nhận và lưu tên sản phẩm dài 256 ký tự | Minor | CHK-IA02-14 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/11) |
+| BUG-10 | Header web không có badge số lượng giỏ hàng | Minor | CHK-IA03-01 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/12) |
+| BUG-11 | Header web không đánh dấu trang đang chọn | Minor | CHK-IA03-06 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/13) |
 | BUG-13 | Sửa một sản phẩm làm đổi tên toàn bộ bảng Admin trên UI | Major | CHK-IA04-02 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/3) |
 | BUG-14 | Xóa sản phẩm Cart thực hiện ngay, thiếu dialog xác nhận | Major | CHK-IA04-03 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/6) |
 | BUG-16 | ProductDetail bỏ qua lần bấm Thêm vào giỏ đầu tiên | Major | Ngoài checklist ban đầu | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/4) |
-| BUG-17 | Admin chấp nhận tên sản phẩm toàn khoảng trắng | Major | CHK-IA02-03 | Chờ đồng bộ |
-| BUG-18 | Native Android bị status/navigation bar chồng nội dung | Major | CHK-IA01-04 | Chờ đồng bộ |
-| BUG-19 | Profile không có h1 mô tả trang | Minor | CHK-IA01-05 | Chờ đồng bộ |
-| BUG-22 | SAVE10 trên đơn 4 triệu làm tổng thành 40 triệu | Major | CHK-IA04-05 | Chờ đồng bộ |
-| BUG-23 | Nút xác nhận Checkout màu xanh lá trái quy định xanh dương | Minor | CHK-IA02-13 | Chờ đồng bộ |
+| BUG-17 | Admin chấp nhận tên sản phẩm toàn khoảng trắng | Major | CHK-IA02-03 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/14) |
+| BUG-18 | Native Android bị status/navigation bar chồng nội dung | Major | CHK-IA01-04 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/15) |
+| BUG-19 | Profile không có h1 mô tả trang | Minor | CHK-IA01-05 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/16) |
+| BUG-22 | SAVE10 trên đơn 4 triệu làm tổng thành 40 triệu | Major | CHK-IA04-05 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/17) |
+| BUG-23 | Nút xác nhận Checkout màu xanh lá trái quy định xanh dương | Minor | CHK-IA02-13 | [Issue](https://github.com/vhthawng/software-testing-hw03/issues/18) |
 
 ## BUG-01 – Checkout dùng VND trong nhãn thay vì thống nhất ₫
 

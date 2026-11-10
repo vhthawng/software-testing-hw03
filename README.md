@@ -42,3 +42,5 @@ Không đồng nhất 48 item với 48×3 executions. 5 Passed do sinh viên xá
 Tạm rút mức tự chấm 100/100; chưa chốt điểm tự đánh giá cuối. Thang điểm tối đa vẫn 100. PDF và ZIP cũ được giữ nguyên theo yêu cầu sinh viên, chưa phản ánh bản Markdown/checklist hiện hành. File .xls cũ được lưu dưới dạng bản lịch sử trong thư mục review; bản Excel hiện hành là .xlsx.
 
 Ảnh mobile gốc không có watermark sinh viên; chưa biết phiên bản Android/Expo Go. Ảnh About phone có định danh riêng tư, chỉ giữ cục bộ và không đưa lên nhánh bằng chứng GitHub. Tên ảnh/EXIF không thay thế thông tin môi trường chưa được cung cấp.
+
+Báo cáo và ảnh đã đồng bộ trên [nhánh GitHub hiện hành](https://github.com/vhthawng/software-testing-hw03/tree/codex/hw03-reports-20261111). Issues #1–#18 ánh xạ 18 bug xác nhận. Nhánh mặc định có thể còn bản lịch sử; dùng nhánh này để đối soát lượt cập nhật.

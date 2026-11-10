@@ -37,12 +37,12 @@ Khi cần đào sâu lý thuyết hoặc công cụ cụ thể, tham khảo các
 3. Ghi rõ cột `Source`: `AI-Generated` hoặc `Human-Added`. Với mỗi mục do người thêm, cung cấp lý giải nguyên nhân AI bỏ sót (do prompt thiếu ngữ cảnh DOM, do giới hạn mô hình, hay do đặc thù nghiệp vụ).
 
 ### Bước 3: Thực Thi Kiểm Thử & Ghi Nhận Lỗi (Bug Logging)
-1. Chạy SUT cục bộ và kiểm tra từng tiêu chí.
-2. Đánh dấu `Passed` hoặc `Failed`.
+1. Chạy SUT cục bộ và kiểm tra từng tiêu chí. Đọc [quy tắc bằng chứng](references/checklist-evidence.md) trước khi thực thi hoặc tổng hợp kết quả.
+2. Chỉ đánh dấu `Passed` hoặc `Failed` sau khi quan sát hành vi trên SUT. Đọc code là cơ sở điều tra, không phải bằng chứng đã thực thi. Dùng `Not Run`, `Blocked` hoặc `Not Applicable` khi phù hợp và ghi lý do; xử lý các mục này trước khi nộp để đáp ứng yêu cầu Pass/Fail của HW03. Không tự mặc định kết quả hoặc nguồn Human-Added khi thiếu dữ liệu.
 3. Với mỗi mục `Failed`:
    - Ghi rõ nguyên nhân lỗi và hành vi thực tế vào cột `Notes`.
-   - Chụp ảnh màn hình làm bằng chứng.
-   - Tạo mã lỗi (ví dụ: `BUG-01`, `BUG-02`...) và đăng ký issue lên GitHub Issues.
+   - Chụp ảnh đúng trạng thái lỗi, lưu đường dẫn vào `evidence` của item và ghi môi trường/steps/expected/actual. Ảnh trang đăng nhập hoặc giỏ rỗng không chứng minh lỗi bảng sản phẩm hay bộ điều khiển số lượng.
+   - Tạo mã lỗi (ví dụ: `BUG-01`, `BUG-02`...). Khi người dùng cho phép đăng GitHub, đăng tất cả lỗi đã xác nhận kèm ảnh, không chỉ lỗi trọng yếu. Nếu chưa đăng, ghi trạng thái và link còn thiếu.
 4. Chạy script để xuất bảng tính Excel:
    ```bash
    node skills/gui-usability-testing/scripts/build_gui_checklist.js checklist_data.json --out-excel HW03_GUI_Checklist.xls --out-md checklist_summary.md

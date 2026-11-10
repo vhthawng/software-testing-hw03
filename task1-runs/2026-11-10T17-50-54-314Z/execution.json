@@ -1,0 +1,1107 @@
+{
+  "environment": {
+    "browser": "Google Chrome installed channel",
+    "browserVersion": "157.0.8103.39",
+    "os": "win32",
+    "osRelease": "10.0.26200",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "locale": "vi-VN",
+    "runId": "2026-11-10T17-50-54-314Z",
+    "web": "http://127.0.0.1:5173",
+    "admin": "http://127.0.0.1:5174",
+    "backend": "http://localhost:3000/api",
+    "userEmail": "hw03-1794333054315@example.test",
+    "method": "Playwright against real local API; no network mocks",
+    "database": "server startup automatically reseeds database.js; no extra reset invoked",
+    "extraFinding": {
+      "bug": "BUG-16",
+      "firstClickFeedback": 0,
+      "secondClickFeedback": true,
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/BUG16-after-first-click.png",
+        "task1-runs/2026-11-10T17-50-54-314Z/BUG16-after-second-click.png"
+      ]
+    }
+  },
+  "counts": {
+    "Failed": 18,
+    "Not Run": 3,
+    "Blocked": 8,
+    "Passed": 19
+  },
+  "results": [
+    {
+      "id": "CHK-IA01-01",
+      "criterion": "Nhất quán định dạng ký hiệu tiền tệ trên toàn bộ màn hình giỏ hàng và thanh toán (sử dụng đồng nhất '₫' hoặc 'VND').",
+      "status": "Failed",
+      "notes": "Checkout hiển thị cả nhãn (VND) và ký hiệu ₫ trên cùng màn hình.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-01.png"
+      ],
+      "startedAt": "2026-11-10T17:51:50.191Z",
+      "steps": "Đọc nhãn tổng tiền và đơn vị hiển thị khi Checkout có hàng.",
+      "finishedAt": "2026-11-10T17:51:52.185Z"
+    },
+    {
+      "id": "CHK-IA01-02",
+      "criterion": "Bảng danh sách quản lý sản phẩm Admin có tiêu đề cột rõ ràng, căn lề nhất quán (chữ căn trái, số tiền căn phải) theo Waghmare Grid Guidelines.",
+      "status": "Failed",
+      "notes": "Headers=Ảnh, Tên SP, Giá, Hành động; alignment=left, left, left, left. Giá phải căn phải theo tiêu chí gốc.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-02.png"
+      ],
+      "startedAt": "2026-11-10T17:50:57.423Z",
+      "steps": "Mở bảng sản phẩm có dữ liệu; đọc headings và căn lề computed.",
+      "observed": {
+        "headers": [
+          "Ảnh",
+          "Tên SP",
+          "Giá",
+          "Hành động"
+        ],
+        "align": [
+          "left",
+          "left",
+          "left",
+          "left"
+        ]
+      },
+      "finishedAt": "2026-11-10T17:50:57.915Z"
+    },
+    {
+      "id": "CHK-IA01-03",
+      "criterion": "Thẻ trạng thái đơn hàng (Order Status Badge) trong lịch sử đơn hàng sử dụng màu sắc phân biệt ngữ nghĩa rõ rệt theo chuẩn WCAG 2.2.",
+      "status": "Not Run",
+      "notes": "Pending badge={\"fg\":\"rgb(133, 77, 14)\",\"bg\":\"rgb(254, 249, 195)\"}; chưa đủ các trạng thái và phép đo WCAG để Pass toàn item.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:52:04.777Z",
+      "steps": "Quan sát badge trạng thái đơn pending thực.",
+      "finishedAt": "2026-11-10T17:52:04.818Z"
+    },
+    {
+      "id": "CHK-IA01-04",
+      "criterion": "Giao diện màn hình đăng ký Mobile tương thích kích thước màn hình điện thoại (Safe Area View, không bị tai thỏ che khuất).",
+      "status": "Blocked",
+      "notes": "Native Expo Go/điện thoại thật chưa kết nối. Playwright web không xác minh SafeArea, secureTextEntry hay bàn phím native.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-05",
+      "criterion": "Phân cấp typography rõ ràng (Heading h2 cho tiêu đề hồ sơ, h3 cho tiêu đề lịch sử đơn hàng).",
+      "status": "Failed",
+      "notes": "[{\"tag\":\"H2\",\"text\":\"Hồ sơ của bạn\"},{\"tag\":\"H2\",\"text\":\"Lịch sử đơn hàng\"}]",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-05.png"
+      ],
+      "startedAt": "2026-11-10T17:51:17.360Z",
+      "steps": "Đọc cấp heading thực của Hồ sơ và Lịch sử.",
+      "finishedAt": "2026-11-10T17:51:20.490Z"
+    },
+    {
+      "id": "CHK-IA01-06",
+      "criterion": "Trang Admin duy trì khoảng cách lề và padding đồng nhất giữa Sidebar điều hướng và vùng nội dung chính.",
+      "status": "Not Run",
+      "notes": "Đã mở Admin, còn cần đánh giá trực quan khoảng cách/padding theo thiết kế; không suy ra Pass từ tên class.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-07",
+      "criterion": "Hiển thị placeholder trực quan, mờ nhạt và biến mất khi người dùng bắt đầu gõ văn bản trong ô mã giảm giá.",
+      "status": "Passed",
+      "notes": "Placeholder tồn tại và không còn hiển thị khi có giá trị.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:52.185Z",
+      "steps": "Focus ô coupon và gõ SAVE10; đọc placeholder/value và :placeholder-shown.",
+      "finishedAt": "2026-11-10T17:51:52.240Z"
+    },
+    {
+      "id": "CHK-IA01-08",
+      "criterion": "Tên sản phẩm quá dài trong bảng Admin không làm tràn vỡ chiều rộng cột bảng.",
+      "status": "Failed",
+      "notes": "{\"width\":3207.387451171875,\"body\":1440,\"scroll\":1440,\"parent\":1104.800048828125}",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA01-08.png"
+      ],
+      "startedAt": "2026-11-10T17:50:59.074Z",
+      "steps": "Sau khi có tên dài 256 ký tự, đo tràn bảng và vùng nội dung.",
+      "observed": {
+        "width": 3207.387451171875,
+        "body": 1440,
+        "scroll": 1440,
+        "parent": 1104.800048828125
+      },
+      "finishedAt": "2026-11-10T17:50:59.235Z"
+    },
+    {
+      "id": "CHK-IA01-09",
+      "criterion": "Định dạng số tiền hiển thị có dấu chấm phân cách hàng nghìn rõ ràng theo chuẩn Việt Nam.",
+      "status": "Passed",
+      "notes": "locale vi-VN; kỳ vọng 4.000.000; kiểm tra Checkout (Profile kiểm tra cùng item sau tạo đơn). Profile có đơn 4.000.000 ₫.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:52.245Z",
+      "steps": "Đọc tiền Checkout và sau đó Profile có đơn ở bước sau.",
+      "finishedAt": "2026-11-10T17:51:52.318Z"
+    },
+    {
+      "id": "CHK-IA01-10",
+      "criterion": "Độ tương phản màu sắc của chữ thông báo lỗi màu đỏ trên nền nhạt (bg-red-100 text-red-700) đạt chuẩn WCAG 2.2 AA.",
+      "status": "Blocked",
+      "notes": "Native Expo Go/điện thoại thật chưa kết nối. Playwright web không xác minh SafeArea, secureTextEntry hay bàn phím native.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-11",
+      "criterion": "Hình ảnh thumbnail sản phẩm trong bảng Admin có kích thước đồng đều và có thuộc tính alt mô tả nội dung.",
+      "status": "Passed",
+      "notes": "Thumbnail thực có alt tên sản phẩm; đo kích thước đồng đều.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:50:57.915Z",
+      "steps": "Đọc alt và kích thước thumbnail trong bảng Admin có dữ liệu.",
+      "observed": [
+        {
+          "alt": "iPhone 15 Pro Max",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "alt": "Samsung Galaxy S24 Ultra",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "alt": "MacBook Pro M3",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "alt": "Tai nghe AirPods Pro 2",
+          "w": 48,
+          "h": 48
+        },
+        {
+          "alt": "Bàn phím cơ Keychron Q1",
+          "w": 48,
+          "h": 48
+        }
+      ],
+      "finishedAt": "2026-11-10T17:50:57.923Z"
+    },
+    {
+      "id": "CHK-IA01-12",
+      "criterion": "Không xuất hiện các giá trị lỗi rò rỉ kiểu dữ liệu như 'NaN', 'undefined', 'null' trong vùng thanh toán.",
+      "status": "Passed",
+      "notes": "Không rò rỉ NaN/undefined/null trong dữ liệu bình thường.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:52.240Z",
+      "steps": "Đọc text checkout với giỏ có bàn phím, tổng số bình thường.",
+      "finishedAt": "2026-11-10T17:51:52.245Z"
+    },
+    {
+      "id": "CHK-IA02-01",
+      "criterion": "Validation ô Số điện thoại trong form Profile phải chấp nhận định dạng số điện thoại Việt Nam hợp lệ bắt đầu bằng số 0 (10–11 chữ số).",
+      "status": "Failed",
+      "notes": "[{\"type\":\"alert\",\"message\":\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\",\"url\":\"http://127.0.0.1:5173/profile\",\"time\":\"2026-11-10T17:51:24.693Z\"}]",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-01.png"
+      ],
+      "startedAt": "2026-11-10T17:51:22.671Z",
+      "steps": "Nhập số 0912345678 và submit, quan sát dialog validation.",
+      "finishedAt": "2026-11-10T17:51:26.770Z"
+    },
+    {
+      "id": "CHK-IA02-02",
+      "criterion": "Ô 'Tổng tiền thanh toán' phải ở chế độ Chỉ đọc (Read-only), tuyệt đối không cho phép người dùng tự gõ sửa số tiền thanh toán.",
+      "status": "Failed",
+      "notes": "Ô tổng tiền cho sửa từ 4000000 thành 1000; coupon bị xóa khi onChange.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-02.png"
+      ],
+      "startedAt": "2026-11-10T17:51:58.318Z",
+      "steps": "Sửa ô tổng tiền 4000000 thành 1000 và kiểm tra input.",
+      "finishedAt": "2026-11-10T17:52:00.436Z"
+    },
+    {
+      "id": "CHK-IA02-03",
+      "criterion": "Form thêm/sửa sản phẩm Admin bắt buộc trường Tên sản phẩm không được để trống và không nhận chuỗi chỉ toàn khoảng trắng.",
+      "status": "Failed",
+      "notes": "Tên rỗng validity=false; submit whitespace HTTP 200; persisted=true",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-03.png"
+      ],
+      "startedAt": "2026-11-10T17:50:57.939Z",
+      "steps": "Thử submit tên rỗng rồi tên toàn khoảng trắng; kiểm tra API và bảng sau submit.",
+      "finishedAt": "2026-11-10T17:50:58.325Z"
+    },
+    {
+      "id": "CHK-IA02-04",
+      "criterion": "Ô Giá sản phẩm trong form Admin có ràng buộc số dương (> 0), ngăn chặn nhập giá âm hoặc giá bằng 0.",
+      "status": "Failed",
+      "notes": "Giá được lưu: [0,-1000]",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-04.png"
+      ],
+      "startedAt": "2026-11-10T17:50:58.326Z",
+      "steps": "Tạo hai sản phẩm riêng với giá 0 và -1000, kiểm tra lưu thật qua API.",
+      "finishedAt": "2026-11-10T17:50:58.777Z"
+    },
+    {
+      "id": "CHK-IA02-05",
+      "criterion": "Form Đăng ký trên Mobile App phải có trường 'Xác nhận mật khẩu' (Confirm Password) để phòng ngừa người dùng gõ nhầm mật khẩu theo chuẩn FR-01/FR-20.",
+      "status": "Blocked",
+      "notes": "Native Expo Go/điện thoại thật chưa kết nối. Playwright web không xác minh SafeArea, secureTextEntry hay bàn phím native.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-06",
+      "criterion": "Nút 'Áp dụng' mã giảm giá bị vô hiệu hóa (disabled) khi ô nhập mã đang để trống hoặc chỉ chứa khoảng trắng.",
+      "status": "Passed",
+      "notes": "disabled empty=true; whitespace=true",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:52.319Z",
+      "steps": "Kiểm tra disabled Apply với chuỗi rỗng và whitespace.",
+      "finishedAt": "2026-11-10T17:51:52.371Z"
+    },
+    {
+      "id": "CHK-IA02-07",
+      "criterion": "Thẻ nhãn Label trong form Profile liên kết chính xác với ô input thông qua thuộc tính htmlFor và id.",
+      "status": "Failed",
+      "notes": "Sau click label, phone focus=false",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-07.png"
+      ],
+      "startedAt": "2026-11-10T17:51:20.499Z",
+      "steps": "Click nhãn Số điện thoại; kiểm tra activeElement và liên kết label-control.",
+      "finishedAt": "2026-11-10T17:51:22.671Z"
+    },
+    {
+      "id": "CHK-IA02-08",
+      "criterion": "Dropdown Danh mục (Category) trong form Admin hiển thị danh sách các danh mục có sẵn và có giá trị mặc định hợp lệ.",
+      "status": "Passed",
+      "notes": "Danh mục Điện thoại, Laptop, Phụ kiện; value=1",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:50:57.923Z",
+      "steps": "Mở select danh mục trong form sản phẩm.",
+      "finishedAt": "2026-11-10T17:50:57.939Z"
+    },
+    {
+      "id": "CHK-IA02-09",
+      "criterion": "Ô nhập Mật khẩu trên Mobile có thuộc tính secureTextEntry ẩn ký tự khi gõ bảo mật.",
+      "status": "Blocked",
+      "notes": "Native Expo Go/điện thoại thật chưa kết nối. Playwright web không xác minh SafeArea, secureTextEntry hay bàn phím native.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-10",
+      "criterion": "Người dùng có thể chỉnh sửa số lượng sản phẩm trực tiếp (tăng/giảm/nhập số) ngay tại bảng Giỏ hàng.",
+      "status": "Failed",
+      "notes": "Dòng hàng có điều khiển: [\"Xóa\"]; số lượng là text.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-10.png"
+      ],
+      "startedAt": "2026-11-10T17:51:41.860Z",
+      "steps": "Giỏ có bàn phím; kiểm tra điều khiển số lượng trên dòng hàng.",
+      "finishedAt": "2026-11-10T17:51:43.933Z"
+    },
+    {
+      "id": "CHK-IA02-11",
+      "criterion": "Bàn phím ảo trên Mobile tự động hiển thị kiểu bàn phím email (keyboardType='email-address') khi focus vào ô Email.",
+      "status": "Blocked",
+      "notes": "Native Expo Go/điện thoại thật chưa kết nối. Playwright web không xác minh SafeArea, secureTextEntry hay bàn phím native.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-12",
+      "criterion": "Trường Email trong form Profile ở chế độ hiển thị chỉ đọc hoặc bị vô hiệu hóa vì không cho phép sửa qua UI theo FR-04.",
+      "status": "Passed",
+      "notes": "Email hiển thị disabled trên form thật.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:20.490Z",
+      "steps": "Thử tương tác input email Profile.",
+      "finishedAt": "2026-11-10T17:51:20.499Z"
+    },
+    {
+      "id": "CHK-IA02-13",
+      "criterion": "Nút bấm 'Xác Nhận Thanh Toán' có màu sắc mang ý nghĩa tiến hành (Xanh lá) theo chuẩn Affordance của Norman.",
+      "status": "Passed",
+      "notes": "background=rgb(22, 163, 74). Đây là tiêu chí thiết kế cũ, không phải quy định màu bắt buộc.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:52.371Z",
+      "steps": "Đọc màu computed của nút xác nhận.",
+      "finishedAt": "2026-11-10T17:51:52.385Z"
+    },
+    {
+      "id": "CHK-IA02-14",
+      "criterion": "Trường Tên sản phẩm trong form Admin giới hạn độ dài tối đa 255 ký tự (maxlength='255') theo đặc tả FR-15.",
+      "status": "Failed",
+      "notes": "Input nhận 256 ký tự; POST HTTP 200",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA02-14.png"
+      ],
+      "startedAt": "2026-11-10T17:50:58.778Z",
+      "steps": "Nhập tên 256 ký tự trong form, submit và đọc persisted value.",
+      "finishedAt": "2026-11-10T17:50:59.074Z"
+    },
+    {
+      "id": "CHK-IA03-01",
+      "criterion": "Mục 'Giỏ hàng' trên thanh điều hướng có huy hiệu đếm số lượng sản phẩm (Cart Badge Counter).",
+      "status": "Failed",
+      "notes": "Header text=Giỏ hàng; không có số đếm.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA03-01.png"
+      ],
+      "startedAt": "2026-11-10T17:51:43.933Z",
+      "steps": "Giỏ có sản phẩm; đọc nhãn link Giỏ hàng trên header.",
+      "finishedAt": "2026-11-10T17:51:46.029Z"
+    },
+    {
+      "id": "CHK-IA03-02",
+      "criterion": "Thanh điều hướng Sidebar của Admin có các tab chức năng rõ ràng (Dashboard, Users, Products, Categories, Orders, Coupons).",
+      "status": "Passed",
+      "notes": "Sáu tab đều mở đúng heading, không phải click-only.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:06.891Z",
+      "steps": "Click từng mục Sidebar và đợi heading đích.",
+      "finishedAt": "2026-11-10T17:51:17.045Z"
+    },
+    {
+      "id": "CHK-IA03-03",
+      "criterion": "Người dùng đã đăng nhập có thể truy cập nhanh vào trang Profile từ liên kết 'Chào, [Tên]' trên thanh Header.",
+      "status": "Passed",
+      "notes": "Link Chào điều hướng đúng /profile.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:28.901Z",
+      "steps": "Click link Chào trên header từ Home.",
+      "finishedAt": "2026-11-10T17:51:31.219Z"
+    },
+    {
+      "id": "CHK-IA03-04",
+      "criterion": "Thanh điều hướng dưới đáy (Bottom Navigation Bar) trên Mobile App cho phép chuyển đổi nhanh giữa Trang chủ, Giỏ hàng, Đơn hàng và Hồ sơ.",
+      "status": "Blocked",
+      "notes": "Native Expo Go/điện thoại thật chưa kết nối. Playwright web không xác minh SafeArea, secureTextEntry hay bàn phím native.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-05",
+      "criterion": "Nút '← Mua tiếp' tại Giỏ hàng đưa người dùng quay lại danh sách sản phẩm nhanh chóng.",
+      "status": "Passed",
+      "notes": "Mua tiếp quay về Home có danh sách sản phẩm.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:46.029Z",
+      "steps": "Click Mua tiếp và xác minh danh sách sản phẩm.",
+      "finishedAt": "2026-11-10T17:51:46.127Z"
+    },
+    {
+      "id": "CHK-IA03-06",
+      "criterion": "Thanh điều hướng có chỉ báo trạng thái trang hiện tại (Active state highlight).",
+      "status": "Failed",
+      "notes": "aria-current=null; link header không có chỉ báo active theo route. Phạm vi đo DOM, chưa kiểm định mọi tín hiệu thị giác.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA03-06.png"
+      ],
+      "startedAt": "2026-11-10T17:51:31.219Z",
+      "steps": "Quan sát trạng thái link Profile khi đang ở /profile.",
+      "finishedAt": "2026-11-10T17:51:33.281Z"
+    },
+    {
+      "id": "CHK-IA03-07",
+      "criterion": "Nút 'Đăng xuất' trong trang Admin xóa token phiên làm việc và quay lại màn hình Login quản trị.",
+      "status": "Passed",
+      "notes": "Token đã xóa, hiển thị Admin Login.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:52:27.686Z",
+      "steps": "Click Đăng xuất Admin, kiểm tra token và form login.",
+      "finishedAt": "2026-11-10T17:52:28.742Z"
+    },
+    {
+      "id": "CHK-IA03-08",
+      "criterion": "Tại màn hình Đăng ký Mobile, có liên kết 'Đã có tài khoản? Đăng nhập' chuyển nhanh sang form Login.",
+      "status": "Blocked",
+      "notes": "Native Expo Go/điện thoại thật chưa kết nối. Playwright web không xác minh SafeArea, secureTextEntry hay bàn phím native.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-09",
+      "criterion": "Sau khi thanh toán thành công, có liên kết rõ ràng cho phép người dùng quay lại Trang chủ.",
+      "status": "Passed",
+      "notes": "Quay lại Home có sản phẩm.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:52:02.524Z",
+      "steps": "Click Quay lại trang chủ sau checkout.",
+      "finishedAt": "2026-11-10T17:52:04.556Z"
+    },
+    {
+      "id": "CHK-IA03-10",
+      "criterion": "Không có liên kết chết hoặc dẫn đến trang lỗi 404 trong toàn bộ 4 phân hệ.",
+      "status": "Not Run",
+      "notes": "Chưa duyệt hết liên kết của cả 4 phân hệ, đặc biệt native mobile; các liên kết web đã chạy chỉ là phạm vi con.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-01",
+      "criterion": "Nút 'Hủy đơn' trong bảng Lịch sử đơn hàng phải có hộp thoại xác nhận (Confirm dialog) trước khi gọi API hủy đơn.",
+      "status": "Failed",
+      "notes": "Đơn chuyển Đã hủy; dialog=[{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\",\"url\":\"http://127.0.0.1:5173/profile\",\"time\":\"2026-11-10T17:52:06.841Z\"}]; không có confirm.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-01.png"
+      ],
+      "startedAt": "2026-11-10T17:52:04.824Z",
+      "steps": "Click Hủy đơn test pending; đếm confirm và xác minh trạng thái sau API.",
+      "finishedAt": "2026-11-10T17:52:08.880Z"
+    },
+    {
+      "id": "CHK-IA04-02",
+      "criterion": "Nút 'Sửa' sản phẩm trong bảng Admin phải mở modal điền sẵn dữ liệu và cập nhật đúng sản phẩm được chọn mà không làm sai lệch các sản phẩm khác.",
+      "status": "Failed",
+      "notes": "Retest harness: chọn đúng nút Lưu sản phẩm thay vì Hủy sửa. Sau sửa fixture riêng, 6/6 dòng UI đổi cùng tên. API chỉ 1 sản phẩm đổi tên; phân biệt lỗi state UI và persistence.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-02-retest.png"
+      ],
+      "startedAt": "2026-11-10T17:50:59.515Z",
+      "steps": "Bấm Sửa ở fixture riêng, đổi tên, kiểm tra các dòng không được chọn.",
+      "finishedAt": "2026-11-10T17:53:04.998Z",
+      "previousAttempts": [
+        {
+          "id": "CHK-IA04-02",
+          "criterion": "Nút 'Sửa' sản phẩm trong bảng Admin phải mở modal điền sẵn dữ liệu và cập nhật đúng sản phẩm được chọn mà không làm sai lệch các sản phẩm khác.",
+          "status": "Blocked",
+          "notes": "Lỗi harness/điều kiện, chưa kết luận lỗi SUT: page.waitForResponse: Timeout 7000ms exceeded while waiting for event \"response\"",
+          "evidence": [
+            "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-02-blocked.png"
+          ],
+          "startedAt": "2026-11-10T17:50:59.515Z",
+          "steps": "Bấm Sửa ở fixture riêng, đổi tên, kiểm tra các dòng không được chọn.",
+          "finishedAt": "2026-11-10T17:51:06.782Z"
+        }
+      ],
+      "observed": {
+        "names": [
+          "HW03 retest changed only selected",
+          "HW03 retest changed only selected",
+          "HW03 retest changed only selected",
+          "HW03 retest changed only selected",
+          "HW03 retest changed only selected",
+          "HW03 retest changed only selected"
+        ]
+      }
+    },
+    {
+      "id": "CHK-IA04-03",
+      "criterion": "Thao tác xóa sản phẩm khỏi giỏ hàng phải hiển thị hộp thoại xác nhận (Confirm dialog).",
+      "status": "Failed",
+      "notes": "Dòng hàng biến mất ngay, không có confirm. Đây là đối chiếu tiêu chí cũ về usability.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-03.png"
+      ],
+      "startedAt": "2026-11-10T17:52:13.211Z",
+      "steps": "Xóa dòng hàng thật trong Cart; xác minh empty state và dialog.",
+      "finishedAt": "2026-11-10T17:52:17.188Z"
+    },
+    {
+      "id": "CHK-IA04-04",
+      "criterion": "Khi người dùng chưa đăng nhập bấm thanh toán, hệ thống phải hiển thị thông báo inline/toast thay vì gọi window.alert() làm đơ trình duyệt.",
+      "status": "Failed",
+      "notes": "Modal alert=Bạn cần đăng nhập để thanh toán!; sau đó đến /login. Fail theo tiêu chí cũ yêu cầu inline/toast, không phải lỗi access control.",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-04.png"
+      ],
+      "startedAt": "2026-11-10T17:52:23.658Z",
+      "steps": "Chưa login, click checkout với giỏ có hàng; ghi dialog và route.",
+      "finishedAt": "2026-11-10T17:52:27.686Z"
+    },
+    {
+      "id": "CHK-IA04-05",
+      "criterion": "Hiển thị thông báo phản hồi màu xanh rõ ràng và cập nhật số tiền tiết kiệm khi áp dụng mã giảm giá thành công.",
+      "status": "Failed",
+      "notes": "Xác Nhận Đơn Hàng\nSản phẩm:\nBàn phím cơ Keychron Q1 x 1 — 4.000.000 ₫\nTổng tiền thanh toán (VND):\nMã Giảm Giá\nÁp dụng\n\n✅ Áp dụng thành công! Giảm 10%\n\nTiết kiệm: -36.000.000 ₫\n\nThành tiền: 40.000.000 ₫\n\nTổng thanh toán: 40.000.000 ₫\nXác Nhận Thanh Toán",
+      "evidence": [
+        "task1-runs/2026-11-10T17-50-54-314Z/CHK-IA04-05.png"
+      ],
+      "startedAt": "2026-11-10T17:51:54.335Z",
+      "steps": "Nhập SAVE10 trên đơn 4 triệu, đợi phản hồi thật và kiểm tra tiền giảm.",
+      "finishedAt": "2026-11-10T17:51:58.318Z"
+    },
+    {
+      "id": "CHK-IA04-06",
+      "criterion": "Hiển thị thông báo phản hồi màu đỏ nêu rõ lý do khi áp dụng mã giảm giá không hợp lệ hoặc đã hết hạn (EXPIRED).",
+      "status": "Passed",
+      "notes": "API từ chối EXPIRED; hiển thị thông báo hết hạn.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:52.385Z",
+      "steps": "Nhập EXPIRED, đợi phản hồi API thật và thông báo.",
+      "finishedAt": "2026-11-10T17:51:54.334Z"
+    },
+    {
+      "id": "CHK-IA04-07",
+      "criterion": "Hiển thị trạng thái tải ('Đang xử lý...') trên nút thanh toán trong lúc đang gửi yêu cầu tạo đơn hàng.",
+      "status": "Passed",
+      "notes": "Bắt được trạng thái Đang xử lý trên request thật.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:52:00.453Z",
+      "steps": "Gửi checkout API thật; quan sát loading trong lúc request chưa xong, không delay/mock.",
+      "finishedAt": "2026-11-10T17:52:02.520Z"
+    },
+    {
+      "id": "CHK-IA04-08",
+      "criterion": "Màn hình Giỏ hàng rỗng (Empty State) hiển thị thông điệp thân thiện và nút kêu gọi hành động tiếp tục mua sắm.",
+      "status": "Passed",
+      "notes": "Có empty message và CTA mở Home.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:52:17.188Z",
+      "steps": "Quan sát giỏ rỗng và click CTA.",
+      "finishedAt": "2026-11-10T17:52:17.294Z"
+    },
+    {
+      "id": "CHK-IA04-09",
+      "criterion": "Hiển thị phản hồi thông báo khi cập nhật hồ sơ cá nhân thành công.",
+      "status": "Passed",
+      "notes": "Dialog=Cập nhật thành công!; persisted phone=912345678. Chỉ kiểm tra phản hồi lưu, không coi workaround là phone VN hợp lệ.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:26.776Z",
+      "steps": "Dùng phone 912345678 (workaround), lưu tên/địa chỉ test; xác nhận dialog thành công.",
+      "finishedAt": "2026-11-10T17:51:28.900Z"
+    },
+    {
+      "id": "CHK-IA04-10",
+      "criterion": "Hiển thị màn hình kết thúc quy trình trang trọng ('Thanh toán thành công!') khi hoàn tất đơn hàng theo nguyên tắc Closure của Shneiderman.",
+      "status": "Passed",
+      "notes": "Có heading thành công và lời cảm ơn sau POST checkout thật.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:52:02.520Z",
+      "steps": "Quan sát màn hình sau đơn thật.",
+      "finishedAt": "2026-11-10T17:52:02.524Z"
+    },
+    {
+      "id": "CHK-IA04-11",
+      "criterion": "Hiển thị thông báo phản hồi lỗi nổi bật (banner màu đỏ) khi đăng ký thất bại trên Mobile App.",
+      "status": "Blocked",
+      "notes": "Native Expo Go/điện thoại thật chưa kết nối. Playwright web không xác minh SafeArea, secureTextEntry hay bàn phím native.",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-12",
+      "criterion": "Bảng Lịch sử đơn hàng hiển thị trạng thái rỗng thân thiện khi người dùng chưa có đơn hàng nào.",
+      "status": "Passed",
+      "notes": "Empty state lịch sử hiển thị cho tài khoản test mới.",
+      "evidence": [],
+      "startedAt": "2026-11-10T17:51:26.771Z",
+      "steps": "Tài khoản mới chưa có đơn: quan sát empty state.",
+      "finishedAt": "2026-11-10T17:51:26.775Z"
+    }
+  ],
+  "extraFinding": {
+    "bug": "BUG-16",
+    "firstClickFeedback": 0,
+    "secondClickFeedback": true,
+    "evidence": [
+      "task1-runs/2026-11-10T17-50-54-314Z/BUG16-after-first-click.png",
+      "task1-runs/2026-11-10T17-50-54-314Z/BUG16-after-second-click.png"
+    ]
+  },
+  "dialogs": [
+    {
+      "type": "alert",
+      "message": "Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.",
+      "url": "http://127.0.0.1:5173/profile",
+      "time": "2026-11-10T17:51:24.693Z"
+    },
+    {
+      "type": "alert",
+      "message": "Cập nhật thành công!",
+      "url": "http://127.0.0.1:5173/profile",
+      "time": "2026-11-10T17:51:28.880Z"
+    },
+    {
+      "type": "alert",
+      "message": "Hủy đơn thành công!",
+      "url": "http://127.0.0.1:5173/profile",
+      "time": "2026-11-10T17:52:06.841Z"
+    },
+    {
+      "type": "alert",
+      "message": "Bạn cần đăng nhập để thanh toán!",
+      "url": "http://127.0.0.1:5173/cart",
+      "time": "2026-11-10T17:52:25.560Z"
+    }
+  ],
+  "network": [
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/login",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/login",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/users",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/admin/orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/categories",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/coupons",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products/5",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products/5",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/apply-coupon",
+      "status": 400
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/apply-coupon",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "url": "http://localhost:3000/api/checkout",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "url": "http://localhost:3000/api/orders/1/cancel",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/orders/my-orders",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/users/me",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "url": "http://localhost:3000/api/products?search=",
+      "status": 200
+    }
+  ],
+  "cleanup": {
+    "deletedSyntheticProductIds": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "retained": "Dedicated synthetic user and its canceled test order retained for audit"
+  }
+}

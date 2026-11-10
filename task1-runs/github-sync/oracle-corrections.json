@@ -1,0 +1,20 @@
+{
+  "previousCounts": {
+    "Failed": 21,
+    "Passed": 27
+  },
+  "currentCounts": {
+    "Passed": 26,
+    "Failed": 22
+  },
+  "changes": [
+    {
+      "item": "CHK-IA01-05",
+      "reason": "FR-21 h1 basis replaces self-imposed h2/h3; still Failed"
+    },
+    {
+      "item": "CHK-IA02-13",
+      "reason": "FR-21 requires blue; observed green => Failed"
+    }
+  ]
+}

@@ -6,7 +6,7 @@ Võ Hữu Thắng — MSSV 23120355. Cập nhật 11/11/2026.
 
 48 items phủ IA-01/02/03/04 theo phân bổ 12/14/10/12. Nguồn dữ liệu lịch sử ghi 33 AI-generated và 15 Human-added; mỗi Human-added có lý do AI bỏ sót. Các ghi nhận này được giữ theo dữ liệu sinh viên, không tự gán phần mới của AI thành Human-added.
 
-Kết quả hiện hành **26 Passed / 22 Failed (54,17% / 45,83%)**. 5 Passed do sinh viên xác nhận thủ công; các mục còn lại có log Playwright hoặc ảnh native. Đọc code chỉ hỗ trợ điều tra, không được ghi thay cho thao tác người dùng. Nguồn kỳ vọng được rà với [SRS SUT](eshop-sut/README.md): FR-01 có Confirm Password, FR-07 có +/- và confirm xóa, FR-21 có h1 và màu xanh dương cho hành động tích cực, FR-23 có badge/active, FR-24 có phản hồi thêm giỏ. Đề HW03 dùng IA thay mã FR cho các khía cạnh; các mã FR mở rộng là mã trong SRS SUT, không tự thêm vào đề HW03.
+Kết quả hiện hành **26 Passed / 22 Failed (54,17% / 45,83%)**. 5 Passed do sinh viên xác nhận thủ công; các mục còn lại có log Playwright hoặc ảnh native. Đọc code chỉ hỗ trợ điều tra, không được ghi thay cho thao tác người dùng. Nguồn kỳ vọng được rà với [SRS SUT](https://github.com/ttbhanh/eshop-sut/blob/85af3ba875c88283615e22cb108f13e2fccaf0e9/README.md): FR-01 có Confirm Password, FR-07 có +/- và confirm xóa, FR-21 có h1 và màu xanh dương cho hành động tích cực, FR-23 có badge/active, FR-24 có phản hồi thêm giỏ. Đề HW03 dùng IA thay mã FR cho các khía cạnh; các mã FR mở rộng là mã trong SRS SUT, không tự thêm vào đề HW03.
 
 Hai điều chỉnh oracle: mục IA01-05 kiểm tra h1 theo SRS, không ép Lịch sử phải h3; IA02-13 nút Checkout xanh lá chuyển Fail vì SRS yêu cầu xanh dương. Bản tổng hợp 27/21 trước đây là lịch sử trước điều chỉnh oracle.
 
