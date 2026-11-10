@@ -7,6 +7,7 @@ const files = [
   'HW03_Cross_Platform_Report.md', 'audit/chat-history.md', 'audit/chat-history.json',
   'submission.config.json', 'scripts/package_submission.ps1', 'scripts/package_submission.sh',
   'scripts/submission_manifest.cjs', 'scripts/update_submission_docs.cjs',
+  'scripts/check_relative_paths.cjs',
   'scripts/clean_submission_reports.cjs', 'scripts/publish_submission_docs.cjs'
 ];
 const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || (() => {

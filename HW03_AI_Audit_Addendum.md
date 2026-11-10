@@ -4,7 +4,7 @@
 
 - Công cụ: Codex.
 - Nguồn: chat “Chấm điểm bài làm HW03”, mã 01a1c672-b31d-7e01-89ca-0f5fa5afefec.
-- [Prompt và phản hồi nguyên văn](audit/chat-history.md) · [JSON](audit/chat-history.json).
+- [Prompt và phản hồi](audit/chat-history.md) · [JSON](audit/chat-history.json). Đường dẫn tệp cục bộ được chuẩn hóa sang dạng tương đối.
 - Thời gian trong lịch sử lấy từ ứng dụng, hiển thị theo Asia/Bangkok; ghi theo thời điểm bắt đầu lượt trao đổi.
 
 ## Đầu ra áp dụng

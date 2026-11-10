@@ -29,6 +29,7 @@ const required = [
   'interview.md', 'submission.config.json', 'audit/chat-history.md', 'audit/chat-history.json',
   'skills/gui-usability-testing', 'skills/playwright-skill',
   'scripts/package_submission.ps1', 'scripts/package_submission.sh', 'scripts/submission_manifest.cjs',
+  'scripts/check_relative_paths.cjs',
   'scripts/run_task1_local.cjs', 'scripts/run_task3_browser.cjs', 'scripts/retest_task1_admin.cjs',
   'scripts/start_task1_local.ps1', 'scripts/start_mobile_local.ps1', 'scripts/watermark_task3_manual.py',
   'scripts/update_submission_docs.cjs', 'scripts/clean_submission_reports.cjs',

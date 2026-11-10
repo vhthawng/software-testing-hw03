@@ -10,6 +10,8 @@ if ($CheckFilesOnly -and -not $ValidateOnly) {
     throw "-CheckFilesOnly is available only with -ValidateOnly."
 }
 $root = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot ".."))
+& node (Join-Path $PSScriptRoot "check_relative_paths.cjs")
+if ($LASTEXITCODE -ne 0) { throw "Submission contains absolute local paths." }
 $manifestText = & node (Join-Path $PSScriptRoot "submission_manifest.cjs")
 $manifestExit = $LASTEXITCODE
 if (-not $manifestText) { throw "Could not build submission manifest." }

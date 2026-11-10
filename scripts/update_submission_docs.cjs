@@ -69,18 +69,25 @@ powershell -ExecutionPolicy Bypass -File scripts/package_submission.ps1
 Git Bash/WSL: **bash scripts/package_submission.sh --validate-only** để kiểm tra, hoặc **bash scripts/package_submission.sh** để đóng gói. Script đọc điểm từ [cấu hình nộp bài](submission.config.json), lấy Excel và bằng chứng hiện hành, kiểm tra liên kết và không ghi đè ZIP đã có. Dùng tên đầu ra khác hoặc tùy chọn **-Force** / **--force** khi muốn thay thế bản cũ.
 `);
 const chat = JSON.parse(read('audit/chat-history.json'));
+// Normalize local paths in the submission copy of the conversation.
+for (const message of chat.messages) {
+  message.text = message.text.replace(/(?:file:\/\/\/)?D:[\\/]+university[\\/]+software-testing[\\/]+HW03[\\/]+/gi, './');
+}
+write('audit/chat-history.json', JSON.stringify(chat, null, 2));
+const chatMarkdown = text => text.replace(/\]\(\.\/([^)]*)\)/g, '](../$1)');
 const date = value => new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Bangkok', dateStyle: 'short', timeStyle: 'medium' }).format(new Date(value));
 write('audit/chat-history.md', `# Lịch sử hội thoại – Chấm điểm bài làm HW03
 
-Nguồn: chat Codex ${chat.threadId}. Múi giờ: Asia/Bangkok (UTC+7). Thời gian ghi ở mỗi mục là thời điểm bắt đầu lượt trao đổi do ứng dụng cung cấp, không phải thời điểm riêng của từng tin nhắn. Nội dung gồm tin nhắn người dùng và phản hồi của trợ lý; giữ cả nhận xét ban đầu và các đính chính sau đó. Lịch sử được lấy đến thời điểm cập nhật phụ lục này.
+Nguồn: chat Codex ${chat.threadId}. Múi giờ: Asia/Bangkok (UTC+7). Thời gian ghi ở mỗi mục là thời điểm bắt đầu lượt trao đổi do ứng dụng cung cấp, không phải thời điểm riêng của từng tin nhắn. Nội dung gồm tin nhắn người dùng và phản hồi của trợ lý; giữ cả nhận xét ban đầu và các đính chính sau đó. Đường dẫn tệp cục bộ được chuyển sang dạng tương đối trong bản nộp. Lịch sử được lấy đến thời điểm cập nhật phụ lục này.
 
 [Dữ liệu JSON](chat-history.json)
 
-${chat.messages.map((m, i) => `## ${i + 1}. ${m.role === 'user' ? 'Người dùng' : 'Codex'} — ${date(m.turnStartedAt)}${m.phase === 'commentary' ? ' (cập nhật tiến độ)' : ''}\n\n${m.text.trim()}`).join('\n\n---\n\n')}`);
+${chat.messages.map((m, i) => `## ${i + 1}. ${m.role === 'user' ? 'Người dùng' : 'Codex'} — ${date(m.turnStartedAt)}${m.phase === 'commentary' ? ' (cập nhật tiến độ)' : ''}\n\n${chatMarkdown(m.text.trim())}`).join('\n\n---\n\n')}`);
 let audit = read('HW03_AI_Audit_Report.md');
 const critique = audit.split('## 2. AI Critique (200–300 từ)')[1].split('## 3.')[0].trim();
 const historical = audit.match(/^\| STT \|[^\n]*(?:\n\|[^\n]*)*/m)[0].trim()
   .replace('Prompt Nguyên Văn & Công Cụ', 'Prompt trích theo nhật ký lịch sử & Công cụ')
+  .replace(/file:\/\/\/[a-z]:\/\.{3}/gi, './...')
   .replace('với cần được đối chiếu độc lập', 'và đối chiếu độc lập');
 write('HW03_AI_Audit_Report.md', `# AI Audit Report – HW03
 
@@ -111,7 +118,7 @@ Các nhãn đánh giá thể hiện phản biện tại thời điểm trao đ�
 
 ## 4. Nhật ký rà soát – Codex
 
-[Lịch sử hội thoại người dùng và Codex](audit/chat-history.md) ghi nguyên văn nội dung lấy từ ứng dụng, theo thứ tự trao đổi, kèm thời gian bắt đầu từng lượt. [Bản JSON](audit/chat-history.json) giữ vai trò, nội dung và mã lượt để đối chiếu. [Phụ lục kết quả tương tác](HW03_AI_Audit_Addendum.md) liên kết các đầu ra của lượt rà soát.
+[Lịch sử hội thoại người dùng và Codex](audit/chat-history.md) ghi nội dung lấy từ ứng dụng, theo thứ tự trao đổi, kèm thời gian bắt đầu từng lượt; đường dẫn tệp cục bộ được chuẩn hóa sang dạng tương đối. [Bản JSON](audit/chat-history.json) giữ vai trò, nội dung và mã lượt để đối chiếu. [Phụ lục kết quả tương tác](HW03_AI_Audit_Addendum.md) liên kết các đầu ra của lượt rà soát.
 
 ## 5. Phản biện và áp dụng đầu ra AI
 
@@ -129,7 +136,7 @@ write('HW03_AI_Audit_Addendum.md', `# Phụ lục AI Audit – Codex
 
 - Công cụ: Codex.
 - Nguồn: chat “Chấm điểm bài làm HW03”, mã ${chat.threadId}.
-- [Prompt và phản hồi nguyên văn](audit/chat-history.md) · [JSON](audit/chat-history.json).
+- [Prompt và phản hồi](audit/chat-history.md) · [JSON](audit/chat-history.json). Đường dẫn tệp cục bộ được chuẩn hóa sang dạng tương đối.
 - Thời gian trong lịch sử lấy từ ứng dụng, hiển thị theo Asia/Bangkok; ghi theo thời điểm bắt đầu lượt trao đổi.
 
 ## Đầu ra áp dụng
