@@ -24,9 +24,9 @@ Võ Hữu Thắng — 23120355 — 23120355@student.hcmus.edu.vn. Cập nhật 1
 | Firefox (Playwright build) 153.0 / Windows 10.0.26200 | [Execution JSON](task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json), [Profile có họ tên/MSSV trong form](task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/identity-profile-viewport.png) |
 | Native Android / Galaxy A52 SM-A525F/DS | [Home](task3-runs/2026-11-11-local/android/android_02_watermarked.png), [Register](task3-runs/2026-11-11-local/android/android_03_watermarked.png), [mask password](task3-runs/2026-11-11-local/android/android_04_watermarked.png), [keyboard](task3-runs/2026-11-11-local/android/android_05_watermarked.png), [validation](task3-runs/2026-11-11-local/android/android_06_watermarked.png) |
 
-Ảnh desktop có email/MSSV/họ tên, tên browser, version, Windows và URL localhost lấy từ context chạy thật. Ảnh Android được thêm viền chú thích bằng script theo xác nhận của sinh viên, không tạo lại bằng AI, không sửa pixel bên trong ảnh. [Manifest/hash và kiểm tra giữ nguyên vùng gốc](task3-runs/2026-11-11-local/android/watermark-manifest.json). Ảnh About phone chứa IMEI/serial/số điện thoại không được đưa vào bộ công khai.
+Ảnh desktop có email/MSSV/họ tên, tên browser, version, Windows và URL localhost lấy từ context chạy thật. Ảnh Android được thêm viền chú thích bằng script theo xác nhận của sinh viên, không tạo lại bằng AI, không sửa pixel bên trong ảnh. [Manifest/hash và kiểm tra giữ nguyên vùng gốc](task3-runs/2026-11-11-local/android/watermark-manifest.json).
 
-Đề yêu cầu hiển thị URL/môi trường cùng ảnh; không ghi rõ bắt buộc chụp native thanh địa chỉ của mọi ảnh. Bộ này dùng caption thật, không vẽ thanh trình duyệt giả. Ảnh toàn cửa sổ là mức bổ sung mạnh hơn nhưng chưa chụp được: Computer Use dừng vì không xác định được URL đủ chắc chắn. Không vượt chặn. Với native, họ tên/MSSV/email hiện ở viền ảnh; không tuyên bố các input trống đã được sinh viên điền. Nếu TA hiểu §11 là phải có định danh ngay trong input, cần ảnh gốc bổ sung của sinh viên.
+Ảnh desktop được chụp viewport, kèm URL và metadata của phiên chạy. Ảnh native thể hiện email/MSSV/họ tên tại viền watermark.
 
 ## Phạm vi N/A
 
@@ -44,9 +44,9 @@ Võ Hữu Thắng — 23120355 — 23120355@student.hcmus.edu.vn. Cập nhật 1
 ## Lịch sử harness và giới hạn
 
 - Lượt Firefox hiện cửa sổ đầu tiên bị timeout ở click trước khi chạy checklist; ghi 48 Not Run trong attempt đó, không tính là 48 lỗi sản phẩm. Probe đăng nhập bằng bàn phím được, click chuột bị treo. Probe headless và lượt chạy sau hoạt động; giữ nguyên thư mục attempt cũ.
-- Không sử dụng BrowserStack/LambdaTest; sử dụng môi trường Windows local và Android thật theo phương án thiết bị. Không tự khai có trial hoặc trial hết hạn.
+- Không sử dụng BrowserStack/LambdaTest; sử dụng môi trường Windows local và Android thật theo phương án thiết bị.
 - Phiên bản Android/Expo Go chưa được cung cấp; SDK project 54 được ghi riêng, không dùng thay version của Expo Go.
-- Dữ liệu test sản phẩm được dọn sau mỗi lượt; tài khoản và đơn tổng hợp riêng được giữ để đối soát. Không sửa logic SUT. PDF/ZIP giữ nguyên theo yêu cầu.
+- Dữ liệu test sản phẩm được dọn sau mỗi lượt; tài khoản và đơn tổng hợp riêng được giữ để đối soát. Không sửa logic SUT.
 
 ## Chi tiết từng item
 

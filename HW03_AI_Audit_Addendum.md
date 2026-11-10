@@ -1,19 +1,22 @@
-# AI Audit Addendum – lượt rà soát và đồng bộ
+# Phụ lục AI Audit – Codex
 
-Công cụ AI: Codex. Ngày rà soát/cập nhật: 11/11/2026 (Asia/Bangkok). Không gán tên model không có dữ liệu xác nhận. Các giờ cụ thể xem log thực thi; thời điểm từng prompt không có export thì ghi chưa có, không suy từ file mtime.
+## Hội thoại
 
-| Prompt người dùng trong chat | Output/tác vụ AI thực tế | Human review / giới hạn |
-| --- | --- | --- |
-| “Hãy chấm điểm bài làm của tôi dựa trên yêu cầu ...” | Đọc ZIP, kiểm tra tài liệu, ảnh, dữ liệu và Issues | Đánh giá ban đầu có phần yêu cầu bằng chứng quá cứng; đã đính chính việc không cần quay mặt, không tự coi thiếu video là người giả |
-| “Nếu được hãy khởi động local và chạy kiểm tra đi.” | Chạy Chrome thật với API local, log/ảnh trong task1-runs; sửa harness giữ lịch sử lần Blocked | Không sửa lỗi SUT. Backend startup tự seed; chuyển sang runtime riêng |
-| “Khởi động mobile luôn và hướng dẫn tôi cách kết nối...” | Cài dependencies, đổi API LAN, chạy Expo SDK54 và kiểm tra Android bundle | Điện thoại do sinh viên thao tác, không ghi là AI tự điều khiển |
-| “tôi đã để tất cả trong manual” | Đọc 7 ảnh, ghi safe area/confirm/masking/contrast và giới hạn | Không suy phiên bản Android/Expo Go; không công bố About phone chứa định danh riêng tư |
-| “các phần not run đó là passed hết, tôi đã xác nhận...” | Chuyển 5 mục sang Passed theo xác nhận sinh viên, giữ provenance | Không gọi là Playwright đã xác minh |
-| “7 người dùng ... là 7 người dùng thật tôi xin cam đoan...” | Ghi nhận xác nhận người thật; giữ nguyên roster/notes/SUS | Không dựng video, pilot, timestamp hoặc commit cũ |
-| “Đồng bộ báo cáo với kết quả thật, bug report, điều chỉnh github issues luôn” | Đối chiếu SRS, sửa oracle, sinh tài liệu và đồng bộ Issues từ danh mục chung | PDF/ZIP giữ nguyên theo chỉ định; log Git phản ánh lịch sử thật |
+- Công cụ: Codex.
+- Nguồn: chat “Chấm điểm bài làm HW03”, mã 01a1c672-b31d-7e01-89ca-0f5fa5afefec.
+- [Prompt và phản hồi nguyên văn](audit/chat-history.md) · [JSON](audit/chat-history.json).
+- Thời gian trong lịch sử lấy từ ứng dụng, hiển thị theo Asia/Bangkok; ghi theo thời điểm bắt đầu lượt trao đổi.
 
-Đây là phụ lục tóm tắt các tương tác có trong chat hiện tại, không thay thế transcript đầy đủ của mọi phiên AI trước đây. Prompt được trích đoạn và ghi rõ phạm vi; không tự dựng output hội thoại bị thiếu. Script, JSON, ảnh và trạng thái GitHub là bằng chứng đầu ra, không phải bằng chứng người tham gia đã phát ngôn thêm điều gì.
+## Đầu ra áp dụng
 
-## Bổ sung Task 3 (11/11/2026)
+| Nhóm tương tác | Đầu ra |
+| --- | --- |
+| Rà soát yêu cầu, checklist và skill | [Checklist](HW03_GUI_Checklist_Summary.md), [JSON](checklist_data.json), [skill](skills/gui-usability-testing/SKILL.md) |
+| Khởi động và kiểm thử local | [Runner Task 1](scripts/run_task1_local.cjs), [runner Task 3](scripts/run_task3_browser.cjs) |
+| Kết nối Expo Go và kiểm tra Android | [Script khởi động](scripts/start_mobile_local.ps1), [ma trận thực thi](task3-runs/2026-11-11-local/matrix.json) |
+| Đồng bộ dữ liệu usability | [Báo cáo usability](HW03_Usability_Evaluation_Report.md), [SUS](HW03_SUS_Report.md) |
+| Rà lại oracle và bug | [Bug report](HW03_Bug_Report.md), [Issues](https://github.com/vhthawng/software-testing-hw03/issues) |
+| Hoàn thiện Task 3 | [Cross-platform report](HW03_Cross_Platform_Report.md), [Excel](HW03_Cross_Platform_Matrix.xlsx), [watermark manifest](task3-runs/2026-11-11-local/android/watermark-manifest.json) |
+| Cập nhật README, Audit và đóng gói | [README](README.md), [Audit](HW03_AI_Audit_Report.md), [script đóng gói](scripts/package_submission.ps1) |
 
-Prompt: “vậy giải quyết task 3 trước đi”. Sinh viên xác nhận “Dùng script, giữ nguyên ảnh gốc” khi được hỏi cách watermark ảnh Android. Output: thực thi 40 mục web trên Chrome và Firefox headless; kiểm tra đủ năm badge, màu/contrast, layout và routes; lập ma trận 91 lượt áp dụng, 48 item thiết kế, N/A theo scope; watermark native giữ nguyên pixel vùng gốc. Lịch sử lỗi Firefox headed và việc Computer Use dừng chụp toàn cửa sổ được lưu trong harness-history.json. Không dùng nguồn tìm kiếm trên mạng để khẳng định nguyên nhân lỗi harness; chỉ báo cáo chẩn đoán thực tế. Không sửa PDF/ZIP.
+Kết quả hiện hành: 48 item, 26 Passed / 22 Failed; 18 bug và 5 nhận xét UX. Task 3 có 91 lượt đánh giá áp dụng: Chrome 21 Passed / 19 Failed, Firefox 21 / 19, Android 7 / 4. SUS của bảy người có mean 30,36/100.

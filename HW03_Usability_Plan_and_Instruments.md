@@ -34,12 +34,10 @@ Kỳ đánh giá này tập trung giải đáp 4 câu hỏi cốt lõi:
 ### 5. Phương pháp & Thiết kế kiểm thử (Methodology)
 * **Hình thức:** Đánh giá có điều phối viên (Moderated Usability Testing).
 * **Giao thức:** Áp dụng phương pháp suy nghĩ thành tiếng (**Think-Aloud Protocol**). Người tham gia được khuyến khích liên tục nói ra những gì họ đang nhìn thấy, đang tìm kiếm, cảm xúc phân vân hoặc bực bội trong suốt quá trình thao tác.
-* **Phiên thử nghiệm (Pilot Session):** Tiến hành 01 phiên thử nghiệm trước (với 1 người) để căn chỉnh thời lượng, kiểm tra kịch bản có gây hiểu nhầm không, và bảo đảm môi trường web hoạt động ổn định trước khi chạy 7 phiên chính thức.
 
 ### 6. Môi trường & Thiết bị (Environment & Setup)
 * **Thiết bị:** Máy tính cá nhân (Laptop), chuột quang, màn hình độ phân giải Full HD (1920x1080).
 * **Trình duyệt:** Google Chrome / Mozilla Firefox truy cập vào SUT EShop (`http://localhost:5173`).
-* **Công cụ thu thập:** OBS Studio / Phần mềm quay màn hình có thu âm giọng nói (với sự đồng ý của người tham gia) để trích xuất lại các đoạn phát ngôn và biểu cảm khi gặp bẫy lỗi.
 
 ### 7. Vai trò & Quy tắc của người điều phối (Moderator Guidelines)
 * **Tạo sự thoải mái:** Nhắc nhở người tham gia trước khi bắt đầu: *"Chúng tôi đang kiểm thử hệ thống phần mềm, hoàn toàn không kiểm tra năng lực của bạn. Bạn không bao giờ làm sai, nếu có vấn đề gì xảy ra thì đó là lỗi của hệ thống."*
@@ -99,35 +97,6 @@ Sau khi điền phiếu SUS, người điều phối phỏng vấn trực tiếp
 
 ---
 
-## PHẦN III: BIỂU MẪU GHI CHÉP QUAN SÁT (OBSERVATION LOG TEMPLATE)
+## PHẦN III: DỮ LIỆU THU THẬP
 
-Người điều phối sử dụng bảng sau để ghi chép lại hành vi của từng người tham gia trong lúc họ đang thực hiện phiên kiểm thử:
-
-| Người tham gia | Thời gian hoàn thành | Tình trạng | Các điểm nghẽn ghi nhận thực tế (Friction Points & Think-Aloud) | Thao tác bối rối / Phản ứng |
-| :--- | :---: | :---: | :--- | :--- |
-| **P1** | ... giây | Thành công / Cần trợ giúp | - Nhập số điện thoại `0912...` báo lỗi đỏ không rõ lý do.<br>- Bấm nút 'Thêm vào giỏ hàng' 1 lần không thấy phản hồi, phải bấm lần 2.<br>- Bất ngờ khi thấy ô Tổng tiền ở trang thanh toán có thể gõ sửa được. | Thốt lên: *"Ủa sao số điện thoại của mình dùng bao lâu nay lại bảo không hợp lệ?"* |
-| **P2** | ... giây | ... | ... | ... |
-| **P3** | ... giây | ... | ... | ... |
-| **P4** | ... giây | ... | ... | ... |
-| **P5** | ... giây | ... | ... | ... |
-| **P6** | ... giây | ... | ... | ... |
-| **P7** | ... giây | ... | ... | ... |
-
----
-
-## PHẦN IV: BIỂU MẪU ROSTER MINH HỌA (KHÔNG PHẢI DANH SÁCH THỰC TẾ)
-
-Bảng dưới là mẫu chuẩn bị ban đầu, không phải dữ liệu người tham gia. Roster thực tế xem [Usability Report](HW03_Usability_Evaluation_Report.md) và [interview.md](interview.md). Không dùng các số minh họa để xác minh người tham gia.
-
-| ID | Họ và tên | Số điện thoại / Zalo (Masked) | Nghề nghiệp / Đối tượng | Trình độ công nghệ / Thói quen online |
-| :---: | :--- | :---: | :--- | :--- |
-| **P1** | [Điền tên P1] | `0912****78` | Sinh viên năm 3 ĐH Kinh tế TP.HCM | Mua sắm Shopee thường xuyên, Non-IT |
-| **P2** | [Điền tên P2] | `0984****12` | Nhân viên Kế toán doanh nghiệp | Thường xuyên mua đồ gia dụng online |
-| **P3** | [Điền tên P3] | `0375****89` | Giáo viên THCS | Thỉnh thoảng mua sách và văn phòng phẩm |
-| **P4** | [Điền tên P4] | `0903****45` | Nhân viên Chăm sóc khách hàng | Dùng điện thoại lướt web mỗi ngày |
-| **P5** | [Điền tên P5] | `0938****23` | Kinh doanh tự do / Bán hàng | Rất nhạy cảm về giá và mã giảm giá |
-| **P6** | [Điền tên P6] | `0764****90` | Kỹ sư Cơ khí | Ít mua sắm online, thao tác cẩn trọng |
-| **P7** | [Điền tên P7] | `0856****34` | Sinh viên năm 1 ĐH Y Dược | Mua sắm đồ cá nhân qua mạng |
-
----
-
+Danh sách bảy người tham gia, nhật ký quan sát, thời lượng, phản hồi phỏng vấn và bảng SUS được trình bày trong [báo cáo usability](HW03_Usability_Evaluation_Report.md). [Ghi chép gốc](interview.md) và [đáp án SUS](sus_participants.json) được đính kèm để đối chiếu.

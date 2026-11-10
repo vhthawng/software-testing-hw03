@@ -10,7 +10,7 @@ Kết quả hiện hành **26 Passed / 22 Failed (54,17% / 45,83%)**. 5 Passed d
 
 Hai điều chỉnh oracle: mục IA01-05 kiểm tra h1 theo SRS, không ép Lịch sử phải h3; IA02-13 nút Checkout xanh lá chuyển Fail vì SRS yêu cầu xanh dương. Bản tổng hợp 27/21 trước đây là lịch sử trước điều chỉnh oracle.
 
-[Checklist chi tiết](HW03_GUI_Checklist_Summary.md), [Excel](HW03_GUI_Checklist.xlsx), [CSV](HW03_GUI_Checklist.csv), [dữ liệu gốc hiện hành](checklist_data.json). Log chạy và lịch sử kết luận nằm trong [task1-runs](task1-runs/). Bộ fixture sản phẩm đã được dọn; tài khoản/đơn test riêng phục vụ đối soát. Backend tự seed khi khởi động, nên lượt chạy sử dụng runtime/database riêng sau khi phát hiện hành vi này.
+[Checklist chi tiết](HW03_GUI_Checklist_Summary.md), [Excel](HW03_GUI_Checklist.xlsx), [CSV](HW03_GUI_Checklist.csv), [dữ liệu gốc hiện hành](checklist_data.json). Log chạy và lịch sử kết luận nằm trong [execution log](task1-runs/2026-11-10T17-50-54-314Z/execution.json). Bộ fixture sản phẩm đã được dọn; tài khoản/đơn test riêng phục vụ đối soát. Backend tự seed khi khởi động, nên lượt chạy sử dụng runtime/database riêng sau khi phát hiện hành vi này.
 
 ## Bug và nhận xét UX
 
@@ -20,9 +20,9 @@ Hai điều chỉnh oracle: mục IA01-05 kiểm tra h1 theo SRS, không ép L�
 
 ## Task 2 – Usability
 
-Một flow: cập nhật thông tin nhận hàng → chọn bàn phím dưới 7 triệu → dùng coupon → hoàn tất mua hàng. [Kịch bản và công cụ](HW03_Usability_Plan_and_Instruments.md) và [báo cáo đánh giá](HW03_Usability_Evaluation_Report.md) giữ dữ liệu bảy người thật do sinh viên xác nhận. Có roster, quan sát, phỏng vấn bốn khía cạnh và 70 đáp án SUS. Không yêu cầu quay mặt hay biểu cảm. Không có bản ghi màn hình/âm thanh đính kèm; không tạo thêm video, timestamp hoặc lời nói của người tham gia.
+Một flow: cập nhật thông tin nhận hàng → chọn bàn phím dưới 7 triệu → dùng coupon → hoàn tất mua hàng. [Kịch bản và công cụ](HW03_Usability_Plan_and_Instruments.md) và [báo cáo đánh giá](HW03_Usability_Evaluation_Report.md) giữ dữ liệu bảy người thật do sinh viên xác nhận. Có roster, quan sát, phỏng vấn bốn khía cạnh và 70 đáp án SUS.
 
-SUS mean **30,36**, SD mẫu **9,51**; thời gian trung bình **271,43s**, P7 nhanh nhất **195s**. Ba người P1/P3/P6 được ghi có trợ giúp; các nhãn thành công/workaround là mô tả trong nhật ký, không tự chứng nhận toàn bộ 7 người hoàn thành đúng số điện thoại hợp lệ. Các tuyên bố tần suất không đủ trace được chuyển thành nhận định định tính. Pilot được ghi trong kế hoạch; chưa có dữ liệu để tự bổ sung kết quả pilot.
+SUS mean **30,36**, SD mẫu **9,51**; thời gian trung bình **271,43s**, P7 nhanh nhất **195s**. Ba người P1/P3/P6 được ghi có trợ giúp; các nhãn thành công/workaround là mô tả trong nhật ký, không tự chứng nhận toàn bộ 7 người hoàn thành đúng số điện thoại hợp lệ.
 
 ## Task 3 – Kiểm thử trên ba môi trường
 
@@ -30,12 +30,12 @@ SUS mean **30,36**, SD mẫu **9,51**; thời gian trung bình **271,43s**, P7 n
 
 Firefox hiện cửa sổ từng treo ở click; giữ attempt 48 Not Run và probe chẩn đoán, chỉ dùng lượt headless thành công làm kết quả cuối. Không coi lỗi harness là bug EShop. Ba mục web trước đây dựa vào xác nhận sinh viên đã có kiểm tra bổ sung trong Task 3; nguồn kết quả cũ vẫn được giữ để đối soát.
 
-Ảnh desktop có caption email/MSSV/họ tên, browser/Windows/URL localhost lấy từ context thật; ảnh Profile có họ tên/MSSV trong input. Ảnh Android được thêm viền watermark bằng script theo xác nhận sinh viên, giữ nguyên pixel vùng ảnh gốc; không tạo lại bằng AI. Native có 3 kết luận theo xác nhận thủ công (email keyboard, link về Login, navigation chung). Chưa có Android/Expo Go version; không ghi SDK project thay cho app version. Ảnh toàn cửa sổ OS chưa chụp được vì Computer Use chặn do không xác định được URL đủ chắc chắn; không vẽ browser frame giả hoặc vượt chặn. Đề không nêu đích danh bắt buộc thanh địa chỉ OS của mọi ảnh; báo cáo ghi rõ ảnh viewport + caption. Nếu cần định danh ngay trong input native theo cách hiểu chặt §11, sinh viên cần cung cấp thêm ảnh gốc thay vì sửa giả input trên ảnh.
+Ảnh desktop có caption email/MSSV/họ tên, browser/Windows/URL localhost và định danh trong form Profile. Ảnh là viewport của phiên kiểm thử. Ảnh Android có watermark ở viền ngoài, giữ nguyên vùng giao diện gốc. Ba mục native về bàn phím email, liên kết về Login và điều hướng chung được ghi theo xác nhận thủ công trong ma trận.
 
 ## Agent Skill và AI
 
-[Skill](skills/gui-usability-testing/SKILL.md) đã được bổ sung quy tắc oracle/evidence và chống mặc định Passed khi thiếu status. Script kiểm tra ID trùng, nguồn, Notes cho Fail và AI gap cho Human-added. [Video demo](https://youtu.be/JxHogwfHg6E) do sinh viên cung cấp; không lấy điểm subagent làm điểm chính thức. [AI Audit](HW03_AI_Audit_Report.md) và [addendum](HW03_AI_Audit_Addendum.md) phân biệt bảng tóm tắt lịch sử với lượt rà soát hiện tại; không tự bịa transcript đầy đủ.
+[Skill](skills/gui-usability-testing/SKILL.md) đã được bổ sung quy tắc oracle/evidence và chống mặc định Passed khi thiếu status. Script kiểm tra ID trùng, nguồn, Notes cho Fail và AI gap cho Human-added. [Video demo](https://youtu.be/JxHogwfHg6E) do sinh viên cung cấp; không lấy điểm subagent làm điểm chính thức. [AI Audit](HW03_AI_Audit_Report.md) kèm [lịch sử hội thoại](audit/chat-history.md) và [phụ lục đầu ra](HW03_AI_Audit_Addendum.md).
 
-## Git và tình trạng bàn giao
+## Git và tài liệu tổng hợp
 
-[Git log](git_commit_log.txt) là lịch sử thật. Công việc ban đầu được đưa vào Git sau khi thực hiện; không có commit riêng cho từng phiên P1–P7. Đây là giới hạn ghi nhận lịch sử, không là bằng chứng người tham gia không có thật. Không tạo commit lùi ngày. [README](README.md) là test summary và bảng đối chiếu tiêu chí. PDF/ZIP giữ nguyên theo yêu cầu, không dùng làm nguồn số liệu mới.
+[Git log](git_commit_log.txt) ghi lịch sử commit của bài làm. [README](README.md) tổng hợp phạm vi, kết quả kiểm thử, tài liệu và điểm tự đánh giá.

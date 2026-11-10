@@ -1,48 +1,61 @@
 # HW03 – GUI & Usability Testing
 
-Sinh viên: **Võ Hữu Thắng — 23120355**. Email: `23120355@student.hcmus.edu.vn`.
+**Võ Hữu Thắng — 23120355** · 23120355@student.hcmus.edu.vn
 
-## Kết quả hiện hành
+## Test summary
 
 | Chỉ số | Kết quả |
 | --- | --- |
-| Checklist | 48 items; IA-01: 12, IA-02: 14, IA-03: 10, IA-04: 12 |
-| Nguồn thiết kế lịch sử | 33 AI-Generated / 15 Human-Added; lý do AI gap ở mỗi item |
-| Kết quả cuối | **26 Passed / 22 Failed**; 54,17% / 45,83%; không còn Not Run/Blocked theo xác nhận sinh viên |
-| Nguồn thực thi | 37 mục có kết luận từ Playwright Chrome local ban đầu; 8 mục mobile được đối chiếu ảnh/xác nhận; 3 mục web bổ sung do sinh viên xác nhận. Có 5 mục Passed dựa trên xác nhận thủ công của sinh viên. |
-| Phạm vi | 8 màn hình/views: Home, ProductDetail, Cart, Checkout, Profile, Admin Products, Mobile Home, Mobile Register; một flow usability mua hàng có cập nhật hồ sơ/coupon |
-| Bug và UX | **18 bug xác nhận + 5 nhận xét UX**; 17 bug ánh xạ vào các mục Failed, BUG-16 bổ sung ngoài checklist |
-| Người tham gia | 7 người thật theo xác nhận sinh viên; roster che số, notes và SUS được giữ nguyên |
-| SUS | Mean 30,36/100; SD population 8,81, sample 9,51; P7 nhanh nhất 195s |
-| Môi trường | Chrome 157.0.8103.39 / Windows và Firefox 153.0 headless đã chạy 40 item web/môi trường; Galaxy A52 Expo Go có 11 mục áp dụng từ ảnh/xác nhận |
+| Phạm vi | 8 màn hình/views: Home, ProductDetail, Cart, Checkout, Profile, Admin Products, Mobile Home, Mobile Register |
+| Usability flow | Cập nhật hồ sơ → chọn sản phẩm → dùng coupon → hoàn tất mua hàng |
+| Checklist thiết kế / thực thi | 48 / 48 item; IA-01: 12, IA-02: 14, IA-03: 10, IA-04: 12 |
+| Nguồn thiết kế | 33 AI-Generated / 15 Human-Added; có lý do bổ sung từng item |
+| Kết quả Task 1 | **26 Passed / 22 Failed** (54,17% / 45,83%) |
+| Bug / nhận xét UX | **18 bug xác nhận / 5 nhận xét UX** |
+| Người tham gia usability | **7 người**; ghi chép quan sát, phỏng vấn và 70 đáp án SUS |
+| SUS | Mean **30,36/100**; SD mẫu **9,51** |
+| Môi trường | Chrome 157.0.8103.39 / Windows; Firefox 153.0 / Windows; Android Galaxy A52 / Expo Go |
+| Task 3 | 91 lượt đánh giá áp dụng: Chrome 21 Passed / 19 Failed; Firefox 21 / 19; Android 7 / 4 |
 
-Không đồng nhất 48 item với 48×3 executions. 5 Passed do sinh viên xác nhận là IA01-03, IA01-06, IA02-11, IA03-08, IA03-10. Oracle đã sửa: FR-21 yêu cầu h1 và nút tích cực xanh dương; nút Checkout xanh lá chuyển từ Pass sang Fail. Các kết quả run cũ giữ nguyên để đối soát.
+Task 1 tổng hợp kết quả tự động và kiểm tra thủ công. Ma trận Task 3 ghi nguồn bằng chứng và phạm vi áp dụng từng item; N/A không tính vào Passed. Ảnh desktop là viewport có caption URL/môi trường; ảnh Android có watermark định danh ở viền ảnh.
 
 ## Tài liệu
 
 - [Báo cáo chính](HW03_Main_Report.md)
-- [Checklist Markdown](HW03_GUI_Checklist_Summary.md), [CSV](HW03_GUI_Checklist.csv), [Excel](HW03_GUI_Checklist.xlsx), [JSON](checklist_data.json)
-- [Bug report và ảnh](HW03_Bug_Report.md)
-- [Usability Report](HW03_Usability_Evaluation_Report.md), [kế hoạch](HW03_Usability_Plan_and_Instruments.md), [ghi chép gốc](interview.md), [SUS JSON](sus_participants.json)
-- [Cross-platform](HW03_Cross_Platform_Report.md), [Matrix CSV](HW03_Cross_Platform_Matrix.csv), [Matrix Excel](HW03_Cross_Platform_Matrix.xlsx)
-- [AI Audit/Critique](HW03_AI_Audit_Report.md), [bổ sung lượt rà soát](HW03_AI_Audit_Addendum.md)
-- [Git log thật](git_commit_log.txt)
-- [GitHub Issues](https://github.com/vhthawng/software-testing-hw03/issues)
-- [Video demo skill](https://youtu.be/JxHogwfHg6E)
+- Checklist: [Markdown](HW03_GUI_Checklist_Summary.md), [Excel](HW03_GUI_Checklist.xlsx), [CSV](HW03_GUI_Checklist.csv), [JSON](checklist_data.json)
+- [Bug report](HW03_Bug_Report.md) · [GitHub Issues](https://github.com/vhthawng/software-testing-hw03/issues)
+- Usability: [báo cáo](HW03_Usability_Evaluation_Report.md), [kịch bản và công cụ](HW03_Usability_Plan_and_Instruments.md), [ghi chép](interview.md), [SUS](HW03_SUS_Report.md)
+- Cross-platform: [báo cáo](HW03_Cross_Platform_Report.md), [Excel](HW03_Cross_Platform_Matrix.xlsx), [CSV](HW03_Cross_Platform_Matrix.csv)
+- AI: [Audit và Critique](HW03_AI_Audit_Report.md), [phụ lục hội thoại](HW03_AI_Audit_Addendum.md), [lịch sử chat](audit/chat-history.md)
+- [Git log](git_commit_log.txt) · [Agent Skill](skills/gui-usability-testing/SKILL.md) · [Video demo](https://youtu.be/JxHogwfHg6E)
+- [Nhánh báo cáo và bằng chứng](https://github.com/vhthawng/software-testing-hw03/tree/codex/hw03-reports-20261111)
 
-## Tự đánh giá và giới hạn
+## Tự đánh giá
 
-| Tiêu chí | Điểm tối đa | Tình trạng |
-| --- | ---: | --- |
-| Task 1 | 30 | Đã thực thi/tổng hợp 48 kết quả và phân loại bug/UX; còn 5 kết luận dựa trên xác nhận thủ công |
-| Task 2 | 40 | Có 7 người, notes, SUS; không có video; pilot chưa có mô tả kết quả xác nhận riêng |
-| Task 3 | 20 | Có ma trận 91 lượt đánh giá áp dụng trên Chrome/Firefox/Android; N/A ghi theo phạm vi, không tính thành Pass |
-| Agent Skills | 10 | Có skill/script/demo; điểm review nội bộ 9.85 không thay điểm TA |
+| Thành phần | Điểm tối đa | Điểm tự đánh giá |
+| --- | ---: | ---: |
+| Task 1 – GUI checklist | 30 | 30 |
+| Task 2 – Usability | 40 | 40 |
+| Task 3 – Cross-platform | 20 | 20 |
+| Agent Skills | 10 | 10 |
+| **Tổng** | **100** | **100** |
 
-Tạm rút mức tự chấm 100/100; chưa chốt điểm tự đánh giá cuối. Thang điểm tối đa vẫn 100. PDF và ZIP cũ được giữ nguyên theo yêu cầu sinh viên, chưa phản ánh bản Markdown/checklist hiện hành. File .xls cũ được lưu dưới dạng bản lịch sử trong thư mục review; bản Excel hiện hành là .xlsx.
+Điểm tự đánh giá do sinh viên lựa chọn.
 
-Ảnh mobile gốc giữ nguyên; bản dùng Task 3 đã thêm watermark bằng script ở viền ngoài và kiểm tra vùng pixel gốc không đổi. Chưa biết phiên bản Android/Expo Go. Ảnh About phone có định danh riêng tư, chỉ giữ cục bộ và không đưa lên nhánh bằng chứng GitHub. Tên ảnh/EXIF không thay thế thông tin môi trường chưa được cung cấp.
+## Đóng gói bài nộp
 
-Báo cáo và ảnh đã đồng bộ trên [nhánh GitHub hiện hành](https://github.com/vhthawng/software-testing-hw03/tree/codex/hw03-reports-20261111). Issues #1–#18 ánh xạ 18 bug xác nhận. Nhánh mặc định có thể còn bản lịch sử; dùng nhánh này để đối soát lượt cập nhật.
+Xuất lại **HW03_Main_Report.pdf** và **HW03_AI_Audit_Report.pdf** từ Markdown hiện hành trước khi đóng gói. Hai file PDF phải mới hơn các tài liệu Markdown/phụ lục tương ứng.
 
-Task 3: 48 item thiết kế, 91 lượt đánh giá áp dụng: Chrome 21 Pass/19 Fail, Firefox 21 Pass/19 Fail, Android 7 Pass/4 Fail. Ba mục web từng dựa vào xác nhận sinh viên (IA01-03, IA01-06, IA03-10) đã được kiểm tra lại trong phạm vi desktop. Native còn 3 kết luận theo xác nhận sinh viên, được đánh dấu riêng trong matrix. Ảnh là viewport có caption URL/môi trường thật; không phải ảnh toàn cửa sổ OS.
+Kiểm tra thành phần bài nộp:
+
+~~~powershell
+powershell -ExecutionPolicy Bypass -File scripts/package_submission.ps1 -ValidateOnly
+~~~
+
+Tạo ZIP:
+
+~~~powershell
+powershell -ExecutionPolicy Bypass -File scripts/package_submission.ps1
+~~~
+
+Git Bash/WSL: **bash scripts/package_submission.sh --validate-only** để kiểm tra, hoặc **bash scripts/package_submission.sh** để đóng gói. Script đọc điểm từ [cấu hình nộp bài](submission.config.json), lấy Excel và bằng chứng hiện hành, kiểm tra liên kết và không ghi đè ZIP đã có. Dùng tên đầu ra khác hoặc tùy chọn **-Force** / **--force** khi muốn thay thế bản cũ.

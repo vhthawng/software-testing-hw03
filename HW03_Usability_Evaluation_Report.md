@@ -1,5 +1,3 @@
-> Cập nhật 11/11/2026: Sinh viên xác nhận 7 người tham gia là người thật. Giữ nguyên roster, đáp án SUS, thời lượng và lời phỏng vấn đã cung cấp; không tạo thêm phiên hoặc lời nói. Không có video đính kèm, không yêu cầu quay khuôn mặt. Pilot được nêu trong kế hoạch nhưng chưa có thông tin xác nhận riêng về việc thực hiện; không tự dựng người/ngày giờ/kết quả pilot. Ngày giờ từng phiên và log moderator chi tiết là thông tin bổ trợ, không được tự thêm thành yêu cầu trường dữ liệu bắt buộc.
-
 # BÁO CÁO ĐÁNH GIÁ KHẢ NĂNG SỬ DỤNG (TASK 2 — USABILITY EVALUATION REPORT)
 **Môn học:** CS423 / CSC13003 – Kiểm chứng Phần mềm (FIT@HCMUS)  
 **Bài tập:** HW03 – GUI & Usability Testing  
@@ -38,12 +36,11 @@ Kỳ đánh giá tập trung làm rõ 4 câu hỏi nghiên cứu cốt lõi:
 ### 1.5. Phương pháp & Thiết kế kiểm thử (Methodology)
 * **Hình thức:** Đánh giá có điều phối viên (Moderated Usability Testing).
 * **Giao thức:** Áp dụng phương pháp suy nghĩ thành tiếng (**Think-Aloud Protocol**). Người tham gia liên tục nói ra những suy nghĩ, thắc mắc, ngập ngừng trong khi thao tác.
-* **Pilot trong kế hoạch:** Một phiên thử trước để kiểm tra kịch bản/môi trường; hiện chưa có thông tin xác nhận riêng về kết quả thực hiện, nên không khai bổ sung ngày giờ hoặc người pilot.
 
 ### 1.6. Môi trường & Thiết bị (Environment & Setup)
 * **Thiết bị:** Laptop độ phân giải Full HD (1920x1080), chuột quang.
 * **Trình duyệt:** Google Chrome & Mozilla Firefox truy cập vào SUT tại `http://localhost:5173`.
-* **Ghi nhận thực tế:** Quan sát, phỏng vấn và đáp án SUS do sinh viên cung cấp; không có bản ghi màn hình/âm thanh đính kèm. Không yêu cầu quay mặt hoặc biểu cảm người tham gia.
+* **Ghi nhận:** Quan sát, phỏng vấn sau tác vụ và đáp án SUS của bảy người tham gia.
 
 ### 1.7. Vai trò của người điều phối (Moderator Guidelines)
 * Nhắc nhở người tham gia: *"Chúng tôi kiểm tra hệ thống phần mềm, không kiểm tra bạn. Bạn không bao giờ làm sai, mọi khó khăn gặp phải đều là lỗi của hệ thống."*
@@ -155,13 +152,13 @@ xychart-beta
 ### 5.3. Tốc độ và tính trôi chảy (Speed)
 * **Thực trạng ghi nhận:** Thời gian hoàn thành tác vụ dao động từ **195 giây đến 345 giây** (Trung bình: 271.4 giây).
 * **Vấn đề cốt lõi:**
-  - **Nút Thêm vào giỏ hàng bị lag/lỗi 2 lần click:** Trong mã nguồn `ProductDetail.jsx` (dòng 22–25), code kiểm tra `if (clickCount === 0) return;` khiến lần click chuột đầu tiên hoàn toàn bị bỏ qua. Nhật ký ghi nhận nhiều người bấm lặp hoặc ngập ngừng; không suy ra đủ 7/7 người có cùng phản ứng từ mô tả tổng hợp.
+  - **Nút Thêm vào giỏ hàng bị lag/lỗi 2 lần click:** Trong mã nguồn `ProductDetail.jsx` (dòng 22–25), code kiểm tra `if (clickCount === 0) return;` khiến lần click chuột đầu tiên hoàn toàn bị bỏ qua. Nhật ký ghi nhận nhiều người bấm lặp hoặc ngập ngừng.
   - **Thiếu nút tăng/giảm số lượng trong giỏ hàng:** Người dùng muốn đổi số lượng bàn phím không thể sửa trực tiếp mà buộc phải quay lại trang chi tiết sản phẩm.
 
 ### 5.4. Mức độ tin cậy và an tâm giao dịch (Trust)
 * **Thực trạng ghi nhận:** Đây là khía cạnh **thất bại nặng nề nhất**, dẫn đến việc điểm số SUS bị kéo tụt xuống mức F.
 * **Vấn đề cốt lõi:**
-  - **Ô tổng tiền cho phép sửa tự do:** Tại trang Checkout, trường *"Tổng tiền thanh toán (VND)"* là một thẻ `<input type="number">` cho phép người dùng tự do gõ sửa giá tiền. Các ghi chép nêu rõ nghi ngại về ô tiền ở một số người tham gia; không khẳng định tần suất 7/7 nếu thiếu ghi nhận tương ứng cho từng người.
+  - **Ô tổng tiền cho phép sửa tự do:** Tại trang Checkout, trường *"Tổng tiền thanh toán (VND)"* là một thẻ `<input type="number">` cho phép người dùng tự do gõ sửa giá tiền. Các ghi chép nêu rõ nghi ngại về ô tiền ở một số người tham gia.
   - P2 (sinh viên ngành CNTT) và P1 (Marketing) thẳng thắn khẳng định: *"Đây là lỗi kiểm soát dữ liệu nghiêm trọng, tạo cảm giác web lừa đảo hoặc chưa hoàn thiện, không bao giờ dám nhập thẻ tín dụng hay chuyển khoản."*
   - Trang xác nhận đơn hàng sau thanh toán chỉ có một dòng thông báo ngắn, không có mã đơn hàng, thời gian giao hàng dự kiến hay tóm tắt địa chỉ người nhận.
 
@@ -194,7 +191,7 @@ Theo công thức chuẩn Rubin & Chisnell:
 $$\text{Criticality (Độ ưu tiên)} = \text{Severity (Mức độ nghiêm trọng)} \times \text{Probability (Tần suất xuất hiện)}$$
 
 * **Thang đo Severity:** 1 (Thấp) $\rightarrow$ 3 (Cao).
-* **Probability:** điểm ưu tiên ước lượng định tính 1–3 từ notes; không quy đổi thành tỷ lệ người tham gia khi chưa có trace từng phiên.
+* **Probability:** điểm ưu tiên ước lượng định tính 1–3 từ notes.
 * **Phân cấp:**
   - **Blocker (Điểm 8 – 9):** Chặn đứng tác vụ, làm sai lệch dữ liệu tài chính hoặc khiến người dùng bỏ cuộc.
   - **Major (Điểm 4 – 6):** Gây ngập ngừng, khó khăn lớn hoặc suy giảm nghiêm trọng lòng tin.

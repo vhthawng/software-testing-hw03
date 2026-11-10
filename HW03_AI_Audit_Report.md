@@ -1,37 +1,27 @@
-> Cập nhật 11/11/2026: Bảng lịch sử giữ để đối soát, các số 38/10 hoặc 16 bugs trong mô tả quá khứ không phải số liệu hiện hành. Checklist hiện tại 33/15 theo nguồn thiết kế, 26/22 Pass/Fail; danh mục hiện hành 18 bugs và 5 UX.
+# AI Audit Report – HW03
 
-**Khoa Công nghệ Thông tin (FIT) – Trường Đại học Khoa học Tự nhiên (HCMUS)**  
-**CS423 / CSC13003 – Kiểm chứng Phần mềm (AI-augmented · 2026)**  
-**CHÍNH SÁCH AI · BIỂU MẪU — 2026 v1.0**  
-
-# AI Audit Report — Nhật Ký Kiểm Toán & Phản Biện AI (HW03)
-*Phụ lục kiểm toán bắt buộc đính kèm cho bài tập cá nhân HW03 – GUI & Usability Testing.*
-
----
-
-## 1. Thông tin Sinh viên
+## 1. Thông tin
 
 | Mục | Giá trị |
-| :--- | :--- |
-| **Họ tên sinh viên (in hoa):** | **VÕ HỮU THẮNG** |
-| **MSSV:** | **23120355** |
-| **Lớp / Khoá:** | CQ2023/3 (Khoa Công nghệ Thông tin) |
-| **Mã bài tập:** | **HW#03 – GUI & Usability Testing** |
-| **Ngày thực hiện:** | 08/11/2026 |
-| **Công cụ AI đã sử dụng:** | Antigravity AI Agent (tên/model theo báo cáo lịch sử sinh viên), Codex; Playwright là công cụ automation, không phải model AI |
-| **Khai báo sử dụng AI:** | **[ x ] Có** &nbsp;&nbsp;&nbsp;&nbsp; [ &nbsp; ] Không |
-
----
+| --- | --- |
+| Sinh viên | VÕ HỮU THẮNG |
+| MSSV | 23120355 |
+| Lớp / Khóa | CQ2023/3 |
+| Môn học | CS423 / CSC13003 – Kiểm chứng Phần mềm |
+| Bài tập | HW03 – GUI & Usability Testing |
+| Thời gian | 08–11/11/2026 |
+| Công cụ AI | Antigravity AI Agent (giai đoạn đầu, theo nhật ký sinh viên); Codex (rà soát và thực thi bổ sung) |
+| Khai báo sử dụng AI | Có |
 
 ## 2. AI Critique (200–300 từ)
 
 Qua bài HW03, tôi nhận thấy AI hỗ trợ tốt việc tổ chức checklist, viết script và tính điểm SUS, nhưng dễ kết luận vượt quá bằng chứng. Ban đầu, AI dùng việc đọc mã để gán kết quả giao diện, trong khi hành vi thực tế còn phụ thuộc trạng thái đăng nhập, dữ liệu và cách chuyển trang. Script mở lại URL làm mất giỏ hàng trong React state, dẫn đến ảnh giỏ trống được gắn cho lỗi chỉnh số lượng. AI cũng nhầm cấu hình Chromium có user-agent Android với điện thoại thật. Khi chạy lại Chrome và đối chiếu ảnh native do tôi cung cấp, một số kết luận cũ thay đổi: ảnh Admin có alt, còn mã SAVE10 hiển thị tổng tiền sai. Một sai sót khác là đặt tiêu chí theo thói quen, như nút xanh lá được xem là đúng, trước khi đọc đặc tả yêu cầu xanh dương. Nguyên nhân là AI ưu tiên mẫu giao diện quen thuộc và suy diễn khi thiếu ngữ cảnh. Tôi học được rằng cần chốt nguồn kỳ vọng, chuẩn bị dữ liệu phù hợp và kiểm tra từng bằng chứng trước khi tổng hợp. Với nghiên cứu usability, dữ liệu bảy người do tôi cung cấp phải được giữ nguyên; AI không được thêm lời nói, thời gian hay phiên thử nghiệm. Kết quả xác nhận thủ công cũng phải được phân biệt với kết quả tự động. AI giúp tăng tốc xử lý, nhưng trách nhiệm xác nhận nội dung và giới hạn báo cáo vẫn thuộc về tôi.
 
-## 3. Bảng Nhật Ký Kiểm Toán Tương Tác Thực Tế (Audited Interactions)
+## 3. Nhật ký giai đoạn đầu – Antigravity
 
-Bảng dưới là bản tóm tắt tương tác lịch sử do sinh viên cung cấp (Conversation ID giữ theo báo cáo cũ). Nhiều prompt bị rút gọn và output là tóm tắt; không mô tả đây là transcript đầy đủ hoặc đã kiểm chứng nguyên văn. Xem [addendum](HW03_AI_Audit_Addendum.md) cho lượt rà soát hiện tại.
+Bảng sau giữ prompt, thời gian và kết quả được ghi trong nhật ký giai đoạn đầu của sinh viên. Output trong bảng là tóm tắt. Các số liệu trong từng dòng phản ánh thời điểm tương tác; kết quả cuối là 48 item (33 AI-Generated / 15 Human-Added), 26 Passed / 22 Failed và 18 bug xác nhận.
 
-| STT | (1) Prompt Nguyên Văn & Công Cụ | (2) Output AI Tóm Tắt | (3) Đánh Giá | (4) Lý Do Phân Loại (Dẫn Chiếu Chuẩn) | (5) Bản Sinh Viên Điều Chỉnh / Phản Biện |
+| STT | (1) Prompt trích theo nhật ký lịch sử & Công cụ | (2) Output AI Tóm Tắt | (3) Đánh Giá | (4) Lý Do Phân Loại (Dẫn Chiếu Chuẩn) | (5) Bản Sinh Viên Điều Chỉnh / Phản Biện |
 | :---: | :--- | :--- | :---: | :--- | :--- |
 | **#1** | **Thời gian:** 11:48 & 11:57 08/11/2026<br>**Tool:** Antigravity AI (Gemini 3.8 Flash)<br>**Prompt:**<br>_"Hãy đọc yêu cầu của @2026.HW03.md và tóm tắt lại cho tôi nó yêu cầu gì, và cần các báo cáo nào..."_<br>_"tôi đã có bộ test case làm lần trước từ HW2 @2026.HW02.Domain Testing_En.md , tôi có thể áp dụng nó lại cho lần này không??? không ý tôi là có thể chọn pool y chan như vậy được không??"_ | AI phân tích tóm tắt yêu cầu đồ án, xác nhận cho phép tái sử dụng phạm vi 4 Pools từ HW02: Pool A (Profile), Pool B (Cart & Checkout), Pool C (Admin), Pool D (Mobile). | **VALID** | Phù hợp với Mục §5 Scope Selection của đề bài (khuyến khích kiểm thử nhiều màn hình để đạt độ phủ giao diện sâu, không làm nông một màn hình). | Sinh viên chốt phạm vi 4 phân hệ kế thừa từ bài tập HW02 để đảm bảo tính xuyên suốt. |
 | **#2** | **Thời gian:** 12:36 & 12:39 08/11/2026<br>**Tool:** Antigravity AI<br>**Prompt:**<br>_"Hãy lên một plan trình bày rõ những gì bạn sẽ làm cho homework này, và cuối cùng acceptance criteria là gì checklist để biết bài này được điểm"_<br>_"sao phần skill lại để cuối?? phài đưa nó lên dầu chứ? có skill rồi mới bắt đầu làm các phần kia được chứ??"_ | AI đề xuất kế hoạch 6 giai đoạn, nhưng xếp việc tạo Agent Skill vào Giai đoạn 5 (sau khi đã làm xong Task 1 và Task 2). | **INVALID** | Đây là điều chỉnh workflow theo lựa chọn sinh viên; đề không bắt buộc skill phải được tạo trước mọi task. | **Sinh viên phản biện chấn chỉnh:** Yêu cầu dời việc tạo Agent Skill lên ngay Giai đoạn 2 để dùng skill sinh checklist, tính SUS và đóng watermark. |
@@ -42,39 +32,18 @@ Bảng dưới là bản tóm tắt tương tác lịch sử do sinh viên cung 
 | **#7** | **Thời gian:** 15:50, 15:57 & 16:01 08/11/2026<br>**Tool:** Antigravity AI<br>**Prompt:**<br>_"còn về phần tạo issues thì sao? tôi có cần tạo repo cho btap này không??"_<br>_"tôi đã tạo repo rồi https://github.com/vhthawng/software-testing-hw03.git... bạn kết nối vào tạo issue luôn được không??"_<br>_"làm cách 1 ghp_************************************"_ | AI kết nối remote git, push toàn bộ bài làm lên repo cá nhân. Viết script `create_github_issues.js` gọi GitHub REST API tạo tự động 8 Issues trọng yếu kèm ảnh watermark. | **VALID** | Đây là trạng thái lịch sử chỉ tạo 8 Issues; đề yêu cầu tất cả genuine bugs. Danh mục Issues hiện hành được đồng bộ với bug report. | Sinh viên cung cấp Personal Access Token để kích hoạt script tự động hóa tạo 8 Issues hoàn chỉnh. |
 | **#8** | **Thời gian:** 16:16 08/11/2026<br>**Tool:** Antigravity AI<br>**Prompt:**<br>_"về phần audit và phầm main report cần điều chỉnh, không cần tạo file pdf, tôi sẽ làm phần đó, bạn chỉ cần tạo file md. Đầu tiên loại bỏ absolute path, dùng relative path, cho các link và phải dùng anchor text để biểu thị. Về audit là nội dung đang bịa, bạn hãy tập hợp hết đoạn chat của tôi và bạn trong conversation này và đưa vào báo cáo. Điều chỉnh lại main report luôn, hiện tại đang quá khó đọc. Git commit log cũng vậy, chỉ cần hiển thị git log thôi, không cần comment giải thích trong đó"_ | AI ban đầu sinh bảng audit với các prompt giả định/ước lệ, dùng đường dẫn tuyệt đối `file:///d:/...`, tự xuất PDF và chèn đoạn văn giải thích vào git log. | **INVALID** | Vi phạm tính trung thực học thuật (Academic Integrity) và chính sách minh bạch AI: AI Audit Report phải phản ánh 100% dữ liệu chat thật; đường dẫn phải tương đối để mở được trên mọi máy. | **Sinh viên phát hiện và chấn chỉnh:** Bắt buộc AI loại bỏ nội dung giả định, trích xuất toàn bộ prompt thật từ transcript, xóa các file PDF thừa, chuyển sang relative path có anchor text, và đưa git log về nguyên bản. |
 
----
+Các nhãn đánh giá thể hiện phản biện tại thời điểm trao đổi. Việc tạo skill muộn hoặc chọn chụp thủ công là lựa chọn phương pháp, không tự vi phạm yêu cầu bài tập. Galaxy A52 native được kiểm tra bằng Expo Go trên điện thoại; giả lập viewport Android trong Playwright được phân biệt với môi trường này.
 
-## 4. Đánh giá lại cách phân loại tương tác
+## 4. Nhật ký rà soát – Codex
 
-Các nhãn VALID/INVALID/INCOMPLETE trong bảng lịch sử là nhận xét tại thời điểm đó, không phải rubric chính thức. Việc tạo skill muộn hoặc chọn chụp thủ công không tự vi phạm đề; không dùng tỷ lệ “62.5% AI sai” từ bảng cũ làm kết luận hiện hành. Sai sót được xác minh trong lượt rà soát là nhầm evidence, nhầm môi trường emulation và chọn oracle trước khi đọc SRS. Các số liệu/căn cứ hiện hành xem Main Report và addendum.
+[Lịch sử hội thoại người dùng và Codex](audit/chat-history.md) ghi nguyên văn nội dung lấy từ ứng dụng, theo thứ tự trao đổi, kèm thời gian bắt đầu từng lượt. [Bản JSON](audit/chat-history.json) giữ vai trò, nội dung và mã lượt để đối chiếu. [Phụ lục kết quả tương tác](HW03_AI_Audit_Addendum.md) liên kết các đầu ra của lượt rà soát.
 
-## 5. Kết Luận — Khi Nào Nên / Không Nên Dùng AI?
+## 5. Phản biện và áp dụng đầu ra AI
 
-* **Khi NÊN dùng AI:**
-  - Tự động hóa viết các đoạn mã lặp lại (Boilerplate code) cho Playwright, PowerShell, Node.js.
-  - Hỗ trợ tính toán số liệu thống kê (Mean, Standard Deviation, Percentile SUS) với cần được đối chiếu độc lập.
-  - Định dạng bảng biểu, chuyển đổi cấu trúc dữ liệu JSON sang bảng tính Excel hoặc Markdown.
-* **Khi KHÔNG NÊN dùng AI:**
-  - Không để AI tự quyết định logic nghiệp vụ mang tính địa phương hóa (như định dạng số điện thoại Việt Nam).
-  - Không để AI tự giả lập hành vi người dùng (phải dùng người dùng thực tế theo đúng quy định chống gian lận).
-  - Tuyệt đối không để AI tự khai báo báo cáo kiểm toán (phải dựa trên nhật ký hội thoại thực tế).
+Sinh viên yêu cầu chuyển từ kết luận dựa trên mã nguồn sang thực thi giao diện, cung cấp ảnh Android và xác nhận các thao tác thủ công. Trong quá trình rà soát, tiêu chí h1 và màu nút được đối chiếu lại SRS; lỗi thiếu alt bị bác bỏ; bug và nhận xét UX được tách riêng. Script Playwright chạy lại các mục web trên Chrome và Firefox, còn ảnh Android được thêm watermark bằng script ở viền ảnh, giữ nguyên vùng giao diện gốc.
 
----
+AI hỗ trợ tổ chức checklist, viết automation, tính SUS và đồng bộ báo cáo với GitHub Issues. Dữ liệu bảy người tham gia và phản hồi SUS do sinh viên cung cấp là nguồn của phần usability. Kết quả tự động, ảnh quan sát và xác nhận thủ công được ghi rõ trong dữ liệu thực thi.
 
-## 6. Mandatory Disclosure (Tuyên Bố Minh Bạch Bắt Buộc)
+## 6. Tuyên bố sử dụng AI
 
-> *"Đồ án này được thực hiện với sự hỗ trợ của Antigravity AI Agent; tôi đã rà soát 100% các kết quả do AI sinh ra, trực tiếp phản biện và yêu cầu đổi phương pháp khi AI đề xuất sai (như chuyển từ chụp thủ công sang Playwright tự động hóa), dữ liệu lịch sử ghi 15 tiêu chí Human-Added (Human-Added Items), và trực tiếp phỏng vấn 7 người tham gia thực tế. Bảng lịch sử là tóm tắt được cung cấp; các cập nhật và giới hạn của lượt rà soát được khai báo riêng, không bổ sung transcript giả."*
-
----
-
-## Chữ Ký Xác Thực
-
-| Mục | Nội dung |
-| :--- | :--- |
-| **Họ tên sinh viên (in hoa):** | **VÕ HỮU THẮNG** |
-| **MSSV:** | **23120355** |
-| **Lớp / Khoá:** | CQ2023/3 |
-| **Môn học:** | CS423 / CSC13003 – Kiểm chứng Phần mềm |
-| **Giảng viên hướng dẫn:** | TS. Lâm Quang Vũ / TS. Trần Duy Hoàng / ThS. Trần Thị Bích Hạnh |
-| **Ngày xác nhận:** | 08/11/2026 |
-| **Chữ ký xác nhận:** | *Võ Hữu Thắng (Đã ký điện tử)* |
+Bài làm sử dụng Antigravity AI Agent và Codex để hỗ trợ thiết kế, kiểm thử, tổng hợp số liệu và trình bày tài liệu. Sinh viên lựa chọn phạm vi, cung cấp dữ liệu usability và ảnh kiểm thử trên điện thoại, phản biện kết luận AI và chịu trách nhiệm về bài nộp. Nhật ký hội thoại và các đầu ra liên quan được đính kèm để đối chiếu.

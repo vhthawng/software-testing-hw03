@@ -1,68 +1,70 @@
-# Script to package HW03 submission zip file cleanly without node_modules
-$ErrorActionPreference = "Stop"
-$ProgressPreference = "SilentlyContinue"
-
-$cwd = Get-Location
-$staging = Join-Path $env:TEMP "hw03_staging_23120355"
-
-if (Test-Path $staging) {
-    Remove-Item -Recurse -Force $staging
-}
-New-Item -ItemType Directory -Path $staging -Force | Out-Null
-
-$files = @(
-    "README.md",
-    "HW03_Main_Report.md",
-    "HW03_AI_Audit_Report.md",
-    "HW03_Bug_Report.md",
-    "HW03_Cross_Platform_Report.md",
-    "HW03_Usability_Evaluation_Report.md",
-    "HW03_Usability_Plan_and_Instruments.md",
-    "HW03_GUI_Checklist.xls",
-    "HW03_GUI_Checklist.csv",
-    "HW03_GUI_Checklist_Summary.md",
-    "git_commit_log.txt",
-    "checklist_data.json",
-    "sus_participants.json",
-    "interview.md"
+[CmdletBinding()]
+param(
+    [switch]$ValidateOnly,
+    [switch]$CheckFilesOnly,
+    [switch]$Force,
+    [string]$OutputPath
 )
-
-Write-Host "Copying root files to staging..."
-foreach ($file in $files) {
-    $src = Join-Path $cwd $file
-    if (Test-Path $src) {
-        Copy-Item -Path $src -Destination $staging
-    }
+$ErrorActionPreference = "Stop"
+if ($CheckFilesOnly -and -not $ValidateOnly) {
+    throw "-CheckFilesOnly is available only with -ValidateOnly."
 }
-
-Write-Host "Copying screenshots..."
-Copy-Item -Recurse -Path (Join-Path $cwd "screenshots") -Destination (Join-Path $staging "screenshots")
-
-Write-Host "Copying scripts..."
-Copy-Item -Recurse -Path (Join-Path $cwd "scripts") -Destination (Join-Path $staging "scripts")
-
-Write-Host "Copying skills (excluding node_modules)..."
-$skillsDest = Join-Path $staging "skills"
-New-Item -ItemType Directory -Path $skillsDest -Force | Out-Null
-
-Get-ChildItem -Path (Join-Path $cwd "skills") -Directory | ForEach-Object {
-    $dest = Join-Path $skillsDest $_.Name
-    Copy-Item -Path $_.FullName -Destination $dest -Recurse
-    $nm = Join-Path $dest "node_modules"
-    if (Test-Path $nm) {
-        Remove-Item -Recurse -Force $nm
-    }
+$root = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot ".."))
+$manifestText = & node (Join-Path $PSScriptRoot "submission_manifest.cjs")
+$manifestExit = $LASTEXITCODE
+if (-not $manifestText) { throw "Could not build submission manifest." }
+$manifest = ($manifestText -join [Environment]::NewLine) | ConvertFrom-Json
+if ($manifestExit -ne 0 -or $manifest.missing.Count -gt 0) {
+    throw ("Required files or linked evidence missing: " + ($manifest.missing -join ", "))
 }
-
-$zipTarget = Join-Path $cwd "23120355_HW03_AI_GUIUsability_100.zip"
-if (Test-Path $zipTarget) {
-    Remove-Item -Force $zipTarget
+Write-Host ("Files: {0}; total: {1:N2} MB; grade: {2}/100" -f $manifest.files.Count, ($manifest.bytes / 1MB), $manifest.grade)
+Write-Host ("Archive name: " + $manifest.filename)
+if ($manifest.stalePdfs.Count -gt 0) {
+    $message = "Re-export current Markdown to PDF before packaging: " + ($manifest.stalePdfs -join ", ")
+    if ($ValidateOnly -and $CheckFilesOnly) { Write-Warning $message }
+    else { throw $message }
 }
-
-Write-Host "Compressing archive to $zipTarget..."
-Compress-Archive -Path "$staging\*" -DestinationPath $zipTarget -Force
-
-Remove-Item -Recurse -Force $staging
-
-$zipInfo = Get-Item $zipTarget
-Write-Host "Done! Archive size: $($zipInfo.Length) bytes ($([math]::Round($zipInfo.Length / 1MB, 2)) MB)"
+if ($ValidateOnly) {
+    Write-Host "File manifest and local evidence links validated. No ZIP created."
+    return
+}
+if (-not $OutputPath) { $OutputPath = Join-Path $root $manifest.filename }
+$target = [System.IO.Path]::GetFullPath($OutputPath)
+if (-not $target.StartsWith($root + [System.IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
+    throw "ZIP output must stay within the homework workspace."
+}
+if ([System.IO.Path]::GetExtension($target) -ne ".zip") { throw "Output must have .zip extension." }
+if ((Test-Path -LiteralPath $target) -and -not $Force) {
+    throw "ZIP already exists. Choose -OutputPath or explicitly pass -Force to replace it."
+}
+Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+# Write a new temporary file first; keep the existing archive if packaging fails.
+$tempArchive = Join-Path $root (".hw03-package-" + [Guid]::NewGuid().ToString("N") + ".tmp")
+try {
+    $stream = [System.IO.File]::Open($tempArchive, [System.IO.FileMode]::CreateNew)
+    try {
+        $archive = New-Object System.IO.Compression.ZipArchive($stream, [System.IO.Compression.ZipArchiveMode]::Create, $true)
+        try {
+            foreach ($relative in $manifest.files) {
+                $source = [System.IO.Path]::GetFullPath((Join-Path $root $relative))
+                if (-not $source.StartsWith($root + [System.IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
+                    throw "Source escaped workspace: $relative"
+                }
+                [System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+                    $archive, $source, $relative.Replace("\", "/"),
+                    [System.IO.Compression.CompressionLevel]::Optimal
+                ) | Out-Null
+            }
+        } finally { $archive.Dispose() }
+    } finally { $stream.Dispose() }
+    $check = [System.IO.Compression.ZipFile]::OpenRead($tempArchive)
+    try {
+        if ($check.Entries.Count -ne $manifest.files.Count) { throw "ZIP entry count mismatch." }
+    } finally { $check.Dispose() }
+    Move-Item -LiteralPath $tempArchive -Destination $target -Force:$Force
+    Write-Host ("Created: " + $target)
+} finally {
+    # Only this unique, workspace-local temporary file is removed.
+    if (Test-Path -LiteralPath $tempArchive) { Remove-Item -LiteralPath $tempArchive -Force }
+}
