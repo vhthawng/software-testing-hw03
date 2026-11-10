@@ -1,3 +1,15 @@
+commit b111a9654ca2018ecae169e54c54ea34326d8285
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   Tue Nov 10 23:05:40 2026 +0700
+
+    docs: add YouTube demo video link to README
+
+commit a60652f208530054fe05ed2dfe33a713bf007937
+Author: vhthawng <vohuuthangwork@gmail.com>
+Date:   Sun Nov 8 16:42:12 2026 +0700
+
+    docs: finalize git_commit_log.txt
+
 commit 37f5a2ae34b6b5a86301c9641aa89668a10f500b
 Author: vhthawng <vohuuthangwork@gmail.com>
 Date:   Sun Nov 8 16:41:58 2026 +0700
