@@ -1,0 +1,10 @@
+{
+  "firefoxHeadedAttempt": "task3-runs/2026-11-11-local/firefox/2026-11-10T18-59-40-342Z",
+  "outcome": "Stopped before checklist: locator.click timeout at Sign In; 48 Not Run, not product failures",
+  "diagnostic": "Keyboard login succeeded; headed mouse click hung; same click worked headless. No causal claim about an upstream issue.",
+  "computerUseCapture": {
+    "status": "Stopped",
+    "reason": "Could not determine current browser URL with enough confidence to enforce policy",
+    "recovery": "No alternative native Windows screen-capture mechanism attempted; ordinary Playwright viewport evidence retained."
+  }
+}

@@ -14,7 +14,7 @@ Sinh viên: **Võ Hữu Thắng — 23120355**. Email: `23120355@student.hcmus.e
 | Bug và UX | **18 bug xác nhận + 5 nhận xét UX**; 17 bug ánh xạ vào các mục Failed, BUG-16 bổ sung ngoài checklist |
 | Người tham gia | 7 người thật theo xác nhận sinh viên; roster che số, notes và SUS được giữ nguyên |
 | SUS | Mean 30,36/100; SD population 8,81, sample 9,51; P7 nhanh nhất 195s |
-| Môi trường | Chrome thật 157.0.8103.39 / Windows; Firefox có evidence lịch sử giới hạn; Galaxy A52 native có ảnh thủ công mới |
+| Môi trường | Chrome 157.0.8103.39 / Windows và Firefox 153.0 headless đã chạy 40 item web/môi trường; Galaxy A52 Expo Go có 11 mục áp dụng từ ảnh/xác nhận |
 
 Không đồng nhất 48 item với 48×3 executions. 5 Passed do sinh viên xác nhận là IA01-03, IA01-06, IA02-11, IA03-08, IA03-10. Oracle đã sửa: FR-21 yêu cầu h1 và nút tích cực xanh dương; nút Checkout xanh lá chuyển từ Pass sang Fail. Các kết quả run cũ giữ nguyên để đối soát.
 
@@ -24,7 +24,7 @@ Không đồng nhất 48 item với 48×3 executions. 5 Passed do sinh viên xá
 - [Checklist Markdown](HW03_GUI_Checklist_Summary.md), [CSV](HW03_GUI_Checklist.csv), [Excel](HW03_GUI_Checklist.xlsx), [JSON](checklist_data.json)
 - [Bug report và ảnh](HW03_Bug_Report.md)
 - [Usability Report](HW03_Usability_Evaluation_Report.md), [kế hoạch](HW03_Usability_Plan_and_Instruments.md), [ghi chép gốc](interview.md), [SUS JSON](sus_participants.json)
-- [Cross-platform](HW03_Cross_Platform_Report.md)
+- [Cross-platform](HW03_Cross_Platform_Report.md), [Matrix CSV](HW03_Cross_Platform_Matrix.csv), [Matrix Excel](HW03_Cross_Platform_Matrix.xlsx)
 - [AI Audit/Critique](HW03_AI_Audit_Report.md), [bổ sung lượt rà soát](HW03_AI_Audit_Addendum.md)
 - [Git log thật](git_commit_log.txt)
 - [GitHub Issues](https://github.com/vhthawng/software-testing-hw03/issues)
@@ -36,11 +36,13 @@ Không đồng nhất 48 item với 48×3 executions. 5 Passed do sinh viên xá
 | --- | ---: | --- |
 | Task 1 | 30 | Đã thực thi/tổng hợp 48 kết quả và phân loại bug/UX; còn 5 kết luận dựa trên xác nhận thủ công |
 | Task 2 | 40 | Có 7 người, notes, SUS; không có video; pilot chưa có mô tả kết quả xác nhận riêng |
-| Task 3 | 20 | Có Android native thật bổ sung; chưa có hồ sơ thực thi toàn checklist trên ba môi trường |
+| Task 3 | 20 | Có ma trận 91 lượt đánh giá áp dụng trên Chrome/Firefox/Android; N/A ghi theo phạm vi, không tính thành Pass |
 | Agent Skills | 10 | Có skill/script/demo; điểm review nội bộ 9.85 không thay điểm TA |
 
 Tạm rút mức tự chấm 100/100; chưa chốt điểm tự đánh giá cuối. Thang điểm tối đa vẫn 100. PDF và ZIP cũ được giữ nguyên theo yêu cầu sinh viên, chưa phản ánh bản Markdown/checklist hiện hành. File .xls cũ được lưu dưới dạng bản lịch sử trong thư mục review; bản Excel hiện hành là .xlsx.
 
-Ảnh mobile gốc không có watermark sinh viên; chưa biết phiên bản Android/Expo Go. Ảnh About phone có định danh riêng tư, chỉ giữ cục bộ và không đưa lên nhánh bằng chứng GitHub. Tên ảnh/EXIF không thay thế thông tin môi trường chưa được cung cấp.
+Ảnh mobile gốc giữ nguyên; bản dùng Task 3 đã thêm watermark bằng script ở viền ngoài và kiểm tra vùng pixel gốc không đổi. Chưa biết phiên bản Android/Expo Go. Ảnh About phone có định danh riêng tư, chỉ giữ cục bộ và không đưa lên nhánh bằng chứng GitHub. Tên ảnh/EXIF không thay thế thông tin môi trường chưa được cung cấp.
 
 Báo cáo và ảnh đã đồng bộ trên [nhánh GitHub hiện hành](https://github.com/vhthawng/software-testing-hw03/tree/codex/hw03-reports-20261111). Issues #1–#18 ánh xạ 18 bug xác nhận. Nhánh mặc định có thể còn bản lịch sử; dùng nhánh này để đối soát lượt cập nhật.
+
+Task 3: 48 item thiết kế, 91 lượt đánh giá áp dụng: Chrome 21 Pass/19 Fail, Firefox 21 Pass/19 Fail, Android 7 Pass/4 Fail. Ba mục web từng dựa vào xác nhận sinh viên (IA01-03, IA01-06, IA03-10) đã được kiểm tra lại trong phạm vi desktop. Native còn 3 kết luận theo xác nhận sinh viên, được đánh dấu riêng trong matrix. Ảnh là viewport có caption URL/môi trường thật; không phải ảnh toàn cửa sổ OS.

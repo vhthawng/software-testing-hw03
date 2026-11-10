@@ -80,11 +80,11 @@ Nguồn kỳ vọng: [đặc tả SUT](https://github.com/ttbhanh/eshop-sut/blob
 - Actual: Chỉ có Họ Tên, Email, Mật khẩu rồi nút Đăng Ký.
 - Trạng thái: Reproduced/observed; chưa sửa source SUT.
 
-![BUG-06](screenshots/manual/03.jpg)
+![BUG-06](task3-runs/2026-11-11-local/android/android_03_watermarked.png)
 
-![BUG-06](screenshots/manual/04.jpg)
+![BUG-06](task3-runs/2026-11-11-local/android/android_04_watermarked.png)
 
-![BUG-06](screenshots/manual/06.jpg)
+![BUG-06](task3-runs/2026-11-11-local/android/android_06_watermarked.png)
 
 ## BUG-07 – Click label Số điện thoại không focus input Profile
 
@@ -196,11 +196,11 @@ Nguồn kỳ vọng: [đặc tả SUT](https://github.com/ttbhanh/eshop-sut/blob
 - Actual: Status bar chồng chữ EShop Mobile/Đăng nhập; navigation bar chồng footer ở đáy.
 - Trạng thái: Reproduced/observed; chưa sửa source SUT.
 
-![BUG-18](screenshots/manual/02.jpg)
+![BUG-18](task3-runs/2026-11-11-local/android/android_02_watermarked.png)
 
-![BUG-18](screenshots/manual/03.jpg)
+![BUG-18](task3-runs/2026-11-11-local/android/android_03_watermarked.png)
 
-![BUG-18](screenshots/manual/06.jpg)
+![BUG-18](task3-runs/2026-11-11-local/android/android_06_watermarked.png)
 
 ## BUG-19 – Profile không có h1 mô tả trang
 
@@ -251,3 +251,7 @@ Nguồn kỳ vọng: [đặc tả SUT](https://github.com/ttbhanh/eshop-sut/blob
 - BUG-12 và BUG-15 chuyển thành UX-04 và UX-05; BUG-14 vẫn là bug vì SRS có yêu cầu confirm xóa giỏ.
 - Bằng chứng BUG-13 cũ là Login Admin, BUG-08 cũ là giỏ trống: không dùng làm chứng cứ cho kết luận mới.
 - Chưa sửa lỗi sản phẩm. Không ghi trạng thái Fixed chỉ vì đã sửa báo cáo.
+
+## Tái kiểm tra Task 3
+
+Các mục web áp dụng được chạy lại trên Chrome và Firefox; kết quả 21 Pass / 19 Fail ở mỗi môi trường. [Ma trận](HW03_Cross_Platform_Report.md) ghi riêng môi trường, nguồn bằng chứng và native scope. Ảnh native trong báo cáo dùng bản có watermark; ảnh gốc vẫn lưu cục bộ. Không có sửa source SUT hoặc thay đổi số lượng 18 bug xác nhận.

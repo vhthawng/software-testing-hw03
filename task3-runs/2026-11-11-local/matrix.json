@@ -1,0 +1,1515 @@
+{
+  "uniqueChecklistItems": 48,
+  "applicableExecutions": 91,
+  "counts": {
+    "chrome": {
+      "Failed": 19,
+      "Passed": 21,
+      "Not Applicable": 8
+    },
+    "firefox": {
+      "Failed": 19,
+      "Passed": 21,
+      "Not Applicable": 8
+    },
+    "android": {
+      "Not Applicable": 37,
+      "Failed": 4,
+      "Passed": 7
+    }
+  },
+  "environment": {
+    "chrome": {
+      "browser": "Google Chrome",
+      "engine": "chrome",
+      "browserVersion": "157.0.8103.39",
+      "os": "win32",
+      "osRelease": "10.0.26200",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "locale": "vi-VN",
+      "runId": "2026-11-10T18-57-10-557Z",
+      "web": "http://localhost:5173",
+      "admin": "http://localhost:5174",
+      "backend": "http://localhost:3000/api",
+      "userEmail": "hw03-1794337030560@example.test",
+      "method": "Playwright against real local API; no network mocks",
+      "database": "server startup automatically reseeds database.js; no extra reset invoked",
+      "extraFinding": {
+        "bug": "BUG-16",
+        "firstClickFeedback": 0,
+        "secondClickFeedback": true,
+        "evidence": [
+          "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/BUG16-after-first-click.png",
+          "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/BUG16-after-second-click.png"
+        ]
+      },
+      "fullWindowEvidence": {
+        "status": "Blocked by Computer Use",
+        "reason": "Could not determine current browser URL with enough confidence to enforce policy",
+        "fullWindowCaptured": false
+      },
+      "identityEvidence": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/identity-profile-viewport.png",
+      "screenshotType": "Actual browser viewport with context-derived caption; not full OS window"
+    },
+    "firefox": {
+      "browser": "Firefox (Playwright build)",
+      "engine": "firefox",
+      "browserVersion": "153.0",
+      "os": "win32",
+      "osRelease": "10.0.26200",
+      "headless": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "locale": "vi-VN",
+      "runId": "2026-11-10T19-03-04-154Z",
+      "web": "http://localhost:5173",
+      "admin": "http://localhost:5174",
+      "backend": "http://localhost:3000/api",
+      "userEmail": "hw03-1794337384156@example.test",
+      "method": "Playwright against real local API; no network mocks",
+      "database": "server startup automatically reseeds database.js; no extra reset invoked",
+      "extraFinding": {
+        "bug": "BUG-16",
+        "firstClickFeedback": 0,
+        "secondClickFeedback": true,
+        "evidence": [
+          "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/BUG16-after-first-click.png",
+          "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/BUG16-after-second-click.png"
+        ]
+      },
+      "fullWindowEvidence": {
+        "status": "Not available: headless Firefox; Computer Use capture stopped",
+        "fullWindowCaptured": false
+      },
+      "identityEvidence": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/identity-profile-viewport.png",
+      "screenshotType": "Actual browser viewport with context-derived caption; not full OS window"
+    },
+    "android": {
+      "browser": "Expo Go native",
+      "device": "Samsung Galaxy A52 SM-A525F/DS",
+      "os": "Android",
+      "osVersion": "Chưa cung cấp",
+      "expoGoVersion": "Chưa cung cấp",
+      "projectSDK": "54",
+      "method": "Người dùng thao tác trên điện thoại thật, ảnh và xác nhận thủ công",
+      "captureTime": "Ảnh gốc hiển thị 01:08–01:10; không suy ngày chụp từ mtime"
+    }
+  },
+  "rows": [
+    {
+      "id": "CHK-IA01-01",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Nhất quán định dạng ký hiệu tiền tệ trên toàn bộ màn hình giỏ hàng và thanh toán (sử dụng đồng nhất '₫' hoặc 'VND').",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Checkout hiển thị cả nhãn (VND) và ký hiệu ₫ trên cùng màn hình.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA01-01.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Checkout hiển thị cả nhãn (VND) và ký hiệu ₫ trên cùng màn hình.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA01-01.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-02",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Bảng danh sách quản lý sản phẩm Admin có tiêu đề cột rõ ràng, căn lề nhất quán (chữ căn trái, số tiền căn phải) theo Waghmare Grid Guidelines.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Headers=Ảnh, Tên SP, Giá, Hành động; alignment=left, left, left, left. Giá phải căn phải theo tiêu chí gốc.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA01-02.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Headers=Ảnh, Tên SP, Giá, Hành động; alignment=left, left, left, left. Giá phải căn phải theo tiêu chí gốc.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA01-02.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-03",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Thẻ trạng thái đơn hàng (Order Status Badge) trong lịch sử đơn hàng sử dụng màu sắc phân biệt ngữ nghĩa rõ rệt theo chuẩn WCAG 2.2.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "[{\"label\":\"Đã hủy\",\"fg\":\"rgb(153, 27, 27)\",\"bg\":\"rgb(254, 226, 226)\",\"ratio\":6.802728419777387},{\"label\":\"Đã giao\",\"fg\":\"rgb(22, 101, 52)\",\"bg\":\"rgb(220, 252, 231)\",\"ratio\":6.4923831516894746},{\"label\":\"Đang giao\",\"fg\":\"rgb(30, 64, 175)\",\"bg\":\"rgb(219, 234, 254)\",\"ratio\":7.149175584004714},{\"label\":\"Đã xác nhận\",\"fg\":\"rgb(55, 48, 163)\",\"bg\":\"rgb(224, 231, 255)\",\"ratio\":8.061996606324048},{\"label\":\"Chờ xác nhận\",\"fg\":\"rgb(133, 77, 14)\",\"bg\":\"rgb(254, 249, 195)\",\"ratio\":6.378852044723008},{\"label\":\"Chờ xác nhận\",\"fg\":\"rgb(133, 77, 14)\",\"bg\":\"rgb(254, 249, 195)\",\"ratio\":6.378852044723008}]",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "[{\"label\":\"Đã hủy\",\"fg\":\"rgb(153, 27, 27)\",\"bg\":\"rgb(254, 226, 226)\",\"ratio\":6.802728419777387},{\"label\":\"Đã giao\",\"fg\":\"rgb(22, 101, 52)\",\"bg\":\"rgb(220, 252, 231)\",\"ratio\":6.4923831516894746},{\"label\":\"Đang giao\",\"fg\":\"rgb(30, 64, 175)\",\"bg\":\"rgb(219, 234, 254)\",\"ratio\":7.149175584004714},{\"label\":\"Đã xác nhận\",\"fg\":\"rgb(55, 48, 163)\",\"bg\":\"rgb(224, 231, 255)\",\"ratio\":8.061996606324048},{\"label\":\"Chờ xác nhận\",\"fg\":\"rgb(133, 77, 14)\",\"bg\":\"rgb(254, 249, 195)\",\"ratio\":6.378852044723008},{\"label\":\"Chờ xác nhận\",\"fg\":\"rgb(133, 77, 14)\",\"bg\":\"rgb(254, 249, 195)\",\"ratio\":6.378852044723008}]",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-04",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Giao diện màn hình đăng ký Mobile tương thích kích thước màn hình điện thoại (Safe Area View, không bị tai thỏ che khuất).",
+      "platforms": {
+        "chrome": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop chrome",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop firefox",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Failed",
+          "notes": "Header EShop Mobile bị status bar chồng chữ; footer bị navigation bar Android chồng ở đáy. Đây là lỗi safe area nhìn thấy trực tiếp trên ảnh, không suy ra từ component SafeAreaView.",
+          "method": "Đối chiếu ảnh thiết bị thật / phép đo màu source",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_02_watermarked.png",
+            "task3-runs/2026-11-11-local/android/android_03_watermarked.png",
+            "task3-runs/2026-11-11-local/android/android_06_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-05",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Mỗi trang Profile có đúng một h1 mô tả trang theo FR-21; các tiêu đề phần có phân cấp phù hợp.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "[{\"tag\":\"H2\",\"text\":\"Hồ sơ của bạn\"},{\"tag\":\"H2\",\"text\":\"Lịch sử đơn hàng\"}]",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA01-05.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "[{\"tag\":\"H2\",\"text\":\"Hồ sơ của bạn\"},{\"tag\":\"H2\",\"text\":\"Lịch sử đơn hàng\"}]",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA01-05.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-06",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Trang Admin duy trì khoảng cách lề và padding đồng nhất giữa Sidebar điều hướng và vùng nội dung chính.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "{\"side\":{\"x\":0,\"y\":0,\"width\":256,\"height\":1000,\"top\":0,\"right\":256,\"bottom\":1000,\"left\":0},\"main\":{\"x\":256,\"y\":0,\"width\":1184,\"height\":1000,\"top\":0,\"right\":1440,\"bottom\":1000,\"left\":256},\"sidePadding\":\"16px\",\"mainPadding\":\"32px\"}; đo bố cục không chồng lấn; đánh giá trực quan kèm ảnh.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/IA01-06-layout-review.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "{\"side\":{\"x\":0,\"y\":0,\"width\":256,\"height\":1000,\"top\":0,\"right\":256,\"bottom\":1000,\"left\":0},\"main\":{\"x\":256,\"y\":0,\"width\":1184,\"height\":1000,\"top\":0,\"right\":1440,\"bottom\":1000,\"left\":256},\"sidePadding\":\"16px\",\"mainPadding\":\"32px\"}; đo bố cục không chồng lấn; đánh giá trực quan kèm ảnh.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/IA01-06-layout-review.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-07",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Hiển thị placeholder trực quan, mờ nhạt và biến mất khi người dùng bắt đầu gõ văn bản trong ô mã giảm giá.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Placeholder tồn tại và không còn hiển thị khi có giá trị.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Placeholder tồn tại và không còn hiển thị khi có giá trị.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-08",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Tên sản phẩm quá dài trong bảng Admin không làm tràn vỡ chiều rộng cột bảng.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "{\"width\":3207.387451171875,\"body\":1440,\"scroll\":1440,\"parent\":1104.800048828125}",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA01-08.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "{\"width\":3209.283447265625,\"body\":1440,\"scroll\":1440,\"parent\":1120}",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA01-08.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-09",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Định dạng số tiền hiển thị có dấu chấm phân cách hàng nghìn rõ ràng theo chuẩn Việt Nam.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "locale vi-VN; kỳ vọng 4.000.000; kiểm tra Checkout (Profile kiểm tra cùng item sau tạo đơn). Profile có đơn 4.000.000 ₫.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "locale vi-VN; kỳ vọng 4.000.000; kiểm tra Checkout (Profile kiểm tra cùng item sau tạo đơn). Profile có đơn 4.000.000 ₫.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-10",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Độ tương phản màu sắc của chữ thông báo lỗi màu đỏ trên nền nhạt (bg-red-100 text-red-700) đạt chuẩn WCAG 2.2 AA.",
+      "platforms": {
+        "chrome": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop chrome",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop firefox",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Passed",
+          "notes": "Thông báo mật khẩu yếu nhìn thấy trên ảnh; màu khai báo hiện tại fg=#991b1b, bg=#fee2e2, tỷ lệ tương phản 6.8027:1 > 4.5:1. Tính từ màu source, ảnh JPEG hỗ trợ đối chiếu trạng thái; chỉ kết luận cho error box này, không chứng nhận toàn app đạt WCAG.",
+          "method": "Đối chiếu ảnh thiết bị thật / phép đo màu source",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_06_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-11",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Hình ảnh thumbnail sản phẩm trong bảng Admin có kích thước đồng đều và có thuộc tính alt mô tả nội dung.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Thumbnail thực có alt tên sản phẩm; đo kích thước đồng đều.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Thumbnail thực có alt tên sản phẩm; đo kích thước đồng đều.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA01-12",
+      "aspect": "IA-01: UI Standards",
+      "criterion": "Không xuất hiện các giá trị lỗi rò rỉ kiểu dữ liệu như 'NaN', 'undefined', 'null' trong vùng thanh toán.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Không rò rỉ NaN/undefined/null trong dữ liệu bình thường.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Không rò rỉ NaN/undefined/null trong dữ liệu bình thường.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-01",
+      "aspect": "IA-02: Forms",
+      "criterion": "Validation ô Số điện thoại trong form Profile phải chấp nhận định dạng số điện thoại Việt Nam hợp lệ bắt đầu bằng số 0 (10–11 chữ số).",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "[{\"type\":\"alert\",\"message\":\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\",\"url\":\"http://localhost:5173/profile\",\"time\":\"2026-11-10T18:57:27.633Z\"}]",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA02-01.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "[{\"type\":\"alert\",\"message\":\"Số điện thoại không hợp lệ. Vui lòng nhập đúng 9-10 chữ số.\",\"url\":\"http://localhost:5173/profile\",\"time\":\"2026-11-10T19:03:17.520Z\"}]",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA02-01.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-02",
+      "aspect": "IA-02: Forms",
+      "criterion": "Ô 'Tổng tiền thanh toán' phải ở chế độ Chỉ đọc (Read-only), tuyệt đối không cho phép người dùng tự gõ sửa số tiền thanh toán.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Ô tổng tiền cho sửa từ 4000000 thành 1000; coupon bị xóa khi onChange.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA02-02.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Ô tổng tiền cho sửa từ 4000000 thành 1000; coupon bị xóa khi onChange.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA02-02.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-03",
+      "aspect": "IA-02: Forms",
+      "criterion": "Form thêm/sửa sản phẩm Admin bắt buộc trường Tên sản phẩm không được để trống và không nhận chuỗi chỉ toàn khoảng trắng.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Tên rỗng validity=false; submit whitespace HTTP 200; persisted=true",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA02-03.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Tên rỗng validity=false; submit whitespace HTTP 200; persisted=true",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA02-03.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-04",
+      "aspect": "IA-02: Forms",
+      "criterion": "Ô Giá sản phẩm trong form Admin có ràng buộc số dương (> 0), ngăn chặn nhập giá âm hoặc giá bằng 0.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Giá được lưu: [0,-1000]",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA02-04.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Giá được lưu: [0,-1000]",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA02-04.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-05",
+      "aspect": "IA-02: Forms",
+      "criterion": "Form Đăng ký mobile có Xác nhận mật khẩu theo FR-01 và phạm vi mobile FR-20 trong đặc tả SUT.",
+      "platforms": {
+        "chrome": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop chrome",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop firefox",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Failed",
+          "notes": "Ảnh app Android 03/04/06: form chỉ có Họ Tên, Email, Mật khẩu, không có Confirm Password. Đặc tả SUT FR-01 bắt buộc xác nhận mật khẩu, FR-20 mở rộng chức năng đăng ký cho mobile.",
+          "method": "Đối chiếu ảnh thiết bị thật / phép đo màu source",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_03_watermarked.png",
+            "task3-runs/2026-11-11-local/android/android_04_watermarked.png",
+            "task3-runs/2026-11-11-local/android/android_06_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-06",
+      "aspect": "IA-02: Forms",
+      "criterion": "Nút 'Áp dụng' mã giảm giá bị vô hiệu hóa (disabled) khi ô nhập mã đang để trống hoặc chỉ chứa khoảng trắng.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "disabled empty=true; whitespace=true",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "disabled empty=true; whitespace=true",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-07",
+      "aspect": "IA-02: Forms",
+      "criterion": "Thẻ nhãn Label trong form Profile liên kết chính xác với ô input thông qua thuộc tính htmlFor và id.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Sau click label, phone focus=false",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA02-07.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Sau click label, phone focus=false",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA02-07.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-08",
+      "aspect": "IA-02: Forms",
+      "criterion": "Dropdown Danh mục (Category) trong form Admin hiển thị danh sách các danh mục có sẵn và có giá trị mặc định hợp lệ.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Danh mục Điện thoại, Laptop, Phụ kiện; value=1",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Danh mục Điện thoại, Laptop, Phụ kiện; value=1",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-09",
+      "aspect": "IA-02: Forms",
+      "criterion": "Ô nhập Mật khẩu trên Mobile có thuộc tính secureTextEntry ẩn ký tự khi gõ bảo mật.",
+      "platforms": {
+        "chrome": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop chrome",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop firefox",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Passed",
+          "notes": "Các ký tự mật khẩu hiện bằng dấu chấm; không ghi nhận nội dung mật khẩu thật hoặc suy ra độ mạnh mật khẩu từ ảnh.",
+          "method": "Đối chiếu ảnh thiết bị thật / phép đo màu source",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_04_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-10",
+      "aspect": "IA-02: Forms",
+      "criterion": "Người dùng có thể chỉnh sửa số lượng sản phẩm trực tiếp (tăng/giảm/nhập số) ngay tại bảng Giỏ hàng.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Dòng hàng có điều khiển: [\"Xóa\"]; số lượng là text.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA02-10.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Dòng hàng có điều khiển: [\"Xóa\"]; số lượng là text.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA02-10.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-11",
+      "aspect": "IA-02: Forms",
+      "criterion": "Bàn phím ảo trên Mobile tự động hiển thị kiểu bàn phím email (keyboardType='email-address') khi focus vào ô Email.",
+      "platforms": {
+        "chrome": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop chrome",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop firefox",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Passed",
+          "notes": "Sinh viên đã kiểm thử thủ công và xác nhận Passed trực tiếp trong chat. Không có ảnh/video bổ sung để assistant đối chiếu; không ghi nhận là Playwright đã xác minh.",
+          "method": "Sinh viên xác nhận thủ công",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_05_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-12",
+      "aspect": "IA-02: Forms",
+      "criterion": "Trường Email trong form Profile ở chế độ hiển thị chỉ đọc hoặc bị vô hiệu hóa vì không cho phép sửa qua UI theo FR-04.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Email hiển thị disabled trên form thật.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Email hiển thị disabled trên form thật.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-13",
+      "aspect": "IA-02: Forms",
+      "criterion": "Nút hành động tích cực Xác Nhận Thanh Toán dùng màu xanh dương theo FR-21 của SUT.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "background=rgb(22, 163, 74); SRS yêu cầu xanh dương.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA02-13.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "background=rgb(22, 163, 74); SRS yêu cầu xanh dương.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA02-13.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA02-14",
+      "aspect": "IA-02: Forms",
+      "criterion": "Trường Tên sản phẩm trong form Admin giới hạn độ dài tối đa 255 ký tự (maxlength='255') theo đặc tả FR-15.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Input nhận 256 ký tự; POST HTTP 200",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA02-14.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Input nhận 256 ký tự; POST HTTP 200",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA02-14.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-01",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Mục 'Giỏ hàng' trên thanh điều hướng có huy hiệu đếm số lượng sản phẩm (Cart Badge Counter).",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Header text=Giỏ hàng; không có số đếm.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA03-01.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Header text=Giỏ hàng; không có số đếm.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA03-01.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Passed",
+          "notes": "Header native Home hiện Giỏ (0), trong khi desktop chỉ Giỏ hàng. Chỉ xác minh hiển thị số đếm ở trạng thái có trong ảnh.",
+          "method": "Đối chiếu ảnh Android Home",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_02_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-02",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Thanh điều hướng Sidebar của Admin có các tab chức năng rõ ràng (Dashboard, Users, Products, Categories, Orders, Coupons).",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Sáu tab đều mở đúng heading, không phải click-only.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Sáu tab đều mở đúng heading, không phải click-only.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-03",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Người dùng đã đăng nhập có thể truy cập nhanh vào trang Profile từ liên kết 'Chào, [Tên]' trên thanh Header.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Link Chào điều hướng đúng /profile.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Link Chào điều hướng đúng /profile.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-04",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Thanh điều hướng dưới đáy (Bottom Navigation Bar) trên Mobile App cho phép chuyển đổi nhanh giữa Trang chủ, Giỏ hàng, Đơn hàng và Hồ sơ.",
+      "platforms": {
+        "chrome": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop chrome",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop firefox",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Failed",
+          "notes": "Home ở trạng thái chưa đăng nhập chỉ có header với Đăng nhập/Giỏ (0) và footer; không có bottom navigation Home/Cart/Orders/Profile theo checklist. Chưa kiểm thử khả năng chuyển các mục sau đăng nhập; không kết luận mọi điều hướng bị hỏng.",
+          "method": "Đối chiếu ảnh thiết bị thật / phép đo màu source",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_02_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-05",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Nút '← Mua tiếp' tại Giỏ hàng đưa người dùng quay lại danh sách sản phẩm nhanh chóng.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Mua tiếp quay về Home có danh sách sản phẩm.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Mua tiếp quay về Home có danh sách sản phẩm.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-06",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Thanh điều hướng có chỉ báo trạng thái trang hiện tại (Active state highlight).",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "aria-current=null; link header không có chỉ báo active theo route. Phạm vi đo DOM, chưa kiểm định mọi tín hiệu thị giác.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA03-06.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "aria-current=null; link header không có chỉ báo active theo route. Phạm vi đo DOM, chưa kiểm định mọi tín hiệu thị giác.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA03-06.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Failed",
+          "notes": "Header Home và Register cùng kiểu hiển thị, không có chỉ báo trang hiện tại. Phạm vi quan sát hai view trong ảnh, không khẳng định đã duyệt mọi view native.",
+          "method": "Đối chiếu ảnh Android Home/Register",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_02_watermarked.png",
+            "task3-runs/2026-11-11-local/android/android_03_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-07",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Nút 'Đăng xuất' trong trang Admin xóa token phiên làm việc và quay lại màn hình Login quản trị.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Token đã xóa, hiển thị Admin Login.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Token đã xóa, hiển thị Admin Login.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-08",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Tại màn hình Đăng ký Mobile, có liên kết 'Đã có tài khoản? Đăng nhập' chuyển nhanh sang form Login.",
+      "platforms": {
+        "chrome": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop chrome",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop firefox",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Passed",
+          "notes": "Sinh viên đã kiểm thử thủ công và xác nhận Passed trực tiếp trong chat. Không có ảnh/video bổ sung để assistant đối chiếu; không ghi nhận là Playwright đã xác minh.",
+          "method": "Sinh viên xác nhận thủ công",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_03_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-09",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Sau khi thanh toán thành công, có liên kết rõ ràng cho phép người dùng quay lại Trang chủ.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Quay lại Home có sản phẩm.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Quay lại Home có sản phẩm.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA03-10",
+      "aspect": "IA-03: Navigation",
+      "criterion": "Không có liên kết chết hoặc dẫn đến trang lỗi 404 trong toàn bộ 4 phân hệ.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "[{\"route\":\"/\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/login\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/register\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/forgot-password\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/profile\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/cart\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/checkout\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/product/5\",\"hasContent\":true,\"notFound\":false}]; desktop routes only; native navigation is not inferred.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "[{\"route\":\"/\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/login\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/register\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/forgot-password\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/profile\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/cart\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/checkout\",\"hasContent\":true,\"notFound\":false},{\"route\":\"/product/5\",\"hasContent\":true,\"notFound\":false}]; desktop routes only; native navigation is not inferred.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Passed",
+          "notes": "Sinh viên đã xác nhận mục này Passed trong nhóm 5 mục trước đây Not Run. Không ghi là Playwright đã duyệt link native.",
+          "method": "Sinh viên xác nhận thủ công",
+          "evidence": [
+            "task1-runs/mobile-manual/student-confirmations.json"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-01",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Nút 'Hủy đơn' trong bảng Lịch sử đơn hàng phải có hộp thoại xác nhận (Confirm dialog) trước khi gọi API hủy đơn.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Đơn chuyển Đã hủy; dialog=[{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\",\"url\":\"http://localhost:5173/profile\",\"time\":\"2026-11-10T18:58:08.278Z\"}]; không có confirm.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA04-01.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Đơn chuyển Đã hủy; dialog=[{\"type\":\"alert\",\"message\":\"Hủy đơn thành công!\",\"url\":\"http://localhost:5173/profile\",\"time\":\"2026-11-10T19:03:22.256Z\"}]; không có confirm.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA04-01.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-02",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Nút 'Sửa' sản phẩm trong bảng Admin phải mở modal điền sẵn dữ liệu và cập nhật đúng sản phẩm được chọn mà không làm sai lệch các sản phẩm khác.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Sau sửa: 10/10 dòng mang cùng tên.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA04-02.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Sau sửa: 10/10 dòng mang cùng tên.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA04-02.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-03",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Thao tác xóa sản phẩm khỏi giỏ hàng phải hiển thị hộp thoại xác nhận (Confirm dialog).",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Dòng hàng biến mất ngay, không có confirm. Đây là đối chiếu tiêu chí cũ về usability.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA04-03.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Dòng hàng biến mất ngay, không có confirm. Đây là đối chiếu tiêu chí cũ về usability.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA04-03.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-04",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Khi người dùng chưa đăng nhập bấm thanh toán, hệ thống phải hiển thị thông báo inline/toast thay vì gọi window.alert() làm đơ trình duyệt.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Modal alert=Bạn cần đăng nhập để thanh toán!; sau đó đến /login. Fail theo tiêu chí cũ yêu cầu inline/toast, không phải lỗi access control.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA04-04.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Modal alert=Bạn cần đăng nhập để thanh toán!; sau đó đến /login. Fail theo tiêu chí cũ yêu cầu inline/toast, không phải lỗi access control.",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA04-04.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-05",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Hiển thị thông báo phản hồi màu xanh rõ ràng và cập nhật số tiền tiết kiệm khi áp dụng mã giảm giá thành công.",
+      "platforms": {
+        "chrome": {
+          "status": "Failed",
+          "notes": "Xác Nhận Đơn Hàng\nSản phẩm:\nBàn phím cơ Keychron Q1 x 1 — 4.000.000 ₫\nTổng tiền thanh toán (VND):\nMã Giảm Giá\nÁp dụng\n\n✅ Áp dụng thành công! Giảm 10%\n\nTiết kiệm: -36.000.000 ₫\n\nThành tiền: 40.000.000 ₫\n\nTổng thanh toán: 40.000.000 ₫\nXác Nhận Thanh Toán",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/CHK-IA04-05.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Failed",
+          "notes": "Xác Nhận Đơn Hàng\nSản phẩm:\nBàn phím cơ Keychron Q1 x 1 — 4.000.000 ₫\nTổng tiền thanh toán (VND):\nMã Giảm Giá\nÁp dụng\n\n✅ Áp dụng thành công! Giảm 10%\n\nTiết kiệm: -36.000.000 ₫\n\nThành tiền: 40.000.000 ₫\n\nTổng thanh toán: 40.000.000 ₫\nXác Nhận Thanh Toán",
+          "method": "Playwright + API local thật",
+          "evidence": [
+            "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/CHK-IA04-05.png"
+          ],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-06",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Hiển thị thông báo phản hồi màu đỏ nêu rõ lý do khi áp dụng mã giảm giá không hợp lệ hoặc đã hết hạn (EXPIRED).",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "API từ chối EXPIRED; hiển thị thông báo hết hạn.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "API từ chối EXPIRED; hiển thị thông báo hết hạn.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-07",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Hiển thị trạng thái tải ('Đang xử lý...') trên nút thanh toán trong lúc đang gửi yêu cầu tạo đơn hàng.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Bắt được trạng thái Đang xử lý trên request thật.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Bắt được trạng thái Đang xử lý trên request thật.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-08",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Màn hình Giỏ hàng rỗng (Empty State) hiển thị thông điệp thân thiện và nút kêu gọi hành động tiếp tục mua sắm.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Có empty message và CTA mở Home.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Có empty message và CTA mở Home.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-09",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Hiển thị phản hồi thông báo khi cập nhật hồ sơ cá nhân thành công.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Dialog=Cập nhật thành công!; persisted phone=912345678. Chỉ kiểm tra phản hồi lưu, không coi workaround là phone VN hợp lệ.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Dialog=Cập nhật thành công!; persisted phone=912345678. Chỉ kiểm tra phản hồi lưu, không coi workaround là phone VN hợp lệ.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-10",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Hiển thị màn hình kết thúc quy trình trang trọng ('Thanh toán thành công!') khi hoàn tất đơn hàng theo nguyên tắc Closure của Shneiderman.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Có heading thành công và lời cảm ơn sau POST checkout thật.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Có heading thành công và lời cảm ơn sau POST checkout thật.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-11",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Hiển thị thông báo phản hồi lỗi nổi bật (banner màu đỏ) khi đăng ký thất bại trên Mobile App.",
+      "platforms": {
+        "chrome": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop chrome",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Not Applicable",
+          "notes": "Item native mobile: thực thi trên Android Expo Go; không áp dụng cho desktop firefox",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Passed",
+          "notes": "Thông báo validation mật khẩu yếu hiện trong khối nền đỏ nhạt, đủ câu giải thích và không bị cắt. Chỉ xác minh nhánh validation local; chưa có bằng chứng nhánh lỗi từ API/backend.",
+          "method": "Đối chiếu ảnh thiết bị thật / phép đo màu source",
+          "evidence": [
+            "task3-runs/2026-11-11-local/android/android_06_watermarked.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "CHK-IA04-12",
+      "aspect": "IA-04: Feedback & State",
+      "criterion": "Bảng Lịch sử đơn hàng hiển thị trạng thái rỗng thân thiện khi người dùng chưa có đơn hàng nào.",
+      "platforms": {
+        "chrome": {
+          "status": "Passed",
+          "notes": "Empty state lịch sử hiển thị cho tài khoản test mới.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/chrome/2026-11-10T18-57-10-557Z/execution.json"
+        },
+        "firefox": {
+          "status": "Passed",
+          "notes": "Empty state lịch sử hiển thị cho tài khoản test mới.",
+          "method": "Playwright + API local thật",
+          "evidence": [],
+          "log": "task3-runs/2026-11-11-local/firefox/2026-11-10T19-03-04-154Z/execution.json"
+        },
+        "android": {
+          "status": "Not Applicable",
+          "notes": "Tiêu chí này gắn với màn hình/component web hoặc Admin trong phạm vi checklist gốc; native được chọn là Home/Register và header/navigation chung. Không suy từ N/A thành Pass.",
+          "method": "Phân định phạm vi",
+          "evidence": []
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Ảnh là viewport thật + caption URL/môi trường, không phải ảnh native toàn cửa sổ; Computer Use chặn do không xác định được URL đủ chắc chắn.",
+    "Firefox headless sau khi bản hiện cửa sổ treo ở thao tác click; giữ attempt lỗi, không tính thành lỗi SUT.",
+    "Android chỉ kiểm tra phạm vi Home/Register/header tương ứng checklist và xác nhận sinh viên; không tự nhận đã chạy Profile/Cart/Checkout native.",
+    "Không sử dụng BrowserStack/LambdaTest; không tuyên bố trial hết hạn hoặc có phiên cloud.",
+    "Chưa cung cấp phiên bản Android và Expo Go. Watermark giữ nguyên toàn bộ vùng ảnh gốc; không điền giả dữ liệu vào input native còn trống."
+  ]
+}

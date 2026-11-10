@@ -1,0 +1,74 @@
+[
+  {
+    "source": "screenshots/manual/02.jpg",
+    "sourceSHA256": "8ddba72a8a0e0e31159f57e62e674f4d69b8c4cef815266907d48483226ab07e",
+    "output": "task3-runs/2026-11-11-local/android/android_02_watermarked.png",
+    "unchangedOriginalRectangle": [
+      0,
+      150,
+      1080,
+      2550
+    ],
+    "pixelPreservationVerified": true
+  },
+  {
+    "source": "screenshots/manual/03.jpg",
+    "sourceSHA256": "a8d8adc5911cf09446331e3171578c0fd476230f462db446d5b61821bb54dbd3",
+    "output": "task3-runs/2026-11-11-local/android/android_03_watermarked.png",
+    "unchangedOriginalRectangle": [
+      0,
+      150,
+      1080,
+      2550
+    ],
+    "pixelPreservationVerified": true
+  },
+  {
+    "source": "screenshots/manual/04.jpg",
+    "sourceSHA256": "a5549ea9172203792ebc3f3de053777b12fdc0b8fc4234737074662c8628d01e",
+    "output": "task3-runs/2026-11-11-local/android/android_04_watermarked.png",
+    "unchangedOriginalRectangle": [
+      0,
+      150,
+      1080,
+      2550
+    ],
+    "pixelPreservationVerified": true
+  },
+  {
+    "source": "screenshots/manual/05.jpg",
+    "sourceSHA256": "f3d5c21a0dbafe8b8591bc01f4ace60cc60088202ea47c65a5c2add38d799391",
+    "output": "task3-runs/2026-11-11-local/android/android_05_watermarked.png",
+    "unchangedOriginalRectangle": [
+      0,
+      150,
+      1080,
+      2550
+    ],
+    "pixelPreservationVerified": true
+  },
+  {
+    "source": "screenshots/manual/06.jpg",
+    "sourceSHA256": "bf12d2229a82162c1f3f5e8df8d48697f4464e9afb07519c53a75da4ba4e89c8",
+    "output": "task3-runs/2026-11-11-local/android/android_06_watermarked.png",
+    "unchangedOriginalRectangle": [
+      0,
+      150,
+      1080,
+      2550
+    ],
+    "pixelPreservationVerified": true
+  },
+  {
+    "source": "screenshots/manual/07.jpg",
+    "sourceSHA256": "f618d177170bc01ce8edee3ab6bdaf918b97d2fd2d6a5c44a116a5428cbeb90d",
+    "output": "task3-runs/2026-11-11-local/android/android_07_watermarked.png",
+    "unchangedOriginalRectangle": [
+      0,
+      150,
+      1080,
+      2550
+    ],
+    "pixelPreservationVerified": true
+  }
+]

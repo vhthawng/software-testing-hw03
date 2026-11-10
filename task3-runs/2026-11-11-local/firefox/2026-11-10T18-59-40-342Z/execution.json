@@ -1,0 +1,368 @@
+{
+  "environment": {
+    "browser": "Firefox (Playwright build)",
+    "engine": "firefox",
+    "browserVersion": "153.0",
+    "os": "win32",
+    "osRelease": "10.0.26200",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "locale": "vi-VN",
+    "runId": "2026-11-10T18-59-40-342Z",
+    "web": "http://localhost:5173",
+    "admin": "http://localhost:5174",
+    "backend": "http://localhost:3000/api",
+    "userEmail": "hw03-1794337180345@example.test",
+    "method": "Playwright against real local API; no network mocks",
+    "database": "server startup automatically reseeds database.js; no extra reset invoked"
+  },
+  "counts": {
+    "Not Run": 48
+  },
+  "results": [
+    {
+      "id": "CHK-IA01-01",
+      "criterion": "Nhất quán định dạng ký hiệu tiền tệ trên toàn bộ màn hình giỏ hàng và thanh toán (sử dụng đồng nhất '₫' hoặc 'VND').",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-02",
+      "criterion": "Bảng danh sách quản lý sản phẩm Admin có tiêu đề cột rõ ràng, căn lề nhất quán (chữ căn trái, số tiền căn phải) theo Waghmare Grid Guidelines.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-03",
+      "criterion": "Thẻ trạng thái đơn hàng (Order Status Badge) trong lịch sử đơn hàng sử dụng màu sắc phân biệt ngữ nghĩa rõ rệt theo chuẩn WCAG 2.2.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-04",
+      "criterion": "Giao diện màn hình đăng ký Mobile tương thích kích thước màn hình điện thoại (Safe Area View, không bị tai thỏ che khuất).",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-05",
+      "criterion": "Mỗi trang Profile có đúng một h1 mô tả trang theo FR-21; các tiêu đề phần có phân cấp phù hợp.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-06",
+      "criterion": "Trang Admin duy trì khoảng cách lề và padding đồng nhất giữa Sidebar điều hướng và vùng nội dung chính.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-07",
+      "criterion": "Hiển thị placeholder trực quan, mờ nhạt và biến mất khi người dùng bắt đầu gõ văn bản trong ô mã giảm giá.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-08",
+      "criterion": "Tên sản phẩm quá dài trong bảng Admin không làm tràn vỡ chiều rộng cột bảng.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-09",
+      "criterion": "Định dạng số tiền hiển thị có dấu chấm phân cách hàng nghìn rõ ràng theo chuẩn Việt Nam.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-10",
+      "criterion": "Độ tương phản màu sắc của chữ thông báo lỗi màu đỏ trên nền nhạt (bg-red-100 text-red-700) đạt chuẩn WCAG 2.2 AA.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-11",
+      "criterion": "Hình ảnh thumbnail sản phẩm trong bảng Admin có kích thước đồng đều và có thuộc tính alt mô tả nội dung.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA01-12",
+      "criterion": "Không xuất hiện các giá trị lỗi rò rỉ kiểu dữ liệu như 'NaN', 'undefined', 'null' trong vùng thanh toán.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-01",
+      "criterion": "Validation ô Số điện thoại trong form Profile phải chấp nhận định dạng số điện thoại Việt Nam hợp lệ bắt đầu bằng số 0 (10–11 chữ số).",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-02",
+      "criterion": "Ô 'Tổng tiền thanh toán' phải ở chế độ Chỉ đọc (Read-only), tuyệt đối không cho phép người dùng tự gõ sửa số tiền thanh toán.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-03",
+      "criterion": "Form thêm/sửa sản phẩm Admin bắt buộc trường Tên sản phẩm không được để trống và không nhận chuỗi chỉ toàn khoảng trắng.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-04",
+      "criterion": "Ô Giá sản phẩm trong form Admin có ràng buộc số dương (> 0), ngăn chặn nhập giá âm hoặc giá bằng 0.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-05",
+      "criterion": "Form Đăng ký mobile có Xác nhận mật khẩu theo FR-01 và phạm vi mobile FR-20 trong đặc tả SUT.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-06",
+      "criterion": "Nút 'Áp dụng' mã giảm giá bị vô hiệu hóa (disabled) khi ô nhập mã đang để trống hoặc chỉ chứa khoảng trắng.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-07",
+      "criterion": "Thẻ nhãn Label trong form Profile liên kết chính xác với ô input thông qua thuộc tính htmlFor và id.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-08",
+      "criterion": "Dropdown Danh mục (Category) trong form Admin hiển thị danh sách các danh mục có sẵn và có giá trị mặc định hợp lệ.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-09",
+      "criterion": "Ô nhập Mật khẩu trên Mobile có thuộc tính secureTextEntry ẩn ký tự khi gõ bảo mật.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-10",
+      "criterion": "Người dùng có thể chỉnh sửa số lượng sản phẩm trực tiếp (tăng/giảm/nhập số) ngay tại bảng Giỏ hàng.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-11",
+      "criterion": "Bàn phím ảo trên Mobile tự động hiển thị kiểu bàn phím email (keyboardType='email-address') khi focus vào ô Email.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-12",
+      "criterion": "Trường Email trong form Profile ở chế độ hiển thị chỉ đọc hoặc bị vô hiệu hóa vì không cho phép sửa qua UI theo FR-04.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-13",
+      "criterion": "Nút hành động tích cực Xác Nhận Thanh Toán dùng màu xanh dương theo FR-21 của SUT.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA02-14",
+      "criterion": "Trường Tên sản phẩm trong form Admin giới hạn độ dài tối đa 255 ký tự (maxlength='255') theo đặc tả FR-15.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-01",
+      "criterion": "Mục 'Giỏ hàng' trên thanh điều hướng có huy hiệu đếm số lượng sản phẩm (Cart Badge Counter).",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-02",
+      "criterion": "Thanh điều hướng Sidebar của Admin có các tab chức năng rõ ràng (Dashboard, Users, Products, Categories, Orders, Coupons).",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-03",
+      "criterion": "Người dùng đã đăng nhập có thể truy cập nhanh vào trang Profile từ liên kết 'Chào, [Tên]' trên thanh Header.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-04",
+      "criterion": "Thanh điều hướng dưới đáy (Bottom Navigation Bar) trên Mobile App cho phép chuyển đổi nhanh giữa Trang chủ, Giỏ hàng, Đơn hàng và Hồ sơ.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-05",
+      "criterion": "Nút '← Mua tiếp' tại Giỏ hàng đưa người dùng quay lại danh sách sản phẩm nhanh chóng.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-06",
+      "criterion": "Thanh điều hướng có chỉ báo trạng thái trang hiện tại (Active state highlight).",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-07",
+      "criterion": "Nút 'Đăng xuất' trong trang Admin xóa token phiên làm việc và quay lại màn hình Login quản trị.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-08",
+      "criterion": "Tại màn hình Đăng ký Mobile, có liên kết 'Đã có tài khoản? Đăng nhập' chuyển nhanh sang form Login.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-09",
+      "criterion": "Sau khi thanh toán thành công, có liên kết rõ ràng cho phép người dùng quay lại Trang chủ.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA03-10",
+      "criterion": "Không có liên kết chết hoặc dẫn đến trang lỗi 404 trong toàn bộ 4 phân hệ.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-01",
+      "criterion": "Nút 'Hủy đơn' trong bảng Lịch sử đơn hàng phải có hộp thoại xác nhận (Confirm dialog) trước khi gọi API hủy đơn.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-02",
+      "criterion": "Nút 'Sửa' sản phẩm trong bảng Admin phải mở modal điền sẵn dữ liệu và cập nhật đúng sản phẩm được chọn mà không làm sai lệch các sản phẩm khác.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-03",
+      "criterion": "Thao tác xóa sản phẩm khỏi giỏ hàng phải hiển thị hộp thoại xác nhận (Confirm dialog).",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-04",
+      "criterion": "Khi người dùng chưa đăng nhập bấm thanh toán, hệ thống phải hiển thị thông báo inline/toast thay vì gọi window.alert() làm đơ trình duyệt.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-05",
+      "criterion": "Hiển thị thông báo phản hồi màu xanh rõ ràng và cập nhật số tiền tiết kiệm khi áp dụng mã giảm giá thành công.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-06",
+      "criterion": "Hiển thị thông báo phản hồi màu đỏ nêu rõ lý do khi áp dụng mã giảm giá không hợp lệ hoặc đã hết hạn (EXPIRED).",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-07",
+      "criterion": "Hiển thị trạng thái tải ('Đang xử lý...') trên nút thanh toán trong lúc đang gửi yêu cầu tạo đơn hàng.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-08",
+      "criterion": "Màn hình Giỏ hàng rỗng (Empty State) hiển thị thông điệp thân thiện và nút kêu gọi hành động tiếp tục mua sắm.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-09",
+      "criterion": "Hiển thị phản hồi thông báo khi cập nhật hồ sơ cá nhân thành công.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-10",
+      "criterion": "Hiển thị màn hình kết thúc quy trình trang trọng ('Thanh toán thành công!') khi hoàn tất đơn hàng theo nguyên tắc Closure của Shneiderman.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-11",
+      "criterion": "Hiển thị thông báo phản hồi lỗi nổi bật (banner màu đỏ) khi đăng ký thất bại trên Mobile App.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    },
+    {
+      "id": "CHK-IA04-12",
+      "criterion": "Bảng Lịch sử đơn hàng hiển thị trạng thái rỗng thân thiện khi người dùng chưa có đơn hàng nào.",
+      "status": "Not Run",
+      "notes": "Chưa thực thi trong lượt này",
+      "evidence": []
+    }
+  ],
+  "dialogs": [],
+  "network": [],
+  "cleanup": {
+    "deletedSyntheticProductIds": [],
+    "retained": "Dedicated synthetic user and own status-fixture/test orders retained for audit; seed products not modified"
+  }
+}

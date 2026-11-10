@@ -13,3 +13,7 @@ Công cụ AI: Codex. Ngày rà soát/cập nhật: 11/11/2026 (Asia/Bangkok). K
 | “Đồng bộ báo cáo với kết quả thật, bug report, điều chỉnh github issues luôn” | Đối chiếu SRS, sửa oracle, sinh tài liệu và đồng bộ Issues từ danh mục chung | PDF/ZIP giữ nguyên theo chỉ định; log Git phản ánh lịch sử thật |
 
 Đây là phụ lục tóm tắt các tương tác có trong chat hiện tại, không thay thế transcript đầy đủ của mọi phiên AI trước đây. Prompt được trích đoạn và ghi rõ phạm vi; không tự dựng output hội thoại bị thiếu. Script, JSON, ảnh và trạng thái GitHub là bằng chứng đầu ra, không phải bằng chứng người tham gia đã phát ngôn thêm điều gì.
+
+## Bổ sung Task 3 (11/11/2026)
+
+Prompt: “vậy giải quyết task 3 trước đi”. Sinh viên xác nhận “Dùng script, giữ nguyên ảnh gốc” khi được hỏi cách watermark ảnh Android. Output: thực thi 40 mục web trên Chrome và Firefox headless; kiểm tra đủ năm badge, màu/contrast, layout và routes; lập ma trận 91 lượt áp dụng, 48 item thiết kế, N/A theo scope; watermark native giữ nguyên pixel vùng gốc. Lịch sử lỗi Firefox headed và việc Computer Use dừng chụp toàn cửa sổ được lưu trong harness-history.json. Không dùng nguồn tìm kiếm trên mạng để khẳng định nguyên nhân lỗi harness; chỉ báo cáo chẩn đoán thực tế. Không sửa PDF/ZIP.

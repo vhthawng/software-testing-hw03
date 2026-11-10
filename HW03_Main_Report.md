@@ -24,9 +24,13 @@ Một flow: cập nhật thông tin nhận hàng → chọn bàn phím dưới 7
 
 SUS mean **30,36**, SD mẫu **9,51**; thời gian trung bình **271,43s**, P7 nhanh nhất **195s**. Ba người P1/P3/P6 được ghi có trợ giúp; các nhãn thành công/workaround là mô tả trong nhật ký, không tự chứng nhận toàn bộ 7 người hoàn thành đúng số điện thoại hợp lệ. Các tuyên bố tần suất không đủ trace được chuyển thành nhận định định tính. Pilot được ghi trong kế hoạch; chưa có dữ liệu để tự bổ sung kết quả pilot.
 
-## Task 3 – Môi trường và giới hạn
+## Task 3 – Kiểm thử trên ba môi trường
 
-[Báo cáo cross-platform](HW03_Cross_Platform_Report.md) phân biệt Chrome thật đã chạy mới, Firefox lịch sử, Chromium mobile emulation lịch sử và Expo Go native người dùng thao tác trên Galaxy A52. Ảnh mobile thật hỗ trợ xác minh các mục native; không tự chứng nhận đầy đủ ma trận 48 items trên cả ba môi trường. Không khẳng định native keyboard/Android dialog từ ảnh emulation cũ.
+[Báo cáo cross-platform](HW03_Cross_Platform_Report.md) và [ma trận Excel](HW03_Cross_Platform_Matrix.xlsx) ghi 48 item, 91 lượt đánh giá áp dụng: Chrome 157.0.8103.39 hiện cửa sổ (21 Pass / 19 Fail), Firefox 153.0 headless (21 Pass / 19 Fail), Galaxy A52 native Expo Go (7 Pass / 4 Fail). Hai desktop chạy cùng 40 item web; native có 8 item Mobile gốc và 3 item header/navigation chung. N/A theo scope được giải thích từng cột và không tính là Passed.
+
+Firefox hiện cửa sổ từng treo ở click; giữ attempt 48 Not Run và probe chẩn đoán, chỉ dùng lượt headless thành công làm kết quả cuối. Không coi lỗi harness là bug EShop. Ba mục web trước đây dựa vào xác nhận sinh viên đã có kiểm tra bổ sung trong Task 3; nguồn kết quả cũ vẫn được giữ để đối soát.
+
+Ảnh desktop có caption email/MSSV/họ tên, browser/Windows/URL localhost lấy từ context thật; ảnh Profile có họ tên/MSSV trong input. Ảnh Android được thêm viền watermark bằng script theo xác nhận sinh viên, giữ nguyên pixel vùng ảnh gốc; không tạo lại bằng AI. Native có 3 kết luận theo xác nhận thủ công (email keyboard, link về Login, navigation chung). Chưa có Android/Expo Go version; không ghi SDK project thay cho app version. Ảnh toàn cửa sổ OS chưa chụp được vì Computer Use chặn do không xác định được URL đủ chắc chắn; không vẽ browser frame giả hoặc vượt chặn. Đề không nêu đích danh bắt buộc thanh địa chỉ OS của mọi ảnh; báo cáo ghi rõ ảnh viewport + caption. Nếu cần định danh ngay trong input native theo cách hiểu chặt §11, sinh viên cần cung cấp thêm ảnh gốc thay vì sửa giả input trên ảnh.
 
 ## Agent Skill và AI
 
