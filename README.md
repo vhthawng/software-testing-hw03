@@ -92,4 +92,4 @@
 
 * **GitHub Repository:** [https://github.com/vhthawng/software-testing-hw03](https://github.com/vhthawng/software-testing-hw03)
 * **GitHub Issues Page:** [https://github.com/vhthawng/software-testing-hw03/issues](https://github.com/vhthawng/software-testing-hw03/issues)
-* **Demo Video Link (YouTube):** *[https://youtu.be/23120355_HW03_Demo_GUI_Usability]* *(Video minh chứng kịch bản Playwright chạy tự động trên Chrome, Firefox, Mobile và quy trình tính SUS bằng Agent Skill).*
+* **Demo Video Link (YouTube):** [https://youtu.be/JxHogwfHg6E](https://youtu.be/JxHogwfHg6E) *(Video demo Agent Skill `gui-usability-testing` áp dụng trên project EShop mới: thiết kế checklist, xuất Excel, tính điểm SUS và đóng dấu watermark).*
